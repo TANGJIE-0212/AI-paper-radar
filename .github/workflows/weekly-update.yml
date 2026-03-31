@@ -1,0 +1,60 @@
+name: Weekly AI Paper Update
+
+on:
+  schedule:
+    # Every Sunday at 01:00 UTC (09:00 Beijing time)
+    - cron: '0 1 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch papers
+        working-directory: scripts
+        run: python3 fetch_papers.py --top 20 --output papers.json
+
+      - name: Build data.js
+        working-directory: scripts
+        run: python3 build_data_js.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/papers.json assets/data.js
+          git diff --cached --quiet || git commit -m "chore: weekly paper update $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: assets
+
+      - id: deployment
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

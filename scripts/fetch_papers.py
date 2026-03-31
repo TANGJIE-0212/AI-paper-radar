@@ -192,13 +192,13 @@ class HuggingFacePaperFetcher:
         last_start = current_start - timedelta(days=7)
         last_end = last_start + timedelta(days=6)
         
-        if weekday <= 2:  # 周一(0)、周二(1)、周三(2) -> 用上一个周期
+        if weekday <= 2 or weekday == 6:  # 周一(0)~周三(2) 和 周日(6) -> 用上一个周期
             week_start, week_end = last_start, last_end
             week_str = self.get_hf_week_number(last_start)
             is_current = False
             date_range = f"{week_start.strftime('%m/%d')}-{week_end.strftime('%m/%d')}"
             print(f"📅 今天是周{['一','二','三','四','五','六','日'][weekday]}，当前周期论文还在积累中，显示上周数据 ({week_str}: {date_range})")
-        else:  # 周四(3)~周日(6) -> 用当前周期
+        else:  # 周四(3)~周六(5) -> 用当前周期
             week_start, week_end = current_start, current_end
             week_str = self.get_hf_week_number(current_start)
             is_current = True
