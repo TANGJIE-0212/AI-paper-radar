@@ -3,60 +3,55 @@ name: ai-paper-radar
 description: "Use when fetching HuggingFace weekly papers, analyzing AI paper trends, generating an AI paper radar page, tracking hot papers in areas like agents or long context, or turning paper summaries into product opportunities."
 ---
 
-# AI 论文雷达 - Skill
+# AI 论文雷达 — OpenClaw Cron Task
 
-## 核心原则
+## 自动化架构
 
-**脚本先抓取并生成基础页面数据，LLM 再做增强分析。**
-
-- `fetch_papers.py`: 仅抓取点赞数前20的论文标题、URL、点赞数、日期、abstract
-- `build_data_js.py`: 将 `papers.json` 转成可直接渲染的 `assets/data.js`，确保页面不会是空壳
-- 分析和机会挖掘由 GitHub Copilot 在基础数据上继续增强
-
-**工作流自动化原则：**
-
-- **一次性完成**：Step 1 → Step 2 → Step 3 → Step 4 必须连续执行，不要中途停下来等待用户确认
-
-
-## 使用场景
-
-当用户说以下类型的话时，使用此 skill：
-- "帮我看看这周 HuggingFace 上有什么热门论文"
-- "分析最近的 AI 论文趋势"
-- "生成一个论文雷达网页"
-- "帮我追踪一下长上下文、agent、工具调用相关的论文"
-- "这周多模态有什么新进展"
-
-## 工作流程
-
-### Step 1: 抓取原始数据
-
-```bash
-cd scripts
-python3 fetch_papers.py --top 20 --output papers.json
-python3 build_data_js.py
+```
+每周日 09:00 (北京时间)          每周日 09:30 (北京时间)          push 后自动
+┌──────────────────┐     ┌─────────────────────────┐     ┌──────────────┐
+│  GitHub Actions   │     │       OpenClaw           │     │ GitHub Pages │
+│  fetch_papers.py  │ ──▶ │  读 papers.json          │ ──▶ │  自动部署    │
+│  → papers.json    │     │  深度分析 → data.js       │     │              │
+│  commit & push    │     │  commit & push           │     │              │
+└──────────────────┘     └─────────────────────────┘     └──────────────┘
 ```
 
-输出结构：
+- **GitHub Actions**：只负责抓取原始数据（`papers.json`），不生成分析
+- **OpenClaw**：负责深度分析，生成 `assets/data.js`，push 后触发自动部署
+- **不使用 `build_data_js.py`**：所有分析由 OpenClaw 完成，不走模板
+
+## OpenClaw 执行流程
+
+**触发时间**：每周日 09:30 北京时间（Actions 抓完数据后）
+
+### Step 1: 读取原始数据
+
+读取 `scripts/papers.json`，这是 GitHub Actions 自动抓取的本周 Top 20 论文。
+
+数据结构：
 ```json
 {
-  "week": "2026-W05",
-  "dateRange": "2026-01-27 to 2026-02-02",
+  "week": "2026-W14",
+  "dateRange": "2026-03-29 to 2026-04-04",
   "papers": [
     {
       "title": "论文标题",
       "url": "https://huggingface.co/papers/xxx",
       "likes": 1234,
-      "date": "2026-01-28",
-      "abstract": "论文摘要..."
+      "date": "2026-03-30",
+      "abstract": "论文摘要...",
+      "published_date": "Mar 30",
+      "github_url": "https://github.com/xxx/xxx",
+      "org_tag": "Google DeepMind"
     }
   ]
 }
 ```
 
-### Step 2: 理解与分析（核心任务）
+### Step 2: 逐篇论文深度分析
 
-**这是你的核心工作。阅读每篇论文的 abstract，基于已经生成的 `assets/data.js` 做增强，而不是从空文件开始。**
+**阅读每篇论文的 abstract，直接生成 `assets/data.js`。**
 
 #### 2.1 六大能力维度（固定分类）
 
@@ -108,10 +103,14 @@ dimensions: {
 
 **完成 Step 2 后，立即执行 Step 3 和 Step 4，不要停下来等待用户确认。**
 
-如果担心输出过长：
-1. 使用文件编辑工具直接更新 `assets/data.js`
-2. 对话中只输出简短的进度汇报和最终摘要
-3. 确保 Step 1 → 2 → 3 → 4 一气呵成
+完成后执行：
+```bash
+git add assets/data.js
+git commit -m "analysis: weekly deep analysis $(date +%Y-%m-%d)"
+git push
+```
+
+push 后 GitHub Actions 会自动部署到 Pages。
 
 ### Step 3: 产品机会挖掘
 
