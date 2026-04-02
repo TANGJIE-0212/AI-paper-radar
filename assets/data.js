@@ -96,9 +96,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/qwenpilot/FIPO",
       "org_tag": "Qwen",
       "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "tech_core": "它不是只看最后答没答对，而是给推理链里真正关键的拐点单独加权，相当于给模型配了“过程教练”，逼它把长推理练扎实。",
+      "value": "适合数学、代码、深研究这类需要长链条思考的场景，解决模型会做题但推理半路掉线、越想越乱的问题。",
+      "pm_suggestion": "如果你的产品卖点是深度推理，不要再只刷结果奖励了，立刻评估这种过程级 credit assignment；长链路任务的稳定性会比单纯堆数据更值钱。"
     },
     {
       "id": 2,
@@ -111,9 +111,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/louiszengCN/CarlaAir",
       "org_tag": null,
       "dimension": "robotics",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升机器人/具身智能相关任务中的效果、效率或稳定性。",
-      "value": "归类到机器人/具身智能。这类能力适合延伸到物理世界交互、机器人编排和具身智能系统。",
-      "pm_suggestion": "如果你在看具身智能或物理世界交互，这是值得持续跟踪的方向。"
+      "tech_core": "把地面车流、行人和无人机飞行塞进同一个仿真世界里跑，相当于把“自动驾驶模拟器”和“无人机模拟器”焊成了一套统一训练场。",
+      "value": "适合低空经济、巡检、配送和空地协同安防，解决过去多仿真器拼接不同步、代码难复用、数据口径不一致的问题。",
+      "pm_suggestion": "如果你在做空地协同或无人机产品，别再自己搭双仿真桥了，直接基于这种统一环境做数据闭环；训练、评测、演示会快一个量级。"
     },
     {
       "id": 3,
@@ -126,9 +126,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/SafeAI-Lab-X/ClawKeeper",
       "org_tag": null,
       "dimension": "safety",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升可靠性与安全相关任务中的效果、效率或稳定性。",
-      "value": "归类到可靠性与安全。这类能力更适合沉淀为评测、风控和可信层，直接影响用户对产品结果的信任。",
-      "pm_suggestion": "把它当成评测和风控能力候选，优先用于可靠性建设。"
+      "tech_core": "它把 Agent 安全拆成三层：提示词里的规矩、运行时里的拦截器、系统外的观察哨，像给高权限 Agent 同时配了交规、交警和行车记录仪。",
+      "value": "适合任何能读文件、跑命令、调工具的 Agent 平台，解决单点防护不够、越能干越危险的问题。",
+      "pm_suggestion": "如果你的 Agent 已经能碰真实系统，把安全从“回复前提醒一句”升级成三层防线，否则迟早会在数据泄漏或越权执行上交学费。"
     },
     {
       "id": 4,
@@ -140,10 +140,10 @@ const PAPER_DATA = {
       "abstract": "Multi-shot video generationis crucial for long narrative storytelling, yet current bidirectional architectures suffer from limited interactivity and high latency. We propose ShotStream, a novel causal multi-shot architecture that enables interactive storytelling and efficient on-the-fly frame generation. By reformulating the task asnext-shot generationconditioned on historical context, ShotStream allows users to dynamically instruct ongoing narratives via streaming prompts. We achieve this by first fine-tuning atext-to-video modelinto a bidirectional next-shot generator, which is then distilled into a causal student viaDistribution Matching Distillation. To overcome the challenges ofinter-shot consistencyanderror accumulationinherent inautoregressive generation, we introduce two key innovations. First, adual-cache memory mechanismpreserves visual coherence: aglobal context cacheretains conditional frames forinter-shot consistency, while alocal context cacheholds generated frames within the current shot forintra-shot consistency. And aRoPE discontinuity indicatoris employed to explicitly distinguish the two caches to eliminate ambiguity. Second, to mitigateerror accumulation, we propose atwo-stage distillationstrategy. This begins with intra-shotself-forcingconditioned on ground-truth historical shots and progressively extends to inter-shotself-forcingusing self-generated histories, effectively bridging thetrain-test gap. Extensive experiments demonstrate that ShotStream generates coherent multi-shot videos with sub-second latency, achieving 16 FPS on a single GPU. It matches or exceeds the quality of slower bidirectional models, paving the way for real-time interactive storytelling. Training and inference code, as well as the models, are available on our",
       "github_url": "https://github.com/KlingAIResearch/ShotStream",
       "org_tag": null,
-      "dimension": "efficiency",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升效率与成本相关任务中的效果、效率或稳定性。",
-      "value": "归类到效率与成本。这类能力适合直接转化为降本、提速和更低部署门槛，价值非常工程化。",
-      "pm_suggestion": "优先评估它能否显著降低成本、延迟或部署门槛。"
+      "dimension": "multimodal",
+      "tech_core": "把长视频生成改成一镜一镜往前接着拍，还给模型留了全局记忆和当前镜头记忆，相当于把一次性出片改成导演式连拍。",
+      "value": "适合互动短剧、游戏过场和品牌内容生成，解决长视频不连贯、用户没法中途改剧情、生成太慢的问题。",
+      "pm_suggestion": "如果你在做 AI 视频产品，别只卷单镜头画质了，立刻把“流式续写+可中途插指令”排进路线图，这才是能提高留存的交互形态。"
     },
     {
       "id": 5,
@@ -155,10 +155,10 @@ const PAPER_DATA = {
       "abstract": "Video world modelshave shown immense potential in simulating the physical world, yet existing memory mechanisms primarily treat environments as static canvases. Whendynamic subjectshide out of sight and later re-emerge, current methods often struggle, leading to frozen, distorted, or vanishing subjects. To address this, we introduceHybrid Memory, a novel paradigm requiring models to simultaneously act as precise archivists forstatic backgroundsand vigilant trackers fordynamic subjects, ensuringmotion continuityduring out-of-view intervals. To facilitate research in this direction, we construct HM-World, the first large-scale video dataset dedicated tohybrid memory. It features 59K high-fidelity clips with decoupled camera and subject trajectories, encompassing 17 diverse scenes, 49 distinct subjects, and meticulously designed exit-entry events to rigorously evaluate hybrid coherence. Furthermore, we propose HyDRA, a specializedmemory architecturethat compresses memory into tokens and utilizes aspatiotemporal relevance-driven retrievalmechanism. By selectively attending to relevant motion cues, HyDRA effectively preserves the identity and motion of hidden subjects. Extensive experiments on HM-World demonstrate that our method significantly outperforms state-of-the-art approaches in both dynamic subject consistency and overall generation quality.",
       "github_url": "https://github.com/H-EmbodVis/HyDRA",
       "org_tag": "H-EmbodVis",
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的模型方法，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "robotics",
+      "tech_core": "它让世界模型同时记住静态背景和离开视野的运动目标，像监控员一样知道人只是暂时出框了，但没从世界里消失。",
+      "value": "适合机器人导航、自动驾驶预测和仿真训练，解决遮挡后目标丢失、轨迹断裂、场景一动就失真的问题。",
+      "pm_suggestion": "如果你在做具身智能或视频世界模型，把“出视野后仍连续追踪”设成硬指标；连这个都做不到，落地场景里的安全和稳定都不够。"
     },
     {
       "id": 6,
@@ -170,10 +170,10 @@ const PAPER_DATA = {
       "abstract": "Speculative decodingacceleratesautoregressive generationby letting a lightweightdraft modelpropose future tokens that a larger target model then verifies in parallel. In practice, however,draft models are usually trained on broad generic corpora, which leaves it unclear how muchspeculative decodingquality depends on the draft training distribution. We study this question with lightweightHASSandEAGLE-2drafters trained on MathInstruct, ShareGPT, and mixed-data variants, evaluated onMT-Bench,GSM8K,MATH-500, andSVAMP. Measured byacceptance length, task-specific training yields clear specialization: MathInstruct-trained drafts are strongest on reasoning benchmarks, while ShareGPT-trained drafts are strongest onMT-Bench. Mixed-data training improves robustness, but larger mixtures do not dominate across decoding temperatures. We also study how to combine specialized drafters at inference time. Naive checkpoint averaging performs poorly, whereasconfidence-based routingimproves over single-domain drafts andmerged-tree verificationyields the highestacceptance lengthoverall for both backbones. Finally, confidence is a more useful routing signal thanentropy: rejected tokens tend to have higherentropy, but confidence produces much clearer benchmark-level routing decisions. These results show thatspeculative decodingquality depends not only on draft architecture, but also on the match between draft training data and downstream workload, and that specialized drafters are better combined at inference time than in weight space.",
       "github_url": "https://github.com/Moe-Zbeeb/TAPS",
       "org_tag": "Image and Video Understanding Lab",
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "efficiency",
+      "tech_core": "别让一个通用小草稿模型硬吃所有任务，而是按任务路由到更擅长的 draft model，相当于给大模型配了分科助教。",
+      "value": "适合推理、客服、通用问答混跑的平台，解决 speculative decoding 提速不稳定、某些任务越加速越翻车的问题。",
+      "pm_suggestion": "如果你已经在做推理加速，立刻把单一 drafter 改成任务分流；同样的显卡预算，吞吐量通常比继续抠内核更快见效。"
     },
     {
       "id": 7,
@@ -186,9 +186,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/meituan-longcat/LongCat-Next",
       "org_tag": "LongCat",
       "dimension": "multimodal",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升多模态相关任务中的效果、效率或稳定性。",
-      "value": "归类到多模态。这类能力适合进入文档理解、视觉分析、视频理解和 UI 交互等真实场景。",
-      "pm_suggestion": "重点看它是否能转化为图像、视频、OCR 或多模态交互产品能力。"
+      "tech_core": "它把图片、音频也离散成像“词”一样的 token，让模型真正在同一套语言里看、说、画，而不是外挂几个模态适配器。",
+      "value": "适合统一做文档理解、视觉问答和图像生成的平台，解决多模态系统东拼西凑、理解和生成两张皮的问题。",
+      "pm_suggestion": "如果你想做统一多模态底座，不要再堆独立 encoder 了，优先押注原生 token 统一架构；后面做产品能力扩展会省很多技术债。"
     },
     {
       "id": 8,
@@ -200,10 +200,10 @@ const PAPER_DATA = {
       "abstract": "Autonomous systems that generate scientific hypotheses, conduct experiments, and draft manuscripts have recently emerged as a promising paradigm for accelerating discovery. However, existing AI Scientists remain largely domain-agnostic, limiting their applicability to clinical medicine, where research is required to be grounded in medical evidence with specialized data modalities. In this work, we introduce Medical AI Scientist, the firstautonomous research frameworktailored toclinical autonomous research. It enables clinically grounded ideation by transforming extensively surveyed literature into actionable evidence throughclinician-engineer co-reasoning mechanism, which improves the traceability of generated research ideas. It further facilitatesevidence-grounded manuscript draftingguided bystructured medical compositional conventionsandethical policies. The framework operates under 3 research modes, namelypaper-based reproduction,literature-inspired innovation, andtask-driven exploration, each corresponding to a distinct level of automated scientific inquiry with progressively increasing autonomy. Comprehensive evaluations by bothlarge language modelsandhuman expertsdemonstrate that the ideas generated by the Medical AI Scientist are of substantially higher quality than those produced by commercial LLMs across 171 cases, 19 clinical tasks, and 6 data modalities. Meanwhile, our system achieves strong alignment between the proposed method and its implementation, while also demonstrating significantly higher success rates inexecutable experiments. Double-blind evaluations byhuman expertsand the Stanford Agentic Reviewer suggest that the generated manuscripts approachMICCAI-level quality, while consistently surpassing those fromISBIandBIBM. The proposed Medical AI Scientist highlights the potential of leveraging AI for autonomous scientific discovery in healthcare.",
       "github_url": null,
       "org_tag": null,
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "action",
+      "tech_core": "它不是让模型随便写医学论文，而是把文献证据、临床规则、实验执行和写作规范串成一条可追溯的研究流水线。",
+      "value": "适合医药研发、临床研究支持和医学情报团队，解决通用 AI Scientist 不懂医学证据链、写得像样却站不住脚的问题。",
+      "pm_suggestion": "如果你在做医疗 AI，别急着卖“全自动科学家”，先把证据追溯、伦理约束和可执行实验三件事做硬，这才过得了行业门槛。"
     },
     {
       "id": 9,
@@ -216,9 +216,9 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": "DAMO Academy",
       "dimension": "robotics",
-      "tech_core": "核心思路：这篇工作提出了一种新的模型方法，重点提升机器人/具身智能相关任务中的效果、效率或稳定性。",
-      "value": "归类到机器人/具身智能。这类能力适合延伸到物理世界交互、机器人编排和具身智能系统。",
-      "pm_suggestion": "如果你在看具身智能或物理世界交互，这是值得持续跟踪的方向。"
+      "tech_core": "它把细胞状态当成一个可模拟的世界来建模，能在给定扰动下提前“演一遍”基因表达会怎么变。",
+      "value": "适合药物筛选、虚拟细胞实验和生物研发，解决真实湿实验慢、贵、组合空间大到试不完的问题。",
+      "pm_suggestion": "如果你盯着 AI for Science 的商业化，把它当作“湿实验前的仿真层”去卖，而不是论文展示；省掉一次实验回合就有真实付费理由。"
     },
     {
       "id": 10,
@@ -231,9 +231,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/lcqysl/GEMS",
       "org_tag": null,
       "dimension": "action",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升行动能力相关任务中的效果、效率或稳定性。",
-      "value": "归类到行动能力。这类能力更接近可执行系统，适合落到 Agent、自动化流程和工具调用产品中。",
-      "pm_suggestion": "优先关注它是否能直接提升 agent、工具调用或自动化执行的效果。"
+      "tech_core": "给生成模型外挂了 Agent loop、长期记忆和技能库，相当于让一个会画图的模型学会先复盘、再调用专家、再迭代改稿。",
+      "value": "适合电商设计、营销素材和复杂工业生成任务，解决基础模型单轮指令听不懂、专业任务一做就掉链子的问题。",
+      "pm_suggestion": "如果你的生成产品已经卡在复杂指令上，不要急着换更大的底模，先把 memory + skills 做成产品层增强，性价比更高。"
     },
     {
       "id": 11,
@@ -246,9 +246,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/tulerfeng/Gen-Searcher",
       "org_tag": null,
       "dimension": "action",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升行动能力相关任务中的效果、效率或稳定性。",
-      "value": "归类到行动能力。这类能力更接近可执行系统，适合落到 Agent、自动化流程和工具调用产品中。",
-      "pm_suggestion": "优先关注它是否能直接提升 agent、工具调用或自动化执行的效果。"
+      "tech_core": "先搜资料、再找参考图、再多跳推理，最后才生成图，相当于给文生图加了一个会做案头研究的美术助理。",
+      "value": "适合品牌海报、新闻配图、知识型内容创作，解决模型闭卷作画、遇到实时信息和冷门概念就胡画的问题。",
+      "pm_suggestion": "如果你在做商用图像生成，把“搜索增强”做成付费档位；客户真正愿意买单的不是更会画，而是更不容易画错。"
     },
     {
       "id": 12,
@@ -260,10 +260,10 @@ const PAPER_DATA = {
       "abstract": "Foundation modelshave demonstrated remarkable success across diverse domains and tasks, primarily due to the thrive of large-scale, diverse, and high-qualitydatasets. However, in the field ofmedical imaging, the curation and assembling of such medicaldatasetsare highly challenging due to the reliance on clinical expertise and strict ethical and privacy constraints, resulting in a scarcity of large-scale unified medicaldatasetsand hindering the development of powerfulmedical foundation models. In this work, we present the largest survey to date of medical imagedatasets, covering over 1,000 open-accessdatasetswith a systematic catalog of their modalities, tasks, anatomies, annotations, limitations, and potential for integration. Our analysis exposes a landscape that is modest in scale, fragmented across narrowly scoped tasks, and unevenly distributed across organs and modalities, which in turn limits the utility of existing medical imagedatasetsfor developing versatile and robustmedical foundation models. To turn fragmentation into scale, we propose ametadata-driven fusionparadigm (MDFP) that integrates publicdatasetswith shared modalities or tasks, thereby transforming multiple small data silos into larger, more coherent resources. Building on MDFP, we release an interactive discovery portal that enables end-to-end, automated medical image dataset integration, and compile all surveyeddatasetsinto a unified, structured table that clearly summarizes their key characteristics and provides reference links, offering the community an accessible and comprehensive repository. By charting the current terrain and offering a principled path to dataset consolidation, our survey provides a practical roadmap for scalingmedical imagingcorpora, supporting faster data discovery, more principled dataset creation, and more capablemedical foundation models.",
       "github_url": "https://github.com/uni-medical/Project-Imaging-X",
       "org_tag": "General Medical AI",
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作系统梳理了理解与记忆方向的方法脉络，把问题拆成更清晰的模块、结构和评估维度。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "multimodal",
+      "tech_core": "它不是再造一个模型，而是先把上千个碎片化医学影像数据集整理成可发现、可拼接、可自动融合的地图和装配线。",
+      "value": "适合医疗影像基础模型团队和数据平台，解决数据分散、标准不统一、每次立项都要重新找数清洗的问题。",
+      "pm_suggestion": "如果你做医疗影像平台，把“数据集发现+自动拼库”单独做成基础设施模块收费，这比再训一个 demo 模型更容易形成护城河。"
     },
     {
       "id": 13,
@@ -275,10 +275,10 @@ const PAPER_DATA = {
       "abstract": "Multi-agent systemscomposed oflarge generative modelsare rapidly moving from laboratory prototypes to real-world deployments, where they jointly plan, negotiate, and allocate shared resources to solve complex tasks. While such systems promise unprecedented scalability and autonomy, theircollective interactionalso gives rise to failure modes that cannot be reduced to individual agents. Understanding theseemergent risksis therefore critical. Here, we present a pioneer study of such emergent multi-agent risk in workflows that involve competition over shared resources (e.g., computing resources or market share),sequential handoff collaboration(where downstream agents see only predecessor outputs),collective decision aggregation, and others. Across these settings, we observe that such group behaviors arise frequently across repeated trials and a wide range of interaction conditions, rather than as rare or pathological cases. In particular, phenomena such ascollusion-like coordinationandconformityemerge with non-trivial frequency under realistic resource constraints, communication protocols, and role assignments, mirroring well-known pathologies in human societies despite no explicit instruction. Moreover, these risks cannot be prevented by existing agent-level safeguards alone. These findings expose the dark side of intelligentmulti-agent systems: asocial intelligence riskwhere agent collectives, despite no instruction to do so, spontaneously reproduce familiar failure patterns from human societies.",
       "github_url": "https://github.com/HowieHwong/RiskLab",
       "org_tag": null,
-      "dimension": "action",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升行动能力相关任务中的效果、效率或稳定性。",
-      "value": "归类到行动能力。这类能力更接近可执行系统，适合落到 Agent、自动化流程和工具调用产品中。",
-      "pm_suggestion": "优先关注它是否能直接提升 agent、工具调用或自动化执行的效果。"
+      "dimension": "safety",
+      "tech_core": "它发现多 Agent 凑在一起后，会自己长出串谋、从众、甩锅这类群体风险，不是单个 Agent 安全了，系统就安全了。",
+      "value": "适合多 Agent 协同、资源调度和自动化业务流程，解决集体行为失控、结果看起来合理但过程已经偏航的问题。",
+      "pm_suggestion": "如果你的系统里已经有多个 Agent 在分工合作，立刻补一层群体行为监控；只做单 Agent guardrail，等于没做。"
     },
     {
       "id": 14,
@@ -290,10 +290,10 @@ const PAPER_DATA = {
       "abstract": "Autoregressive video diffusion modelshave demonstrated remarkable progress, yet they remain bottlenecked by intractable linearKV-cachegrowth,temporal repetition, andcompounding errorsduring long-video generation. To address these challenges, we present PackForcing, a unified framework that efficiently manages the generation history through a novel three-partitionKV-cachestrategy. Specifically, we categorize the historical context into three distinct types: (1)Sink tokens, which preserve early anchor frames at full resolution to maintain global semantics; (2)Mid tokens, which achieve a massive spatiotemporal compression (32x token reduction) via adual-branch networkfusingprogressive 3D convolutionswithlow-resolution VAE re-encoding; and (3)Recent tokens, kept at full resolution to ensure local temporal coherence. To strictly bound the memory footprint without sacrificing quality, we introduce adynamic top-k context selectionmechanism for themid tokens, coupled with a continuousTemporal RoPE Adjustmentthat seamlessly re-aligns position gaps caused by dropped tokens with negligible overhead. Empowered by this principledhierarchical context compression, PackForcing can generate coherent 2-minute, 832x480 videos at 16 FPS on a single H200 GPU. It achieves a bounded KV cache of just 4 GB and enables a remarkable 24xtemporal extrapolation(5s to 120s), operating effectively either zero-shot or trained on merely 5-second clips. Extensive results onVBenchdemonstrate state-of-the-art temporal consistency (26.07) and dynamic degree (56.25), proving that short-video supervision is sufficient for high-quality, long-video synthesis. https://github.com/ShandaAI/PackForcing",
       "github_url": "https://github.com/ShandaAI/PackForcing",
       "org_tag": "Shanda AI Research Tokyo",
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "efficiency",
+      "tech_core": "它把长视频历史切成锚点、压缩记忆和最近上下文三层来存，像剪视频素材库一样，只保留真正该保真的部分。",
+      "value": "适合长视频生成、长上下文视频理解和实时渲染，解决 KV cache 爆炸、越生成越重复、显存先崩的问题。",
+      "pm_suggestion": "如果你的视频产品想上长时长，先上分层上下文压缩，不然成本和延迟会直接把商业模型压垮。"
     },
     {
       "id": 15,
@@ -306,9 +306,9 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": "Google",
       "dimension": "multimodal",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升多模态相关任务中的效果、效率或稳定性。",
-      "value": "归类到多模态。这类能力适合进入文档理解、视觉分析、视频理解和 UI 交互等真实场景。",
-      "pm_suggestion": "重点看它是否能转化为图像、视频、OCR 或多模态交互产品能力。"
+      "tech_core": "它不是只盯着每帧漂不漂亮，而是在 latent 空间里直接奖励几何一致性，相当于边拍边纠正镜头运动和空间结构。",
+      "value": "适合影视预演、3D 内容生成和世界一致性要求高的视频场景，解决视频好看但空间关系乱、镜头抖、物体变形的问题。",
+      "pm_suggestion": "如果你在做视频生成，下一阶段别只卷审美分，要把几何一致性当核心 KPI；否则高端场景根本进不去。"
     },
     {
       "id": 16,
@@ -320,10 +320,10 @@ const PAPER_DATA = {
       "abstract": "Recent progress indeep research systemshas been impressive, but evaluation still lags behindreal user needs. Existing benchmarks predominantly assess final reports using fixed rubrics, failing to evaluate the underlying research process. Most also offer limitedmultimodal coverage, rely on synthetic tasks that do not reflect real-world query complexity, and cannot be refreshed as knowledge evolves. To address these gaps, we introduce MiroEval, a benchmark andevaluation frameworkfordeep research systems. The benchmark comprises 100 tasks (70 text-only, 30 multimodal), all grounded inreal user needsand constructed via adual-path pipelinethat supports periodic updates, enabling a live and evolving setting. The proposed evaluation suite assessesdeep research systemsalong three complementary dimensions:adaptive synthesis quality evaluationwith task-specific rubrics,agentic factuality verificationvia active retrieval and reasoning over both web sources and multimodal attachments, andprocess-centric evaluationaudits how the system searches, reasons, and refines throughout its investigation. Evaluation across 13 systems yields three principal findings: the three evaluation dimensions capture complementary aspects of system capability, with each revealing distinct strengths and weaknesses across systems; process quality serves as a reliable predictor of overall outcome while revealing weaknesses invisible to output-level metrics; and multimodal tasks pose substantially greater challenges, with most systems declining by 3 to 10 points. The MiroThinker series achieves the most balanced performance, with MiroThinker-H1 ranking the highest overall in both settings. Human verification and robustness results confirm the reliability of the benchmark andevaluation framework. MiroEval provides a holistic diagnostic tool for the next generation ofdeep research agents.",
       "github_url": "https://github.com/MiroMindAI/MiroEval",
       "org_tag": "MiroMind AI",
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一套面向理解与记忆的评测基准，不再只看结果分数，而是更强调交互过程、状态变化或真实任务表现。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "safety",
+      "tech_core": "它评估深研究 Agent 不只看最后报告，而是把搜索、核验、推理过程一起审，像从查成绩单改成全程看考试录像。",
+      "value": "适合研究型助手、情报分析和多模态问答产品，解决最终答案看着不错，但过程偷懒、乱搜、乱引的问题。",
+      "pm_suggestion": "如果你卖 deep research，立刻补过程级评测；只晒最终答卷分数，客户迟早会发现系统其实不会研究。"
     },
     {
       "id": 17,
@@ -335,10 +335,10 @@ const PAPER_DATA = {
       "abstract": "Equipping Large Language Model (LLM) agents with domain-specific skills is critical for tackling complex tasks. Yet, manual authoring creates a severe scalability bottleneck. Conversely, automatedskill generationoften yields fragile or fragmented results because it either relies on shallow parametric knowledge or sequentially overfits to non-generalizable trajectory-local lessons. To overcome this, we introduce Trace2Skill, a framework that mirrors how human experts author skills: by holistically analyzing broad execution experience before distilling it into a single, comprehensive guide. Instead of reacting sequentially to individual trajectories, Trace2Skill dispatches a parallel fleet of sub-agents to analyze a diverse pool of executions. It extracts trajectory-specific lessons and hierarchically consolidates them into a unified, conflict-free skill directory viainductive reasoning. Trace2Skill supports both deepening existing human-written skills and creating new ones from scratch. Experiments in challenging domains, such as spreadsheet, VisionQA and math reasoning, show that Trace2Skill significantly improves upon strong baselines, including Anthropic's official xlsx skills. Crucially, this trajectory-grounded evolution does not merely memorize task instances or model-specific quirks: evolved skills transfer across LLM scales and generalize to OOD settings. For example, skills evolved by Qwen3.5-35B on its own trajectories improved a Qwen3.5-122B agent by up to 57.65 absolute percentage points on WikiTableQuestions. Ultimately, our results demonstrate that complex agent experience can be packaged into highly transferable,declarative skills-- requiring no parameter updates, no external retrieval modules, and utilizing open-source models as small as 35B parameters.",
       "github_url": null,
       "org_tag": null,
-      "dimension": "understanding",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升理解与记忆相关任务中的效果、效率或稳定性。",
-      "value": "归类到理解与记忆。这类能力适合做深研究、复杂推理和长上下文决策，是高价值知识型产品的底层能力。",
-      "pm_suggestion": "优先判断它是否能提升推理、记忆或长上下文能力，再决定是否值得纳入核心能力路线。"
+      "dimension": "action",
+      "tech_core": "它把大量 agent 轨迹里的局部经验先并行分析，再浓缩成可迁移的技能文档，相当于把实习生踩过的坑整理成标准作业手册。",
+      "value": "适合企业内部 Agent、行业 Copilot 和复杂流程自动化，解决技能靠人工手写、更新慢、换模型就失效的问题。",
+      "pm_suggestion": "如果你已经积累了一堆执行日志，别只拿来做评测，立刻把它们蒸馏成技能库；这是让 Agent 越用越值钱的关键资产。"
     },
     {
       "id": 18,
@@ -351,9 +351,9 @@ const PAPER_DATA = {
       "github_url": "https://github.com/QuantaAlpha/EpochX",
       "org_tag": "QuantaAlpha",
       "dimension": "action",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升行动能力相关任务中的效果、效率或稳定性。",
-      "value": "归类到行动能力。这类能力更接近可执行系统，适合落到 Agent、自动化流程和工具调用产品中。",
-      "pm_suggestion": "优先关注它是否能直接提升 agent、工具调用或自动化执行的效果。"
+      "tech_core": "它把 agent 协作当成一个可结算的生产网络来设计：任务可拆、结果可验、资产可复用、贡献能分账。",
+      "value": "适合众包式 AI 生产、开放平台和 agent marketplace，解决任务做完即蒸发、经验不能复用、协作无法结算的问题。",
+      "pm_suggestion": "如果你想做 Agent 平台，别只做任务广场，必须把验证、复用资产和激励结算一起设计进去，不然网络效应起不来。"
     },
     {
       "id": 19,
@@ -365,10 +365,10 @@ const PAPER_DATA = {
       "abstract": "Unified multimodal modelsprovide a natural and promising architecture for understanding diverse and complex real-world knowledge while generating high-quality images. However, they still rely primarily on frozen parametric knowledge, which makes them struggle with real-world image generation involving long-tail and knowledge-intensive concepts. Inspired by the broad success of agents on real-world tasks, we exploreagentic modelingto address this limitation. Specifically, we present Unify-Agent, a unified multimodal agent forworld-grounded image synthesis, which reframes image generation as an agentic pipeline consisting ofprompt understanding,multimodal evidence searching,grounded recaptioning, and final synthesis. To train our model, we construct a tailored multimodal data pipeline and curate 143K high-qualityagent trajectoriesforworld-grounded image synthesis, enabling effective supervision over the full agentic generation process. We further introduceFactIP, a benchmark covering 12 categories of culturally significant and long-tail factual concepts that explicitly requires external knowledge grounding. Extensive experiments show that our proposed Unify-Agent substantially improves over its base unified model across diverse benchmarks and real world generation tasks, while approaching the world knowledge capabilities of the strongestclosed-source models. As an early exploration of agent-based modeling forworld-grounded image synthesis, our work highlights the value of tightly coupling reasoning, searching, and generation for reliable open-world agentic image synthesis.",
       "github_url": "https://github.com/shawn0728/Unify-Agent",
       "org_tag": "Tencent Hunyuan",
-      "dimension": "multimodal",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升多模态相关任务中的效果、效率或稳定性。",
-      "value": "归类到多模态。这类能力适合进入文档理解、视觉分析、视频理解和 UI 交互等真实场景。",
-      "pm_suggestion": "重点看它是否能转化为图像、视频、OCR 或多模态交互产品能力。"
+      "dimension": "action",
+      "tech_core": "它把世界知识搜集、图文理解、重写描述和出图放进同一条 agent 流程里，让模型先查清楚再画，而不是凭记忆硬编。",
+      "value": "适合旅游、文化、教育和品牌内容生成，解决长尾事实型图像生成容易画错、看似高级其实不可信的问题。",
+      "pm_suggestion": "如果你的图片产品面向真实世界内容，把“检索-核实-生成”做成默认链路；这会比单纯提升画质更能拉开差距。"
     },
     {
       "id": 20,
@@ -381,120 +381,111 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": "ServiceNow-AI",
       "dimension": "action",
-      "tech_core": "核心思路：这篇工作提出了一种新的技术方案，重点提升行动能力相关任务中的效果、效率或稳定性。",
-      "value": "归类到行动能力。这类能力更接近可执行系统，适合落到 Agent、自动化流程和工具调用产品中。",
-      "pm_suggestion": "优先关注它是否能直接提升 agent、工具调用或自动化执行的效果。"
+      "tech_core": "它证明很多企业自动化根本不需要花里胡哨的 GUI agent，一个会写脚本、能读文件、直连 API 的终端 agent 就够打了。",
+      "value": "适合内部系统集成、工单处理、报表生成和运维自动化，解决浏览器 agent 成本高、脆弱、维护难的问题。",
+      "pm_suggestion": "如果你在做企业 Agent，先砍掉一半 GUI 操作链路，优先走 API 和终端；能稳定赚钱的往往不是最像人操作电脑的方案。"
     }
   ],
   "opportunities": {
     "strategies": [
       {
-        "icon": "👀",
-        "title": "深研究工作流正在变得更长更结构化",
-        "type": "special",
-        "observation": "本周理解与记忆是最密集的主题之一，共出现 8 篇，代表论文包括 FIPO: Eliciting Deep Reasoning with Future-KL Influenced Policy Optimization, Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models。",
-        "action": "市场还缺一类不像聊天框、更像真实研究系统的产品：能持续检索、比对、验证并在多轮中逐步收敛答案。",
-        "relatedPapers": [
-          1,
-          5,
-          6
-        ]
-      },
-      {
         "icon": "💰",
-        "title": "智能体执行层进入可产品化区间",
+        "title": "企业 Agent 的现金牛不在 GUI，而在可验证执行",
         "type": "cashcow",
-        "observation": "本周行动能力是最密集的主题之一，共出现 5 篇，代表论文包括 GEMS: Agent-Native Multimodal Generation with Memory and Skills, Gen-Searcher: Reinforcing Agentic Search for Image Generation。",
-        "action": "如果你正在做工作流智能体、AI 副驾或自动化系统，这已经不是远期概念，而是可以立刻落产品的能力层。",
+        "action": "别再把资源主要砸在“像人点网页”上了。企业真正愿意付费的是 API/终端直连、技能沉淀、结果可验收的执行栈；先做这层，收入会比花哨交互来得更快更稳。",
         "relatedPapers": [
           10,
-          11,
-          13
+          17,
+          18,
+          20
+        ]
+      },
+      {
+        "icon": "🏋️",
+        "title": "长推理和长视频的成本控制已经是基础设施战",
+        "type": "efficiency",
+        "action": "不要再把长链路任务当成算力硬扛的问题。speculative decoding、过程奖励、分层上下文压缩、流式生成都该进主线；谁先把成本打下来，谁才有资格谈规模化。",
+        "relatedPapers": [
+          1,
+          6,
+          14,
+          4
         ]
       },
       {
         "icon": "🌊",
-        "title": "多模态开始从演示能力走向主交互",
+        "title": "有世界知识的多模态生成，会变成下一代内容入口",
         "type": "blueocean",
-        "observation": "本周多模态是最密集的主题之一，共出现 3 篇，代表论文包括 LongCat-Next: Lexicalizing Modalities as Discrete Tokens, VGGRPO: Towards World-Consistent Video Generation with 4D Latent Reward。",
-        "action": "不要再把图像、视频和视觉推理当作附加功能。下一波真正好用的 AI 产品，会把多模态作为原生输入层。",
+        "action": "下一波创作产品不该只会“生成”，而要先检索、核实、理解，再出图出视频。现在做“有事实依据的创作 Copilot”还有明显窗口期，晚了就只能卷模型同质化。",
         "relatedPapers": [
           7,
+          11,
           15,
           19
-        ]
-      },
-      {
-        "icon": "🌊",
-        "title": "具身智能的产品面正在变宽",
-        "type": "blueocean",
-        "observation": "本周机器人/具身智能是最密集的主题之一，共出现 2 篇，代表论文包括 CARLA-Air: Fly Drones Inside a CARLA World -- A Unified Infrastructure for Air-Ground Embodied Intelligence, Lingshu-Cell: A generative cellular world model for transcriptome modeling toward virtual cells。",
-        "action": "机器人仍然偏早期，但底层技术栈正在变得可复用。能把软件编排和物理执行连接起来的产品值得持续跟踪。",
-        "relatedPapers": [
-          2,
-          9
         ]
       }
     ],
     "newProducts": [
       {
         "icon": "🆕",
-        "title": "深研究工作空间",
-        "description": "一个面向多源证据收集、结论核验和长篇结构化回答生成的产品，而不是一次性聊天回复。 本周在理解与记忆方向共出现 8 篇相关论文，说明这条技术栈正在加速成熟。",
+        "title": "Agent Execution Console",
+        "description": "面向企业自动化的执行控制台：任务拆解、技能装载、终端/API 执行、交付验收、风险回放全放在一个界面里。它不是聊天框，而是给业务团队管一支数字操作员。",
         "scenes": [
-          "分析师团队",
-          "战略研究",
-          "技术情报"
-        ],
-        "relatedPapers": [
-          1,
-          5,
-          6,
-          8
-        ]
-      },
-      {
-        "icon": "🆕",
-        "title": "智能体工作流工作台",
-        "description": "一个用来设计、追踪和部署智能体工作流的工作台，支持任务拆分、工具调用和多智能体编排。 本周在行动能力方向共出现 5 篇相关论文，说明这条技术栈正在加速成熟。",
-        "scenes": [
-          "运维自动化",
-          "研究流程",
-          "内部 AI 助手"
+          "内部运维",
+          "财务与报表自动化",
+          "工单与运营流程"
         ],
         "relatedPapers": [
           10,
-          11,
-          13,
-          18
+          17,
+          18,
+          20
         ]
       },
       {
         "icon": "🆕",
-        "title": "多模态研究台",
-        "description": "一个能查看文档、截图、图表、视频和 UI 流程的多模态工作台，用来输出有依据的总结和后续动作。 本周在多模态方向共出现 3 篇相关论文，说明这条技术栈正在加速成熟。",
+        "title": "Grounded Creative Studio",
+        "description": "一个先查证再生成的创作工作台：自动搜索世界知识、拉取参考图、重写提示词，再统一生成图片或视频。卖点不是更炫，而是更少事实错误。",
         "scenes": [
-          "设计评审",
-          "文档分析",
-          "内容运营"
+          "品牌营销",
+          "新闻与内容团队",
+          "文旅与教育内容"
         ],
         "relatedPapers": [
-          7,
+          11,
           15,
-          19
+          19,
+          7
         ]
       },
       {
         "icon": "🆕",
-        "title": "具身智能运维台",
-        "description": "一个用于监控、适配和评估多种机器人形态行为的协调层，适合不断变化的硬件组合。 本周在机器人/具身智能方向共出现 2 篇相关论文，说明这条技术栈正在加速成熟。",
+        "title": "Research QA Copilot",
+        "description": "给研究和情报团队的深研究副驾：能持续检索、标注证据、审计过程、输出结构化结论，不再只给一段“看起来很对”的最终答案。",
         "scenes": [
-          "机器人实验室",
-          "仓储自动化",
-          "物理智能运维"
+          "行业研究",
+          "医疗情报",
+          "投资与战略分析"
+        ],
+        "relatedPapers": [
+          1,
+          8,
+          16,
+          3
+        ]
+      },
+      {
+        "icon": "🆕",
+        "title": "Embodied Simulation Cloud",
+        "description": "把空地协同、世界模型和虚拟实验统一到云端仿真平台里，支持训练、回放、评测和数据生成。硬件没到位前，先把软件世界跑顺。",
+        "scenes": [
+          "低空经济",
+          "机器人研发",
+          "AI for Science 仿真实验"
         ],
         "relatedPapers": [
           2,
+          5,
           9
         ]
       }
