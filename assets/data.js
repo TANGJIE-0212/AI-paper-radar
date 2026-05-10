@@ -42,10 +42,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/allenai/molmoact2",
       "org_tag": "Ai2",
       "dimension": "robotics",
-      "lede": "全开源具身大脑，反超 GPT-5",
-      "tech_core": "一个全开源的机器人「大脑」——同一个模型既能看场景、又能理解指令、又能输出动作；新版还加了个会偷懒的小技巧：场景没变就别重算空间深度，只盯着动了的部分看。",
-      "value": "过去开源 VLA 要么慢、要么贵硬件、要么效果不到能用线。MolmoAct2 把权重、数据、训练代码全开，还在 13 个具身推理基准上反超了 GPT-5 和 Gemini Robotics ER-1.5。给做机器人创业、家庭服务机器人的团队第一次有了「真能上车」的开源底座。",
-      "pm_suggestion": "如果你在做机器人/具身相关产品，立刻把它当首选 baseline 评估，比闭源 Pi-05、GR00T 都便宜可控；非机器人团队也值得跟一眼——「场景未变就不重算」这个思路可以复用到任何视觉 Agent 里省 token。"
+      "lede": "全开源机器人大脑",
+      "tech_core": "一个开源模型，让机器人能看懂场景、听懂指令、做出动作。还学会了「场景没变就不重看」省算力。",
+      "value": "过去开源机器人模型要么慢、要么差。这个第一次能跟 GPT-5、Gemini Robotics 掰手腕，且权重数据全公开。",
+      "pm_suggestion": "做机器人产品立刻拿来当起点。比闭源便宜可控。"
     },
     {
       "id": 2,
@@ -58,10 +58,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/S1s-Z/Ctx2Skill",
       "org_tag": null,
       "dimension": "understanding",
-      "lede": "Agent 自学自考，无需人工标注",
-      "tech_core": "教 LLM「自己出题考自己」——一个 Agent 出难题、一个 Agent 答题、第三个 Agent 当裁判，答错的地方反过来变成新「技能」存到知识库，下次遇到类似场景直接调用。整个过程不用人标注。",
-      "value": "过去在长上下文里塞满公司文档让模型现学，效果不稳。这个框架自动从语料里抽出「规则+解题套路」当 skill 注入，做企业 RAG/客服时可以让任何 LLM 在你的私域内容上变聪明，不用微调。",
-      "pm_suggestion": "做 B 端 RAG 的团队关注跟进——这是 RAG 的下一站：从「检索片段」升级到「检索可复用的解法」。可以先在客服场景做小流量 A/B。"
+      "lede": "AI 自己出题考自己",
+      "tech_core": "一个 AI 出题、一个答题、一个当裁判。错了的反过来变成新「招式」存起来下次用，全程不用人标注。",
+      "value": "做企业 RAG 的痛点是只能背片段。这套思路让模型在你的私域文档里自动学到解题套路，不用微调。",
+      "pm_suggestion": "做 B 端知识助手的可以试这套机制取代普通 RAG。"
     },
     {
       "id": 3,
@@ -74,10 +74,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/FrameX-AI/Stream-R1",
       "org_tag": "FrameX-AI",
       "dimension": "multimodal",
-      "lede": "流式视频生成的精准蒸馏术",
-      "tech_core": "流式视频生成的「重点辅导」加速法——蒸馏小模型时不再每帧都同等学，而是哪些片段是好学生（高奖励）就多学，哪些像素更重要（梯度大）就重点关注，相当于针对薄弱区精准补课。",
-      "value": "实时视频生成（直播虚拟人、游戏过场、生成式广告）一直卡在「快但糊」或「清晰但慢」。Stream-R1 不动架构、不增推理成本，三个维度一起涨。",
-      "pm_suggestion": "做视频生成 SaaS 的，立刻把这个加进蒸馏管线，几乎零成本提质；做实时虚拟人的，关注但暂不押注——还需要看长序列稳定性。"
+      "lede": "视频生成精准补课",
+      "tech_core": "把大模型蒸馏成小模型时，重点学好的片段、重点关注关键像素，相当于针对薄弱环节专门补课。",
+      "value": "实时视频生成总是「快但糊」或「清晰但慢」。这个不动架构、不加成本，三个指标一起涨。",
+      "pm_suggestion": "做视频生成 SaaS 立刻接进蒸馏管线，几乎零成本提质。"
     },
     {
       "id": 4,
@@ -90,10 +90,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/RLWRLD/RLDX-1",
       "org_tag": "RLWRLD",
       "dimension": "robotics",
-      "lede": "灵巧手操控首次跨过工业线",
-      "tech_core": "为灵巧手做的「多模态融合 Transformer」——把视觉、语言、触觉、本体感这些不同流的信号用专属通道处理，再在中间层互相通气，更接近人类大脑的协作模式。",
-      "value": "在 ALLEX 类人机器人任务上 86.8% 成功率（对手 π_{0.5}/GR00T N1.6 只有 ~40%），意味着接触密集型操作（拆包、装配、家务）首次跨过工业可用门槛。",
-      "pm_suggestion": "如果你在做工业机械臂或家用机器人，这是一个比 π 系列更值得跟踪的开源方案；做仿真平台的可以把 RLDX-1 当样板模型集成进去。"
+      "lede": "灵巧手到达工业可用线",
+      "tech_core": "把视觉、触觉、语言、本体感觉用专属通道分开处理，再让它们互相沟通，更接近人类大脑。",
+      "value": "类人机器人复杂操作（拆包、装配、家务）成功率从 40% 跳到 86.8%，第一次跨过工业能用门槛。",
+      "pm_suggestion": "做工业/家用机器人的关注：比 π 系列开源方案更值得跟踪。"
     },
     {
       "id": 5,
@@ -106,10 +106,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep",
       "org_tag": "Shanghai Jiao Tong University",
       "dimension": "action",
-      "lede": "AI 写论文也要双盲审稿",
-      "tech_core": "让 AI 做研究不再「编故事」——核心思路是「双模型互查」：一个模型推进实验，另一个不同家族模型当审稿人挑刺；再加上证据-结论强校验，避免长流程下不知不觉造假。",
-      "value": "目前 Auto-Researcher 类产品最大的痛点不是跑不动，而是跑出来的结论不可信。ARIS 用工程手段强约束证据链，把「自动写论文」从玩具推向能交付。",
-      "pm_suggestion": "做 AI Researcher / 自动数据分析产品的，立刻参考它的「assurance layer」三段式（完整性→映射→审计），这是产品化必备护栏；可作为收费 SaaS 的差异化卖点。"
+      "lede": "AI 写论文也要双盲审",
+      "tech_core": "一个模型推进研究、另一个不同家族模型当审稿人挑刺，再加证据强校验，避免长流程下不知不觉造假。",
+      "value": "Auto-Researcher 类产品的最大痛点是结论不可信。这套用工程手段强约束证据链，从玩具变成能交付。",
+      "pm_suggestion": "做 AI 调研/分析产品的，这套审稿机制是产品化必备护栏。"
     },
     {
       "id": 6,
@@ -122,10 +122,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/FrameX-AI/Stream-T1",
       "org_tag": "FrameX-AI",
       "dimension": "multimodal",
-      "lede": "视频生成的考前刷题机制",
-      "tech_core": "视频生成的「考前刷题」——生成时多采几个候选画面，再用奖励模型筛、用记忆机制把好结果传给下一段，相当于让模型考完一道题再做下一道，连贯性大涨。",
-      "value": "对长视频（30 秒以上）尤其重要：物体不再瞬移、镜头不再断片。给广告、短剧、AI 影视一个直接可用的质量提升组件。",
-      "pm_suggestion": "如果你在做 AI 短剧/广告生成，立刻把它和 Stream-R1 一起接入；这两个组合起来基本是 2026 流式视频的工程标配。"
+      "lede": "视频生成考前刷题",
+      "tech_core": "生成时先多采几个候选画面，用奖励模型筛最好的，再把选中的传给下一段，连贯性大涨。",
+      "value": "对 30 秒以上长视频特别有用：物体不再瞬移、镜头不再断片。给广告短剧 AI 影视一个直接可用组件。",
+      "pm_suggestion": "做 AI 短剧/广告生成的立刻接入，和上一篇 Stream-R1 是绝配。"
     },
     {
       "id": 7,
@@ -138,10 +138,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/shawn0728/OpenSearch-VL",
       "org_tag": "Tencent Hunyuan",
       "dimension": "action",
-      "lede": "开源版图文搜索 Agent 全配方",
-      "tech_core": "开源版「图文搜索 Agent」全套配方——从数据合成（怎么造高质量训练样本）、工具栈（OCR、图搜、剪裁、超分一应俱全）到强化学习（带容错的 GRPO）全公开。",
-      "value": "过去想做能联网+看图+多步推理的 Agent 必须用 Perplexity/SearchGPT 这类闭源接口。OpenSearch-VL 直接把训练-推理整套搬上桌，平均涨 10 分追上商业产品。",
-      "pm_suggestion": "做行业搜索/法律/医疗资料 Agent 的团队立刻评估——开源闭环让你能在私域知识上彻底定制；个人开发者直接 fork 当基础。"
+      "lede": "开源版联网搜图 Agent",
+      "tech_core": "把训练数据合成、工具栈（OCR、图搜、剪裁、超分）、强化学习全开源，做成一份完整配方。",
+      "value": "过去要做能联网+看图+多步推理的 Agent 必须用 Perplexity 这类闭源 API。现在能在私域知识上彻底定制。",
+      "pm_suggestion": "做行业搜索/法律/医疗资料 Agent 的可直接 fork。"
     },
     {
       "id": 8,
@@ -154,10 +154,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/houyuanchen111/UniVidX",
       "org_tag": null,
       "dimension": "multimodal",
-      "lede": "一个模型搞定多种视频任务",
-      "tech_core": "一个模型搞定多种视频生成任务——把「输入什么、输出什么」当成可以随机切换的角色：训练时随机遮一部分让模型学着补，推理时你想要 RGB 出 RGB、想要法线图出法线图。",
-      "value": "工业视频管线常常需要 RGB+深度+法线+材质多种图层，过去要几个专模型；UniVidX 一个搞定，1000 条训练数据就能出活。给影视/游戏/AR 资产生成省下大量集成成本。",
-      "pm_suggestion": "做 3D/影视工具链的，关注跟进——本季可以先用它替换团队里多个老式 image-to-X 模型；做 AR/虚拟试穿的可以考虑把它当 backbone。"
+      "lede": "一个模型搞多种视频任务",
+      "tech_core": "训练时随机遮一部分让模型学着补，推理时你想要 RGB 出 RGB、想要法线图出法线图，角色随便切。",
+      "value": "影视/游戏/AR 资产生成常需要多种图层，过去要好几个模型。这个一个搞定，1000 条数据就能出活。",
+      "pm_suggestion": "做 3D/影视工具链的，本季可考虑替换团队里的老式 image-to-X 模型。"
     },
     {
       "id": 9,
@@ -170,10 +170,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/H-EmbodVis/HERMESV2",
       "org_tag": "H-EmbodVis",
       "dimension": "robotics",
-      "lede": "自动驾驶世界模型理解+预测",
-      "tech_core": "自动驾驶的「世界模型」升级版——既能看懂当前 3D 场景里有什么，又能预测下一秒物体怎么动；用 BEV 鸟瞰图做统一表示，再用 LLM 增强语义，让理解和预测互相促进。",
-      "value": "现在的自动驾驶世界模型要么只会预测画面、要么只会理解场景；HERMES++ 同时做到了，对仿真训练数据生成、安全测试场景构造尤其有用。",
-      "pm_suggestion": "做自动驾驶仿真平台或合成数据的，立刻评估当 baseline；做 L4 的车厂关注但不要急着替换车端模型——还属于研究阶段。"
+      "lede": "自动驾驶世界模型升级",
+      "tech_core": "既能看懂当前 3D 场景，又能预测下一秒物体怎么动。用鸟瞰图统一表示再加 LLM 增强语义。",
+      "value": "现有自动驾驶世界模型要么只会预测画面、要么只会理解场景。这个两件一起做，对仿真训练特别有用。",
+      "pm_suggestion": "做自动驾驶仿真/合成数据的可当 baseline；车厂别急着上车。"
     },
     {
       "id": 10,
@@ -186,10 +186,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/DCI-Agent/DCI-Agent-Lite",
       "org_tag": "TIGER-Lab",
       "dimension": "action",
-      "lede": "扔掉向量库，让 Agent 用 grep",
-      "tech_core": "扔掉向量数据库，让 Agent 直接用 grep、cat、shell 在原始文档里翻——结果比传统语义检索还准，因为 Agent 能动态组合精确条件、回头补查、迭代修正。",
-      "value": "颠覆性结论：当 Agent 足够强时，「检索接口的分辨率」比「向量相似度」更重要。对企业本地知识库尤其有意义——不用建索引、文档随便加，能省一大笔向量库成本。",
-      "pm_suggestion": "立刻试验：在你的 RAG 项目里加一条「terminal tool 旁路」，让 Agent 自己决定走 grep 还是走向量。可能 50% 场景能直接砍掉向量服务的费用。这是今年最值得复现的工程结论之一。"
+      "lede": "扔掉向量库，用 grep",
+      "tech_core": "让 Agent 直接用 grep、cat、shell 在原始文档里翻，比传统语义检索还准。Agent 自己会迭代修正。",
+      "value": "颠覆性结论：当 Agent 够强，「精确匹配 + 自由组合」比「相似度检索」更好。可能能砍掉一大笔向量库费用。",
+      "pm_suggestion": "今年最值得复现的工程结论之一，立刻在 RAG 里加 grep 旁路 A/B 测。"
     },
     {
       "id": 11,
@@ -202,10 +202,10 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": null,
       "dimension": "action",
-      "lede": "Agent 技能库的端到端进化",
-      "tech_core": "让 Agent 的技能库会自己进化——以前「找技能、用技能、攒技能」是三件分开优化的事，现在用一个统一的 RL 信号一起训：低频信号告诉它怎么选，高频信号告诉它怎么提炼新技能。",
-      "value": "做长期运行的 Agent（持续工作的客服、运维、研究助手）必须有可成长的 skill 库，这篇给出了端到端方案。在 ALFWorld 和 WebShop 上稳定超过既有方案。",
-      "pm_suggestion": "如果你在做「越用越聪明」的 Agent 产品（Devin、Cursor 类），立刻参考其单信号训练框架；不做长期 Agent 可以暂缓。"
+      "lede": "Agent 技能库会自我进化",
+      "tech_core": "以前「找技能、用技能、攒技能」分开训。现在用一个 RL 信号一起训：低频教选择，高频教提炼新技能。",
+      "value": "做长期运行的 Agent（客服、运维、研究助手）必须有可成长的技能库，这篇给出端到端方案。",
+      "pm_suggestion": "做「越用越聪明」类产品（Devin、Cursor 类）参考其训练框架。"
     },
     {
       "id": 12,
@@ -218,10 +218,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/PolarSeeker/OpenSeeker",
       "org_tag": null,
       "dimension": "action",
-      "lede": "1 万条数据训出 SOTA 搜索 Agent",
-      "tech_core": "用学术团队的小数据集（1.06 万条）训出 SOTA 搜索 Agent——证明了搜索 Agent 不一定要工业级 CPT+SFT+RL 全套流水线，关键在于「构造高难度但有营养的训练轨迹」。",
-      "value": "小团队也能造出对标 Tongyi DeepResearch 的搜索 Agent。给学术界、独立开发者一个能复现的 SOTA 配方，权重和数据全开源。",
-      "pm_suggestion": "做 deep research / Perplexity 类产品的独立开发者立刻 fork 当起点；不需要再向大厂模型 API 付费做基础能力。商业化机会在垂直领域微调。"
+      "lede": "1 万条数据训出 SOTA",
+      "tech_core": "证明搜索 Agent 不一定要工业级海量训练，关键是构造高难度但有营养的训练样本。",
+      "value": "学术团队也能造出对标 Tongyi DeepResearch 的搜索 Agent。权重和数据全开源。",
+      "pm_suggestion": "做 deep research/Perplexity 类的独立开发者直接 fork 当起点。"
     },
     {
       "id": 13,
@@ -234,10 +234,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/OpenBMB/MiniCPM-o",
       "org_tag": "OpenBMB",
       "dimension": "multimodal",
-      "lede": "9B 端侧实时全双工多模态",
-      "tech_core": "端侧实时全双工多模态——可以一边听一边看一边说，不用等用户说完再回应，还能主动开口提醒、评论。9B 参数、12GB 内存就能跑。",
-      "value": "过去要做实时多模态 Agent（直播助手、车载 AI、家庭机器人嘴）只能挂云端 GPT-4o。MiniCPM-o 4.5 把它压到普通笔记本和手机能跑，本地端侧 AI 体验真正可用。",
-      "pm_suggestion": "做 AI 玩具、车载语音、智能眼镜的团队立刻把它当首选端侧模型评估；做云端语音的也要警惕——端侧能力变强会冲击你的一部分场景。"
+      "lede": "9B 端侧实时全双工",
+      "tech_core": "可以一边听一边看一边说，不用等用户说完。还能主动开口提醒。9B 参数、12GB 内存就能跑。",
+      "value": "过去实时多模态只能挂云端 GPT-4o。这个让普通笔记本和手机本地就能跑，端侧 AI 体验真正可用。",
+      "pm_suggestion": "做 AI 玩具、车载语音、智能眼镜的立刻把它当首选端侧模型。"
     },
     {
       "id": 14,
@@ -250,10 +250,10 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": null,
       "dimension": "understanding",
-      "lede": "扩散模型挑战自回归生成",
-      "tech_core": "一个尝试替代「自回归一个个吐 token」的新范式——先把文本压成连续向量、在向量空间里用扩散模型生成全局语义、再解码成文字。和 LLaDA 等同等规模，能 scale 到 2000 EFLOPs。",
-      "value": "目前还偏研究，但是给「下一代语言模型架构」打开一条路：不再左到右、可同时建模文本和连续模态（图像、音频）。如果跑通，统一多模态生成会更优雅。",
-      "pm_suggestion": "非研究团队不用急——观察 6-12 个月看是否进入工业可用规模；做 LLM 基础架构研究的实验室必读。"
+      "lede": "扩散模型挑战自回归",
+      "tech_core": "不再左到右一个个吐字，而是先把文本压成向量、在向量空间里全局生成、再解码成文字。",
+      "value": "目前还偏研究，但给「下一代 LLM 架构」打开新路：可同时建模文本和连续模态，统一多模态会更优雅。",
+      "pm_suggestion": "应用团队不用急；做 LLM 架构研究的实验室必读。"
     },
     {
       "id": 15,
@@ -266,10 +266,10 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": "Tencent",
       "dimension": "understanding",
-      "lede": "长上下文的概念签名机制",
-      "tech_core": "长上下文的「记忆指纹」——不再尝试把所有 token 都注意一遍，而是先抽出一组高级概念当做这次问题的「激活签名」，用它去引导后续生成。",
-      "value": "长文档 QA、智能体长期记忆是刚需痛点。MiA-Signature 在 RAG 和 Agent 系统上都涨点，并且是即插即用的轻量模块，不用改主模型。",
-      "pm_suggestion": "做企业知识助手、长会议总结、Agent 长期记忆的，立刻评估这种「概念签名」机制——比死塞 token 进上下文便宜得多。"
+      "lede": "长文档的概念签名机制",
+      "tech_core": "不再让模型把所有 token 都注意一遍，先抽出一组高级概念当「这次问题的指纹」引导后续生成。",
+      "value": "长文档 QA 和 Agent 长期记忆都涨点。即插即用、不用改主模型，比死塞 token 进上下文便宜多了。",
+      "pm_suggestion": "做企业知识助手、长会议总结的立刻评估这种轻量替代。"
     },
     {
       "id": 16,
@@ -282,10 +282,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/XIAO4579/PRISM",
       "org_tag": "HKUSTGZ",
       "dimension": "safety",
-      "lede": "多模态 RL 的稳态对齐层",
-      "tech_core": "在 SFT 和 RL 中间插一个「对齐课」——用一个混合专家判别器（一个看感知、一个看推理）当对手，把策略拉回真实分布，避免 SFT 之后偏出去导致 RL 阶段越训越歪。",
-      "value": "多模态后训练的隐性痛点：感知错误和推理错误会在 RL 阶段相互放大。PRISM 给 RLVR 加了一个工程化稳态层，平均提升 +4.4 到 +6.0 分。",
-      "pm_suggestion": "做多模态模型微调服务（B 端定制大模型）的团队立刻把这套三段流程加进产品；做应用层不太需要碰。"
+      "lede": "多模态对齐稳态层",
+      "tech_core": "在 SFT 和 RL 中间插一节「对齐课」，用判别器把策略拉回真实分布，避免越训越歪。",
+      "value": "多模态后训练总会感知错误和推理错误互相放大。这个加了工程化稳态层，平均提升 4-6 分。",
+      "pm_suggestion": "做多模态模型微调服务的把这套三段流程加进产品。"
     },
     {
       "id": 17,
@@ -299,9 +299,9 @@ const PAPER_DATA = {
       "org_tag": "Novosibirsk State University",
       "dimension": "action",
       "lede": "七模型组队 + GPT 当裁判",
-      "tech_core": "七个不同 LLM 组队答题，再用 GPT-4o-mini 当裁判挑最优答案——异质集成 + 判官路由，在多轮 RAG 任务上拿到 SemEval 第一。",
-      "value": "工程结论清晰：模型多样性 > 单模型规模，对生成式答题任务尤其明显。给做企业问答、知识助手的团队一个简单可落地的提质方案。",
-      "pm_suggestion": "如果你的客服/答题产品已经在用单模型 + RAG，立刻试试这种「多模型+判官」架构；成本上去了，但准确率提升直观，B 端客户愿意买单。"
+      "tech_core": "七个不同 LLM 一起答题，再用 GPT-4o-mini 挑最优答案。异质集成 + 判官路由。",
+      "value": "工程结论很清晰：模型多样性比单模型规模更重要。简单可落地的提质方案，多轮 RAG 任务上拿了第一。",
+      "pm_suggestion": "客服/答题已经在用单模型 RAG 的，立刻试这种多模型架构。"
     },
     {
       "id": 18,
@@ -314,10 +314,10 @@ const PAPER_DATA = {
       "github_url": "https://github.com/web2bigtable/web2bigtable",
       "org_tag": null,
       "dimension": "action",
-      "lede": "AI 调研员一次出整张大宽表",
-      "tech_core": "让 Agent 能从全网搜出大宽表——上层 Agent 拆任务，下层一群 worker 并行搜，再通过共享白板互相看到对方进展、避免重复劳动；任务做完用 run-verify-reflect 闭环不断改进。",
-      "value": "调研、行业图谱、竞品矩阵这种「找 100 家公司每家 10 项数据」的需求，过去得靠人力外包。Web2BigTable 在 WideSearch 上 7.5 倍领先第二名，意味着 RPA + 调研外包业务直接被冲。",
-      "pm_suggestion": "做行业研究、SaaS 销售线索、市场调研工具的，立刻把这套架构集成；商业化机会很大，可以做成「AI 调研员」按表收费。"
+      "lede": "AI 调研员一次出整张表",
+      "tech_core": "上层 Agent 拆任务，下层一群 worker 并行搜，通过共享白板互相协调；做完用闭环不断改进。",
+      "value": "「找 100 家公司每家 10 项数据」这种活原本要外包人力。这个比第二名快 7.5 倍，调研外包要被冲了。",
+      "pm_suggestion": "做行业研究/SaaS 销售线索的立刻集成；可包装成「按表收费的 AI 调研员」。"
     },
     {
       "id": 19,
@@ -330,10 +330,10 @@ const PAPER_DATA = {
       "github_url": null,
       "org_tag": null,
       "dimension": "robotics",
-      "lede": "机器人自我怀疑省 69% 算力",
-      "tech_core": "机器人「自我怀疑」机制——预测的未来和真实观察一致时多走几步，不一致时立刻停下重规划，省 69% 前向计算同时还涨成功率 35%。",
-      "value": "实际机器人部署的核心矛盾是「想跑得快又不能跑歪」。FFDC 把这件事做到了通用层面，对家庭机器人、移动机器人尤其重要——续航和安全都靠它。",
-      "pm_suggestion": "做机器人产品的团队立刻把它当 WAM 类策略的标配；这种「自检验」思路也可以迁移到任何长链路 Agent，能省大笔 token。"
+      "lede": "机器人会自我怀疑",
+      "tech_core": "预测和真实一致就多走几步，不一致就立刻停下重规划。省 69% 算力还涨成功率 35%。",
+      "value": "机器人部署的核心矛盾是「想跑得快又不能跑歪」。这个把它做到了通用层面，对家庭机器人特别重要。",
+      "pm_suggestion": "做机器人产品的把它当 WAM 类策略的标配。"
     },
     {
       "id": 20,
@@ -346,102 +346,121 @@ const PAPER_DATA = {
       "github_url": "https://github.com/aim-uofa/MARBLE",
       "org_tag": "Zhejiang University",
       "dimension": "safety",
-      "lede": "扩散模型 RL 的多目标平衡器",
-      "tech_core": "扩散模型 RL 微调时的「多目标平衡器」——不再死给每个奖励配权重，而是把每个奖励的梯度方向凑到一起算最优合力，避免「学了 A 维度就毁了 B 维度」。",
-      "value": "图像生成的对齐总是按下葫芦浮起瓢——美感涨了文本对齐崩，文本对齐好了构图烂。MARBLE 让五个维度同时涨，对所有要做生成模型对齐的团队都有用。",
-      "pm_suggestion": "做图像/视频生成 SaaS、AI 头像、商品图工具的团队立刻替换掉 weighted-sum 训练；这是 2026 年生成模型对齐的工程标配。"
+      "lede": "扩散模型多目标平衡",
+      "tech_core": "图像生成 RL 微调时，不死给每个奖励配权重，而是把多个目标的梯度合成一股最优合力。",
+      "value": "图像生成对齐总是按下葫芦浮起瓢。这个让美感、文本对齐、构图等五个维度同时涨。",
+      "pm_suggestion": "做图像/视频生成 SaaS、AI 头像、商品图工具的把训练里的 weighted-sum 换掉。"
     }
   ],
   "opportunities": {
     "strategies": [
       {
-        "type": "cashcow",
+        "icon": "💰",
         "title": "AI 调研员 SaaS",
-        "papers": [
+        "type": "cashcow",
+        "action": "把 Web2BigTable + 多模型组队 + OpenSearch-VL 拼起来，包成「按表收费的 AI 调研员」。1 个人 2 周可以做出 MVP，目标客户是中小咨询、独立分析师、SaaS 销售线索团队。",
+        "relatedPapers": [
           18,
           17,
           7
-        ],
-        "insight": "Web2BigTable + 多模型组队 + OpenSearch-VL 三篇合起来已经把「自动出整张行业大宽表」做到 7.5 倍领先。把它包成「按表收费的 AI 调研员」，目标客户是中小咨询公司、SaaS 销售线索团队、独立分析师。",
-        "action": "立刻 fork Web2BigTable 当骨架，套上多模型判官路由，用 OpenSearch-VL 做 fallback 搜索。第一版 MVP 2 周内可上。"
+        ]
       },
       {
-        "type": "efficiency",
+        "icon": "⚡️",
         "title": "干掉向量数据库",
-        "papers": [
+        "type": "efficiency",
+        "action": "在自家 RAG 里加一条「让 Agent 直接 grep 文档」的旁路，再加长上下文激活签名两个开关，A/B 测一周。可能能砍掉 30-50% 向量服务费用，并提升准确率。",
+        "relatedPapers": [
           10,
           15,
           19
-        ],
-        "insight": "本周三篇都在唱反调：Agent 用 grep 比向量库强、长上下文用「概念签名」就够、机器人不需要每步都重算。共同信号——当模型够强时，「重检索 + 重计算」反而是工程债。",
-        "action": "在自家 RAG 项目加一条 terminal grep 旁路 + 长上下文激活签名两个开关，A/B 测一周，可能能砍 30-50% 向量服务费。"
+        ]
       },
       {
+        "icon": "🌊",
+        "title": "国产端侧多模态硬件",
         "type": "blueocean",
-        "title": "国产端侧多模态玩具/穿戴",
-        "papers": [
+        "action": "MiniCPM-o + MolmoAct2 + 灵巧手开源方案首次让端侧机器人/玩具/智能眼镜不依赖云端。做 AI 玩具、儿童陪伴、老人辅助的团队立刻评估这套组合。",
+        "relatedPapers": [
           13,
           1,
           4
-        ],
-        "insight": "MiniCPM-o 4.5 让 9B 全双工多模态在手机上跑，MolmoAct2 + RLDX-1 让具身 VLA 开源到能用。两条线交汇 → 端侧机器人/玩具/智能眼镜终于有了能落地的开源底座，且不依赖云端 API。",
-        "action": "做 AI 玩具/儿童陪伴/老人辅助的团队立刻评估这套组合；做云端语音助手的要警惕，端侧能力变强会冲击你 30% 的低频场景。"
+        ]
       },
       {
-        "type": "special",
+        "icon": "✨",
         "title": "生成模型对齐工程化",
-        "papers": [
+        "type": "special",
+        "action": "把这四篇按「微调三段式」组装：SFT → PRISM 稳态 → MARBLE 多目标 RL → 推理时刷题。基本是 2026 年生成模型对齐的工程标配，做图像/视频 SaaS 的可形成技术壁垒。",
+        "relatedPapers": [
           20,
           16,
           6,
           3
-        ],
-        "insight": "本周四篇都在解决同一个底层问题：生成模型微调时「按下葫芦浮起瓢」。MARBLE 的多目标梯度合力、PRISM 的稳态层、视频考前刷题、Stream-R1 的精准蒸馏，合起来基本就是 2026 年生成模型对齐的工程标配。",
-        "action": "做图像/视频生成 SaaS 的团队把这四个组件按「微调三段式」组装：SFT → PRISM 稳态 → MARBLE 多目标 RL → 推理时刷题。可申请技术专利。"
+        ]
       }
     ],
     "newProducts": [
       {
-        "name": "AI 调研员（按表收费）",
-        "papers": [
+        "icon": "📊",
+        "title": "AI 调研员（按表收费）",
+        "description": "你给关键词，我给整张行业大宽表：公司、产品、融资、技术栈、客户案例。每张表 ¥99-¥999。",
+        "scenes": [
+          "中小咨询公司",
+          "独立分析师",
+          "VC 实习生",
+          "SaaS 销售线索"
+        ],
+        "relatedPapers": [
           18,
           7
-        ],
-        "pitch": "你给关键词，我给整张行业大宽表（公司/产品/融资/技术栈/客户案例）。每张表 ¥99-¥999。",
-        "moat": "Web2BigTable 的并行 + 反思机制 + 私域知识微调，是普通 RPA 工具做不到的深度调研。",
-        "audience": "中小咨询、独立分析师、SaaS 销售线索团队、VC 实习生。"
+        ]
       },
       {
-        "name": "DeepSeek 端侧编程助手（中文版）",
-        "papers": [
+        "icon": "💻",
+        "title": "国产端侧编程助手",
+        "description": "对标 Cursor，但全本地、中文优先、不出境。基于 DeepSeek 和 MiniCPM-o，月费 ¥30。",
+        "scenes": [
+          "企业内网研发",
+          "政企开发者",
+          "金融/医疗合规场景"
+        ],
+        "relatedPapers": [
           13,
           12
-        ],
-        "pitch": "把 MiniCPM-o + 小数据训练的搜索 Agent 组合成本地编程助手，国内合规、离线可用、月费 ¥30。",
-        "moat": "对标 Cursor，但全本地 + 中文优先 + 不出境，主打 toB 内网开发场景。",
-        "audience": "国内中大型企业内网研发、政企开发者、合规要求高的金融/医疗。"
+        ]
       },
       {
-        "name": "AI 短剧工厂（一键出片）",
-        "papers": [
+        "icon": "🎬",
+        "title": "AI 短剧工厂",
+        "description": "一句话生成 30 秒短剧，画质连贯、镜头稳定。比单纯调 Sora API 便宜 5 倍且可商用。",
+        "scenes": [
+          "内容工作室",
+          "短视频 MCN",
+          "广告代理",
+          "独立创作者"
+        ],
+        "relatedPapers": [
           3,
           6,
           8
-        ],
-        "pitch": "一句话生成 30 秒短剧，自动出 RGB+深度+材质多图层，画质连贯、镜头稳定。",
-        "moat": "Stream-R1 + UniVidX + 视频考前刷题三层组合，比单纯调 Sora API 便宜 5 倍且可商用。",
-        "audience": "内容工作室、短视频 MCN、广告代理、独立创作者。"
+        ]
       },
       {
-        "name": "可成长的 Agent 平台",
-        "papers": [
+        "icon": "🧠",
+        "title": "可成长 Agent 平台",
+        "description": "用得越多技能越强的企业 Agent。每个员工的 Agent 自动从工作日志里抽出新技能入库。",
+        "scenes": [
+          "IT 部门",
+          "客服中心",
+          "法务",
+          "财务"
+        ],
+        "relatedPapers": [
           11,
           2,
           5
-        ],
-        "pitch": "用得越多、技能越强的企业 Agent 平台。每个员工的 Agent 会自动从工作日志里抽出新 skill 入库。",
-        "moat": "三篇关键论文给出了「自学自考 + 端到端 RL + 双盲审稿」的可成长闭环，是当前所有 Agent SaaS 都还没做到的。",
-        "audience": "中大型企业的 IT/客服/法务/财务部门，按席位收费。"
+        ]
       }
     ]
   }
