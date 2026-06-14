@@ -1,206 +1,206 @@
 {
-  "week": "2026-W23",
-  "dateRange": "2026-05-31 to 2026-06-06",
+  "week": "2026-W24",
+  "dateRange": "2026-06-07 to 2026-06-13",
   "papers": [
     {
-      "title": "On the Scaling of PEFT: Towards Million Personal Models of Trillion Parameters",
-      "url": "https://huggingface.co/papers/2606.02437",
-      "likes": 217,
-      "date": "2026-06-07",
-      "abstract": "Parameter-efficient fine-tuning(PEFT) is usually treated as a cheaper alternative tofull fine-tuning. We study a broader role: smalltrainable adaptersaspersistent local stateon top of strongshared foundation models. In this framing, the base model provides shared competence while adapters carryinstance-specific behaviorsuch as preferences, skills, tool habits, and memory-like updates. We organize the problem around three scaling axes: Scale Up, where strongershared priorsmake small local updates more useful; Scale Down, where we study how small adapters can be while remaining reliable; and Scale Out, where many persistent adapted instances coexist. MinT provides one infrastructure example for managingadapter identity,revision,provenance,evaluation, andserving residency. Together, the results suggest that PEFT can be a compact substrate for persistent personal models rather than only a budget substitute forfull fine-tuning.",
-      "published_date": "Jun 1",
-      "github_url": null,
-      "org_tag": "Mind Lab"
+      "title": "ABot-Earth 0.5: Generative 3D Earth Model",
+      "url": "https://huggingface.co/papers/2606.09967",
+      "likes": 463,
+      "date": "2026-06-14",
+      "abstract": "We present ABot-Earth 0.5, a generative 3D framework designed to synthesize vast, seamless 3D environments from ubiquitous, geospatially referencedsatellite imagery. To achieve this, we propose a novelgenerative modelformulated directly with the3D Gaussian Splatting(3DGS) representation. The model is trained on a diverse corpus of existing real-world urban reconstructions, learning to generate realistic geometry and textures. At inference, it synthesizes novel 3D scenes conditioned solely onsatellite imageryat a scalable rate of under 10 minutes per square kilometer, while demonstrating exceptional realism. The framework is designed for accessibility, with integrated hierarchicallevel-of-detail(LOD) structures that permit real-time, interactive visualization on web-based map engines. This high-fidelity simulation sandbox effectively mitigates the sim-to-real domain gap, enabling critical downstreamEmbodied AIapplications like closed-loopUAV navigation. By providing an ultra-low-cost and high-efficiency solution, ABot-Earth 0.5 significantly lowers the technical and financial barriers to large-scale 3D reconstruction and empowers the future of globaldigital earth visualization.",
+      "published_date": "Jun 8",
+      "github_url": "https://github.com/amap-cvlab/ABot-Earth-0.5",
+      "org_tag": "Alibaba AMAP CV Lab"
     },
     {
-      "title": "Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs",
-      "url": "https://huggingface.co/papers/2605.30611",
-      "likes": 192,
-      "date": "2026-06-07",
-      "abstract": "Scientific figures are among the most effective means of communicating complex research ideas, yet producing publication-quality illustrations remains one of the most labor-intensive parts of paper preparation. Existing automated systems each target a single figure type under text-only input, leaving the diversity of types and conditions researchers actually use unaddressed; theirraster outputsfurther cannot be locally revised. Because scientific figures are structured compositions of discrete semantic components, the localized errors generators produce on such layouts demand not a stronger backbone but a harness. We instantiate this harness in two complementary systems: Crafter, amulti-agent harnessforfigure generationthat generalizes across figure types and input conditions without architectural changes, and CraftEditor, which applies the same pattern to convertraster outputsintoeditable SVGs. Moreover, we introduceCraftBench, a benchmark spanning three figure types and four input conditions with human quality annotation. Experiments show that Crafter substantially outperforms both standalone generators and the agentic baseline onPaperBanana-BenchandCraftBench, with ablations confirming each component's independent contribution; CraftEditor faithfully converts outputs intoeditable SVGsthat surpass all baselines. Our code and benchmark are available at https://github.com/HaozheZhao/Crafter.",
-      "published_date": "May 28",
-      "github_url": "https://github.com/HaozheZhao/Crafter",
-      "org_tag": null
-    },
-    {
-      "title": "Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding",
-      "url": "https://huggingface.co/papers/2605.29707",
-      "likes": 140,
-      "date": "2026-06-07",
-      "abstract": "Speculative decodingaccelerates LLM inference by drafting multiple tokens and verifying them in parallel with the target model. However, its practical speedup is constrained by the trade-off betweendraft qualityanddrafting cost:autoregressive draftersmodelcausal dependenciesamong draft tokens but incur sequential overhead, whileparallel draftersreducedrafting costbut weaken intra-block dependency modeling. In this paper, we propose Domino, aspeculative decodingframework that decouples causal dependency modeling from expensive autoregressive draft execution. Domino first uses a parallel draft backbone to produce preliminary draft distributions for the entire block, and then applies a lightweightDomino headto refine them with prefix-dependent causal information. To stabilizeteacher-forced causal encoding, we further introduce abase-anchored training curriculumthat first strengthens theparallel backboneand then gradually shifts optimization toward the causally corrected final distribution. Experiments on Qwen3 models show that Domino achieves up to \\(5.49\\times\\) end-to-end speedup under theTransformers backendand up to \\(5.8\\times\\) throughput speedup underSGLang serving.",
-      "published_date": "May 28",
-      "github_url": "https://github.com/jianuo-huang/Domino",
-      "org_tag": "Shanghai Jiao Tong University"
-    },
-    {
-      "title": "COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation",
-      "url": "https://huggingface.co/papers/2605.31264",
-      "likes": 108,
-      "date": "2026-06-07",
-      "abstract": "LLM agents are increasingly expected not only to complete isolated tasks, but also to carry bounded representations of human expertise, judgment, and interaction style. Building suchperson-grounded agentsremains difficult because actionable knowledge associated with a person or role is usually embedded in heterogeneous traces rather than written as clean instructions. Existing memory and persona systems capture fragments of this evidence, while skill frameworks provide portable packaging formats; however, there is no end-to-end workflow for distilling these traces into inspectable, correctable, and agent-usable skills. We present an automatedtrace-to-skill distillationsystem for generating person-grounded AI skills viaexpert knowledge distillation. Given materials from a target person or role, COLLEAGUE.SKILL produces a versionedskill packagewith two coordinated tracks: acapability trackfor practices, mental models, and decision heuristics, and a boundedbehavior trackfor communication style, interaction rules, and correction history. The package can be inspected, invoked, updated through natural-language feedback, rolled back, installed across agent hosts, and optionally prepared for controlled distribution. We describe the artifact contract, generation workflow,correction lifecycle,deployment surface, anddomain presetsimplemented in the open-source system. At the time of writing, the public repository has approximately 18.5k GitHub stars; the gallery lists 215 skills from 165 contributors and more than 100k cumulative stars across listed skill cards. The system illustrates how person-grounded skills can be represented as portable, correctable packages rather than opaque prompts or hidden memories.",
-      "published_date": "May 29",
-      "github_url": "https://github.com/titanwings/colleague-skill",
-      "org_tag": "shanghai ailab"
-    },
-    {
-      "title": "GrepSeek: Training Search Agents for Direct Corpus Interaction",
-      "url": "https://huggingface.co/papers/2605.29307",
-      "likes": 102,
-      "date": "2026-06-07",
-      "abstract": "Large Language Model (LLM)search agentshave shown strong promise for knowledge-intensive language tasks through multiple rounds of reasoning and informationretrieval. Most existing systems access information using a retriever that takes a keyword or natural language query and returns a ranked list of documents using an index of pre-computed document representations. In this work, we explore a complementary perspective in which the search agent treats the corpus itself as the search environment and finds evidence by issuing executableshell commands. We introduceGrepSeek, an optimizeddirect corpus interaction(DCI) search agent that trains a compact search agent to find, filter, and compose evidence from large text corpora. To address the instability of learning behavior directly withreinforcement learningon large corpora, we propose a two-stage training pipeline. First, we construct acold-start datasetusing an answer-awareTutorand answer-blindPlannerto generate verified, causally grounded search trajectories. Second, we refine the initialized policy withGroup Relative Policy Optimization(GRPO), allowing the agent to improve its task-oriented search behavior through direct interaction with the corpus. To make DCI practical at scale, we further use a semantics-preservingsharded-parallel execution enginethat accelerates shell-basedretrievalby up to 7.6times while preserving byte-exact equivalence with sequential execution of the shell command. Experiments across seven open-domain question answering benchmarks show thatGrepSeekachieves the strongest overall token-level F_1 andExact Match. Our analysis also highlights the limitations of purely lexical interaction on queries with substantial surface-form variation, suggesting DCI as a practical and competitive method forsearch agentsthat can complement existingretrievalparadigms in the real world.",
-      "published_date": "May 28",
-      "github_url": "https://github.com/alirezasalemi7/grepseek",
-      "org_tag": "University of Massachusetts Amherst"
-    },
-    {
-      "title": "Audio Interaction Model",
-      "url": "https://huggingface.co/papers/2606.05121",
-      "likes": 101,
-      "date": "2026-06-07",
-      "abstract": "Audio is an inherently interactive modality, yet today'sLarge Audio Language Models(LALMs) are offline, andstreaming audio modelseach handle only a single task such as streaming ASR or voice chatting. It is time to unify them into one online LALM: a model that, through an always-onperceive-decide-respond loop, listens to sound, environment, and instructions in real time and reacts on the fly. We formalize this regime as theAudio Interaction Model, and realize it with Audio-Interaction, a unified streaming model that retains offline task execution while adding online general audio instruction following, from dialogue to full voice chatting, deciding when to respond from the semantics of the stream. To enable this, we proposeSoundFlow, a framework that instantiates theperceive-decide-respond loopend to end, from data to training to deployment, throughstreaming-native data construction,comprehension-aware training, andasynchronous low-latency inferencefor stable real-time interaction. We further constructStreamAudio-2M, a 2.6M-item streaming corpus spanning 7 fundamental abilities and 28 sub-tasks, andProactive-Sound-Benchfor evaluating proactive audio intervention. Across 8 benchmarks, Audio-Interaction preserves competitive performance on mainstream audio tasks while unlocking capabilities inaccessible to offline LALMs, including real-time ASR, streaming audio instruction following, and proactive help.",
+      "title": "Agents' Last Exam",
+      "url": "https://huggingface.co/papers/2606.05405",
+      "likes": 330,
+      "date": "2026-06-14",
+      "abstract": "Recent AI systems have achieved strong results on a wide range ofbenchmarks, yet these gains have not translated into economically meaningful deployment across many professional domains. We argue that this gap is largely an evaluation problem: widely usedbenchmarks lack sustained performance measurement on real and economically valuable workflows. This paper introduces Agents' Last Exam (ALE), abenchmarkdesigned to evaluateAI agentson long-horizon, economically valuable,real-world taskswith verifiable outcomes. Developed in collaboration with 250+ industry experts, ALE covers non-physical industries defined with reference toO*NET/SOC 2018(the U.S. federal occupational taxonomy). It is organized around atask taxonomywith 55 subfields grouped into 13industry clusterscovering 1K+ tasks. Current results show that the hardest tier remains far from saturated: across mainstream harness and backbone configurations, the averagefull pass rateis 2.6%. ALE is designed as aliving benchmark: its task pool grows continuously as new workflows and industries are onboarded. More broadly, ALE is intended not merely as another leaderboard, but as an instrument for closing the gap betweenbenchmarksuccess and GDP-relevant impact.",
       "published_date": "Jun 3",
-      "github_url": "https://github.com/xzf-thu/Audio-Interaction",
-      "org_tag": "National University of Singapore"
+      "github_url": "https://github.com/rdi-berkeley/agents-last-exam",
+      "org_tag": "UC Berkeley"
     },
     {
-      "title": "Cosmos 3: Omnimodal World Models for Physical AI",
-      "url": "https://huggingface.co/papers/2606.02800",
-      "likes": 88,
-      "date": "2026-06-07",
-      "abstract": "We introduce Cosmos 3, a family ofomnimodal world modelsdesigned to jointly process and generate language, image, video, audio, and action sequences within a unifiedmixture-of-transformers architecture. By supporting highly flexible input-output configurations, Cosmos 3 seamlessly unifies critical modalities forPhysical AI-- effectively subsumingvision-language models,video generators,world simulators, andworld-action modelsinto a single framework. Our evaluation demonstrates that Cosmos 3 establishes a new state-of-the-art across a diverse suite of understanding and generation tasks, demonstratingomnimodal world modelsas scalable, general-purpose backbones forembodied agents. Our post-trained Cosmos 3 models were ranked as the best open-source Text-to-Image and Image-to-Video models by Artificial Analysis, and the best policy model by RoboArena at the time the technical report was written. To accelerate open research and deployment inPhysical AI, we make our code, model checkpoints, curated synthetic datasets, and evaluation benchmark available under the Linux Foundation's OpenMDW-1.1 https://openmdw.ai/license/1-1/ License at https://github.com/nvidia/cosmos}{github.com/nvidia/cosmos and https://huggingface.co/collections/nvidia/cosmos3 . The project website is available at https://research.nvidia.com/labs/cosmos-lab/cosmos3 .",
-      "published_date": "Jun 1",
-      "github_url": "https://github.com/NVIDIA/cosmos",
-      "org_tag": "NVIDIA"
+      "title": "Kwai Keye-VL-2.0 Technical Report",
+      "url": "https://huggingface.co/papers/2606.10651",
+      "likes": 182,
+      "date": "2026-06-14",
+      "abstract": "We introduce Kwai Keye-VL-2.0-30B-A3B, an open-sourceMixture-of-Experts(MoE)multimodal foundation modeldesigned to advance long-video understanding and agentic intelligence. To address the challenges of ultra-long contexts, information redundancy, and prohibitive computational costs inherent in hour-level videos, Keye-VL-2.0 is the first to adaptDeepSeek Sparse Attention(DSA) to GQA-based multimodal architectures, enabling lossless256K context processingwhile capturing critical frames and long-range temporal dependencies. This architecture is underpinned by a highly optimized training and inference infrastructure, including scalable video I/O,heterogeneous ViT-LM parallelism, andcustom DSA kernelsthat significantly maximize throughput and minimize computational overhead. Furthermore, to overcome the algorithmic dilemma of catastrophic forgetting during multi-task alignment, we introduceCross-Modal Multi-Teacher On-Policy Distillation(MOPD) paired withContext-RLandVideo-RL. By distillingdense token-level teacher feedbackfromon-policy rolloutsback into the MoE backbone, which activates only 3B parameters, Keye-VL-2.0 natively empowers advancedagent collaborationacrossCode,Tool, andSearch scenarioswithmultimodal self-correction. Extensive evaluations across video understanding, temporal grounding, reasoning, STEM, and agent benchmarks demonstrate that Keye-VL-2.0-30B-A3B achieves state-of-the-art performance among models of similar scale, particularly excelling in fine-grained temporal localization on TimeLens and long-video comprehension on Video-MME-v2 and LongVideoBench. We release our model checkpoints to accelerate community progress toward scalable and robust multimodal agentic applications.",
+      "published_date": "Jun 9",
+      "github_url": "https://github.com/Kwai-Keye/Keye",
+      "org_tag": "Kwai Keye"
     },
     {
-      "title": "OCC-RAG: Optimal Cognitive Core for Faithful Question Answering",
-      "url": "https://huggingface.co/papers/2606.00683",
-      "likes": 84,
-      "date": "2026-06-07",
-      "abstract": "Recent progress in the development oflanguage modelshas been defined by scale, with each generation absorbing more of the world's knowledge into its weights. However, many practical applications benefit more from robust reasoning than from extensive parametric knowledge. In this setting, task-specialized smalllanguage models(SLMs) offer a principled design choice. We introduce Optimal Cognitive Core (OCC), a family of SLMs built around this premise. As a variant of OCC, we present OCC-RAG, optimized for faithfulquestion answering(QA) grounded in the provided context. This task directly aligns with the OCC design approach, requiringmulti-hop reasoningover supplied passages while ignoring memorized knowledge. To train OCC-RAG, we implement a novel pipeline for synthesizing multi-context, multi-hop QA data at scale, producing a corpus of over three million examples targetingmulti-hop reasoning, strictcontext faithfulness, and calibrated abstention. We release OCC-RAG-0.6B and OCC-RAG-1.7B, both mid-trained on this corpus. The models producestructured reasoning traceswithsource citationsgrounded in literal quotes from the context. Through OCC-RAG, we demonstrate that compact, task-specialized SLMs can match or exceed general-purpose models 2 -- 6x their size acrossmulti-hop reasoning(HotpotQA,MuSiQue,TAT-QA), faithfulness (ConFiQA), and refusal (MuSiQue-Un) benchmarks.",
-      "published_date": "May 30",
-      "github_url": "https://github.com/optimal-cognitive-core/OCC-RAG",
-      "org_tag": "OCC"
-    },
-    {
-      "title": "Trust-Region Behavior Blending for On-Policy Distillation",
-      "url": "https://huggingface.co/papers/2605.31159",
-      "likes": 64,
-      "date": "2026-06-07",
-      "abstract": "On-policy distillation(OPD) trains a student on prefixes sampled from its own policy while matching a stronger teacher. This addresses theprefix mismatchofoffline distillation, but early student rollouts can still be poor, placing teacher supervision on weak or low-quality prefixes. We propose Trust-Regionbehavior Blending(TRB), a warmup method that replaces the early rollout policy with the closest-to-teacher behavior policy inside a student-centeredKL trust region, while keeping the per-prefix reverse-KL OPD loss unchanged. The KL budget is annealed to zero, so training returns to pure student rollouts after warmup. Across two math-reasoning distillation settings, TRB attains the strongest average among the compared methods.",
-      "published_date": "May 29",
-      "github_url": null,
-      "org_tag": "T-Tech"
-    },
-    {
-      "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
-      "url": "https://huggingface.co/papers/2606.06492",
-      "likes": 63,
-      "date": "2026-06-07",
-      "abstract": "Code language models needrepository-level contextto resolve imports, APIs, and project conventions. Existing methods inject this knowledge as long inputs (retrieved through RAG or dependency analysis) or through per-repository fine-tuning and LoRA -- costly at repository scale and brittle to evolving codebases. We introduceCode2LoRA, ahypernetwork frameworkthat generates repository-specificLoRA adapters, effectively injecting repository knowledge with zero inference-time token overhead.Code2LoRAsupports two usage scenarios:Code2LoRA-Static converts a single repository snapshot into an adapter, suitable for comprehension of stable codebases; whileCode2LoRA-Evo maintains an adapter backed by aGRU hidden stateupdated per code diff, suitable for active development of evolving codebases. To evaluateCode2LoRAagainstparameter-efficient fine-tuningbaselines, we buildRepoPeftBench, a benchmark of 604 Python repositories with two tracks: a static track with 40K training and 12K testassertion-completion tasks, and an evolution track with 215K commit-derived training and 87K commit-derived test tasks. On the static track,Code2LoRA-Static achieves 63.8% cross-repo and 66.2%in-repo exact match, matching the per-repository LoRA upper bound; on the evolution track,Code2LoRA-Evo achieves 60.3%cross-repo exact match(+5.2 pp over a single shared LoRA).Code2LoRA's code can be found at https://anonymous.4open.science/r/code2lora-6857; the model checkpoints andRepoPeftBenchdatasets can be found at https://huggingface.co/code2lora.",
-      "published_date": "Jun 4",
-      "github_url": null,
-      "org_tag": "University of Waterloo"
-    },
-    {
-      "title": "A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks",
-      "url": "https://huggingface.co/papers/2605.28556",
-      "likes": 63,
-      "date": "2026-06-07",
-      "abstract": "Asagent capabilitiesadvance, existing benchmarks, such as τ^2-Bench, are becoming increasingly saturated. Yet constructing new benchmark tasks remains complex, costly, and labor-intensive. Moreover, the standard approach, in which scenarios are first written in natural language and then mapped to tool sequences, captures only a narrow subset of thetool-use patternsagents exercise. In this paper, we address these problems by reversing the task construction process. We propose TASTE:Task SynthesisfromTool Sequence Evolution, an automatic method that generates challenging tasks with broader tool-use coverage. TASTE utilizes anAdaptive Contrastive n-gram modeltrained onLLM-judged validity signals. This enables sampling valid tool sequences that cover a vast range of tool combinations. TASTE then selects representative sequences from the pool viaclustering, instantiates them into complete benchmark tasks, and refines them throughiterative difficulty evolution. Using TASTE, we construct τ^c-Bench, a challenging extension of the three domains of τ^2-Bench. We evaluate 11 agent/user LLM pairs and find that models nearly saturating τ^2-Bench suffer severe performance drops on our tasks (e.g., Gemini-3-Flash falls from 0.82!-!0.94 to 0.28!-!0.61). Beyond increasing difficulty, our generated tasks more than double the number of unique tool combinations agents must execute. Our results suggest high scores on existing benchmarks often reflect saturation rather than robust task-solving ability. By automating the generation of difficult, high-coverage benchmarks, TASTE enables continuous, scalable evaluation of future agents.",
-      "published_date": "May 27",
-      "github_url": "https://github.com/tomerkeren42/TASTE-task-synthesis-from-tool-sequence-evolution",
-      "org_tag": "Technion Israel institute of technology"
-    },
-    {
-      "title": "Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism",
-      "url": "https://huggingface.co/papers/2606.00408",
-      "likes": 61,
-      "date": "2026-06-07",
-      "abstract": "Long-horizon search agents accumulate large amounts of retrieved content across many tool calls, making context-budget efficiency increasingly important. A minimal intervention is to mask stale observations from the context as the trajectory progresses, but it remains unclear when this form ofcontext managementhelps and why. We studyobservation maskingthrough a systematic sweep over variousagent backbones(4B to 284B parameters) and threeretrieverson offline and live-webagentic searchbenchmarks. We find that the accuracy gain from masking follows an asymmetric inverted-U shape when plotted against the model's accuracy withoutcontext management: a plateau under weakretrievers, a peak when a strong retriever meets a mid-capacity model, and a sharp collapse when the model is saturated. This pattern reflects the interaction between retriever recall and the model'simplicit filtering capacity, rather than either factor in isolation. Mechanistically, masking implements atoken-for-turn trade-off: it removes observations the model has largely stopped attending to and pages the agent rarely re-opens. The added turns help when they convert failures into successes, but they fail when masking removes evidence the model would otherwise have used. We therefore reframecontext managementas a regime-dependent intervention and provide a holistic perspective for analyzing context use in agentic deep search. We release our scaffold and trajectories here (https://github.com/i-DeepSearch/observation-masking) to support future research.",
-      "published_date": "May 29",
-      "github_url": "https://github.com/i-DeepSearch/observation-masking",
-      "org_tag": "McAuley-Lab"
-    },
-    {
-      "title": "Representation Forcing for Bottleneck-Free Unified Multimodal Models",
-      "url": "https://huggingface.co/papers/2605.31604",
-      "likes": 58,
-      "date": "2026-06-07",
-      "abstract": "Unified multimodal models(UMMs) aim to handle perception and generation in a single model. Yet existing UMMs still rely on a frozen, separately pretrained VAE for image generation, imposing a structural bottleneck. Naively removing it introduces a quality gap, as the model must learn both high-level structure and low-level details from raw pixels. In this paper, we proposeRepresentation Forcing(RF), a technique that closes this gap by making representation prediction a native capability of the model. Concretely, RF forces the decoder to autoregressively predictvisual representationsas intermediate tokens before pixels; these tokens then stay in context to guidepixel diffusionwithin the same backbone. By turning representations from perception outputs into generation targets, RF eliminates the need for any external generative latent space. We find that RF benefits both understanding and generation. On image generation, our pixel-space model with RF matches state-of-the-art VAE-based unified models. On image understanding, pixel-space RF generally outperforms its VAE-based variant. Together, these results offer an effective step toward end-to-end, bottleneck-free UMMs.",
-      "published_date": "May 29",
-      "github_url": null,
-      "org_tag": "ByteDance Seed"
-    },
-    {
-      "title": "SwanVoice: Expressive Long-Form Zero-Shot Speech Synthesis for Both Monologue and Dialogue",
-      "url": "https://huggingface.co/papers/2605.30993",
-      "likes": 56,
-      "date": "2026-06-07",
-      "abstract": "Zero-shot text-to-speech(TTS) has improved substantially for single-speaker synthesis, yet expressive long-form multi-speaker dialogue remains difficult. A common workaround is to synthesize each turn with amonologue TTSmodel and stitch the outputs together. This adds inference cost and often breaks acoustic consistency, conversational coherence, and affective continuity across turns. Recentdialogue TTSsystems have begun to address this setting, but they still struggle to keep expressive coherence, controllable speaker switching, and monologue quality at the same time. We present SwanData-Speech and SwanVoice. SwanData-Speech builds monologue and dialogue corpora from in-the-wild audio, using SwanForced Alignerfor pause-aware word-level alignment and RobustMegaTTS3 for pronunciation-hard cases. Built on these data, SwanVoice is a zero-shot TTS model for 1--4 speakers, combining a 25 HzVAE, raw-text conditioning withpause-aware symbolsandpinyin substitution, and aflow-matching DiTwithspeaker-turn conditioning. Training starts from monologue speech, moves through mixed and real dialogue data, and then uses DiffusionNFT post-training with phone-level and speaker-similarity rewards. On SwanBench-Speech, SwanVoice obtains higher richness and hierarchy scores than all evaluated open-source baselines in both monologue and dialogue settings, while content accuracy remains the main limitation. Audio demos are available at https://swanaigc.github.io//#swanvoice.",
-      "published_date": "May 29",
-      "github_url": null,
-      "org_tag": "ByteDance"
-    },
-    {
-      "title": "KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks",
-      "url": "https://huggingface.co/papers/2606.03458",
-      "likes": 53,
-      "date": "2026-06-07",
-      "abstract": "Test-time scaling is a powerful approach to obtain better reasoning in large language models, but it becomes memory-bottlenecked during long-horizon decoding, as the KV-cache grows.KV-cache quantizationcan help improve this, but current methods are evaluated under prefill-like settings and errors behave differently underautoregressive decoding. We show that in the latter regime, quantization errors accumulate across timesteps, driven primarily by incorrecttoken scales. We introduceKVarN, a calibration-free KV-cache quantizer that applies aHadamard rotationfollowed by adual-scaling variance normalizationacross both axes of the K and V matrices. We find that this combination fixes outlying token-scale errors and substantially reduceserror accumulationover existing baselines.KVarNestablishes a new state-of-theart forKV-cache quantizationon generative benchmarks, including MATH500, AIME24 and HumanEval, at 2-bit precision. A vLLM implementation of theKVarNmethod is available at https://github.com/huawei-csl/KVarN",
-      "published_date": "Jun 2",
-      "github_url": "https://github.com/huawei-csl/KVarN",
-      "org_tag": "HUAWEI Computing Systems Lab"
-    },
-    {
-      "title": "K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts",
-      "url": "https://huggingface.co/papers/2606.02404",
-      "likes": 53,
-      "date": "2026-06-07",
-      "abstract": "Frontier model evaluations are shifting from foundational capabilities (e.g., instruction following and reasoning) toward compositional, agentic ones, but Korean agentic benchmarks remain scarce. We introduce K-BrowseComp, aweb-browsing agent benchmarkgrounded inKorean contexts, consisting of 400 problems. The 300-problem K-BrowseComp-Verified subset is manually constructed and validated by native Korean speakers. On this subset, frontierLLMs, including GPT-5.5, DeepSeek-V4-Pro, and GLM-5.1, reach only 30.00--45.67\\%, a substantial drop fromBrowseComp, while KoreanLLMsreleased through Korea's Proprietary AI Foundation Model program obtain only 0.00--10.33\\%. We further construct a 100-problemsynthetic splitusing hardfew-shot exemplarsandfailure-mode-targeted generationto exploit the asymmetry between solving and creating web browsing problems. On the adversarially filtered synthetic diagnostic split, the strongest model reaches only 26.00\\%, and we report this split separately as a targeted stress test. We publicly release our data and code.",
-      "published_date": "Jun 1",
-      "github_url": "https://github.com/prometheus-eval/K-BrowseComp",
-      "org_tag": "Carnegie Mellon University"
-    },
-    {
-      "title": "Mellum2 Technical Report",
-      "url": "https://huggingface.co/papers/2605.31268",
-      "likes": 53,
-      "date": "2026-06-07",
-      "abstract": "We present Mellum 2, an open-weight 12B-parameterMixture-of-Experts(MoE) language model with 2.5B active parameters per token. Mellum 2 is a general-purpose language model specialized in software engineering, spanning code generation and editing, debugging, multi-step reasoning, tool use and function calling, agentic coding, and conversational programming assistance, and it is the successor to the completion-focused 4B dense Mellum model. The architecture builds on theMixture-of-Experts(64 experts, 8 active) and combinesGrouped-Query Attentionwith 4 KV heads,Sliding Window Attentionon three of every four layers, and a singleMulti-Token Prediction headthat doubles as both an auxiliary pre-training objective and a built-in draft model forspeculative decoding; each choice was validated by ablation with inference efficiency on commodity GPUs as a design constraint. Pre-training spans approximately 10.6 trillion tokens through a three-phase curriculum that progressively shifts the mixture from diverse web data toward curated code and mathematical content, optimized with Muon underFP8 hybrid precisionand aWarmup-Hold-Decay schedulewith linear decay to zero. The pre-trained base is extended to a 128K context window via a layer-selectiveYaRNand then post-trained in two stages (supervised fine-tuningfollowed byRLVR), yielding two released variants: an Instruct model that answers directly and a Thinking model that emits an explicit reasoning trace before its final answer. Across code generation, math and reasoning, tool use, knowledge, and safety benchmarks, Mellum 2 is competitive with open-weight baselines in the 4B-14B range while running at the per-token compute of a 2.5B dense model. We release the base, instruct, and thinking checkpoints, together with this report on the architecture decisions, data pipeline, and training recipe behind them, under the Apache 2.0 license.",
-      "published_date": "May 29",
-      "github_url": null,
-      "org_tag": "JetBrains"
-    },
-    {
-      "title": "From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain",
-      "url": "https://huggingface.co/papers/2605.23895",
-      "likes": 51,
-      "date": "2026-06-07",
-      "abstract": "Identifying which brain regions represent a visual concept in the human brain is a central challenge in neuroscience. Existing approaches have localized coarse functional regions (e.g., faces, places) throughactivation maximization, identifying regions that activate strongly for a target concept relative to other concepts. Yet strong activation alone does not establish that a region represents the concept itself, as responses may instead be driven by correlated visual or semantic cues. We introduce BrainCause, an automated framework that combines generative andbrain modelsto synthesize controlled stimuli and validate neural representations through targetedcausal testing. Given a query specifying a concept of interest, our framework constructs targeted stimulus sets comprising concept images, counterfactual edits that remove the target concept while preserving other image content, and images with candidate correlated distractors. It then uses animage-to-fMRI encoding modelto predict brain responses and searches for representations that respond specifically to the target concept over correlated alternatives. BrainCause returns validated candidate representations and proposes follow-up fMRI experiments to further test or extend its discoveries. Our approach successfully recovers knownfunctional localizationsand identifies new candidate representations across dozens of concepts, validated on both predicted and measured fMRI data. Critically, we show that without causal validation, a large fraction of localizations would be false positives, confirming that activation alone is insufficient evidence of representation.",
-      "published_date": "May 22",
-      "github_url": null,
+      "title": "EvoArena: Tracking Memory Evolution for Robust LLM Agents in Dynamic Environments",
+      "url": "https://huggingface.co/papers/2606.13681",
+      "likes": 121,
+      "date": "2026-06-14",
+      "abstract": "Large language model (LLM) agents have achieved strong performance on a wide range of benchmarks, yet most evaluations assume static environments. In contrast, real-world deployment is inherently dynamic, requiring agents to continually align their knowledge, skills, and behavior with changing environments and updated task conditions. To address this gap, we introduceEvoArena, a benchmark suite that modelsenvironment changesas sequences ofprogressive updatesacross terminal, software, andsocial domains. We further proposeEvoMem, a patch-based memory paradigm that recordsmemory evolutionas structured update histories, enabling agents to reason about environmental evolution through changes in their memory. Experiments show that current agents struggle onEvoArena, achieving an average accuracy of 39.6% across evolving terminal, software, and social-preference domains.EvoMemconsistently improves performance, yielding an average gain of 1.5% onEvoArenaand also improving standard benchmarks such as GAIA and LoCoMo by 6.1% and 4.8%. Beyond individual tasks,EvoMemfurther improveschain-level accuracyby 3.7% onEvoArena, where success requires completing a consecutive sequence of related evolutionary subtasks.Mechanistic analysisshows thatEvoMemimproves evidence capture in the memory, indicating better preservation of complete evolving environment states. Our results highlight the importance of modeling evolution in both evaluation and memory for reliable agent deployment.",
+      "published_date": "Jun 11",
+      "github_url": "https://github.com/Aiden0526/EvoArena",
       "org_tag": "Massachusetts Institute of Technology"
     },
     {
-      "title": "Where Do Deep-Research Agents Go Wrong? Span-Level Error Localization in Agent Trajectories",
-      "url": "https://huggingface.co/papers/2606.02060",
-      "likes": 50,
-      "date": "2026-06-07",
-      "abstract": "Deep-research agentssolve tasks through long trajectories of search, tool use, evidence inspection, and answer synthesis. Evaluation based on final answers shows whether an agent succeeds, but not which parts of the trajectory make the answer unreliable. We studyspan-level error localizationfordeep-research agents. We collect 2,790 real trajectories from twoagent frameworks, threebackbone models, and three benchmarks, convert raw logs into semantic spans, and annotate harmfulerror spansthroughLLM-assisted expert review. From these annotations, we buildTELBench, a 1,000-instance benchmark for identifyingerror spansamong normal exploration, failed searches, tentative hypotheses, and harmless noise. We further proposeDRIFT, aclaim-centric auditingframework that tracks agent claims, checks their support intrajectory evidence, and marks spans where unsupported or conflicting claims affect the answer path. Experiments across model families and auditing frameworks show thatDRIFTimprovesspan-level error localizationand first-error accuracy by up to 30 percentage points. Our work provides a process-level view of reliability indeep-research agents.",
-      "published_date": "Jun 1",
-      "github_url": "https://github.com/NJU-LINK/DRIFT",
-      "org_tag": "NJU-LINK Lab"
+      "title": "Imaginative Perception Tokens Enhance Spatial Reasoning in Multimodal Language Models",
+      "url": "https://huggingface.co/papers/2606.03988",
+      "likes": 117,
+      "date": "2026-06-14",
+      "abstract": "Vision language models(VLMs) excel at many tasks but still struggle withspatial reasoningwhen critical information is not directly observable. Many such problems requireimaginative perception: inferring what would be seen from an unseen viewpoint, tracing paths through occluded spaces, or integrating partial observations into a coherent spatial representation. We introduceImaginative Perception Tokens(IPT), intermediate perceptual representations that externalize what a VLM would perceive under alternative spatial configurations while remaining consistent with the observed input.\n  To study this capability, we formulate three tasks,Perspective Taking(PET),Path Tracing(PT), andMultiview Counting(MVC), and construct datasets of approximately 20K examples with ground truth imaginations, answers, and evaluation benchmarks. Using the unified VLMBAGELas the backbone, IPTsupervisionconsistently improvesspatial reasoningand often outperforms textual chain of thought training, even without generating images at inference time. On MVC, IPT improves accuracy by 3.4% and achieves competitive performance with strong closed-source models on PT. We further find that combining IPT and label-onlysupervisionyields additional gains, whereas textual chain of thought can substantially degrade performance, suggesting a modality mismatch when spatial computation is forced through language. Overall, IPT provides a principledsupervisionsignal for reasoning about unobserved spatial structure, improvinggeneralizationwhile producing interpretableintermediate representations.",
+      "published_date": "Jun 3",
+      "github_url": "https://github.com/weikaih04/Imaginative-Perception-Token",
+      "org_tag": "University of Washington"
     },
     {
-      "title": "Harness-1: Reinforcement Learning for Search Agents with State-Externalizing Harnesses",
-      "url": "https://huggingface.co/papers/2606.02373",
-      "likes": 46,
-      "date": "2026-06-07",
-      "abstract": "Search agentsare often trained as policies over growing transcripts: the model must decide how to search while also remembering what it has seen, which evidence is useful, which constraints remain open, and which claims have actually been checked. We argue that this formulation puts too much routine state management inside the policy:reinforcement learningis forced to optimize both semantic search decisions and recoverable bookkeeping that the environment can maintain more reliably. We introduce Harness-1, a 20B search agent (retrieval subagent) trained withreinforcement learninginside astateful search harness. The harness maintains environment-sideworking memory, including acandidate pool, an importance-taggedcurated set, compactevidence links,verification records, compressed and deduplicated observations, and budget-awarecontext rendering. The policy retains the semantic decisions: what to search, which documents to keep or discard, what to verify, and when to stop. Across eightretrieval benchmarksspanning web, finance, patents, andmulti-hop QA, Harness-1 achieves 0.730 averagecurated recall, outperforming the next strongest open search subagent by +11.4 points and remaining competitive with much larger frontier-model searchers. Its gains are especially strong on held-out transfer benchmarks, suggesting thatreinforcement learningover explicit search state can produce retrieval behaviors that generalize beyond the training domains. Our code is available at https://github.com/pat-jj/harness-1.",
-      "published_date": "Jun 1",
-      "github_url": "https://github.com/pat-jj/harness-1",
-      "org_tag": "chroma"
+      "title": "SWE-Explore: Benchmarking How Coding Agents Explore Repositories",
+      "url": "https://huggingface.co/papers/2606.07297",
+      "likes": 110,
+      "date": "2026-06-14",
+      "abstract": "Repository-level coding benchmarks such asSWE-benchhave driven a rapid surge in the capabilities ofcoding agents. Yet they usually treat coding tasks as a holistic, binary prediction problem (e.g., resolved or unresolved), neglecting fine-grained agent capabilities such asrepository understanding,context retrieval,code localization, andbug diagnosis. In this paper, we introduceSWE-Explore, a benchmark that isolates the evaluation ofrepository exploration, a critical capability ofcoding agents. Given a repository and an issue,SWE-Exploreasks an explorer to return a ranked list of relevant code regions under a fixedline budget.SWE-Explorecovers 848 issues across 10 programming languages and 203 open-source repositories. For each instance, we derive line-level ground truth from independent agent trajectories that successfully solved the same issue, distilling the specific code regions their solution paths actually consulted. We evaluate exploration along coverage,ranking, andcontext-efficiencydimensions, showing that these metrics strongly track downstream repair behavior. Across a broad set ofretrieval methods, generalcoding agents, and specialized localizers, we find thatagentic explorersform a clear tier above classical retrieval. While file-level localization is already strong for modern methods,line-level coverageand efficientrankingremain the key axes differentiating state-of-the-art explorers.",
+      "published_date": "Jun 5",
+      "github_url": "https://github.com/Qiushao-E/SWE-Explore-Bench",
+      "org_tag": "Shanghai Jiao Tong University"
+    },
+    {
+      "title": "Toward Generalist Autonomous Research via Hypothesis-Tree Refinement",
+      "url": "https://huggingface.co/papers/2606.11926",
+      "likes": 109,
+      "date": "2026-06-14",
+      "abstract": "Scientific progress depends on a repeated loop of exploration, experimentation, and abstraction. Researchers test candidate directions, interpret the evidence, and carry the resulting lessons into later attempts. We study how an AI agent can run this loop autonomously overlong horizons. We introduce Arbor, a general framework forautonomous researchthat combines a long-livedcoordinator, short-livedexecutors, andHypothesis Tree Refinement(HTR), a persistent tree that links hypotheses, artifacts, evidence, and distilled insights across time. Thecoordinatormanages global research strategy over the tree, whileexecutorsimplement and test individual hypotheses in isolatedworktrees. As results return, Arbor updates the tree, propagates reusable lessons, refines the search frontier, and admits verified improvements. This design turnsautonomous researchfrom a sequence of local attempts into a cumulative process in which strategy, execution, and evidence are carried across time. We evaluate Arbor under Autonomous Optimization (AO), an operational setting where an agent improves an initialresearch artifactthroughiterative experimentationwithout step-level human supervision. Across six real research tasks in model training, harness engineering, and data synthesis, Arbor achieves the bestheld-out resulton all six tasks, attaining more than 2.5x the average relative held-out gain of Codex and Claude Code under the same task interface and resource budget. OnMLE-Bench Lite, Arbor reaches 86.36% Any Medal with GPT-5.5, the strongest result in our comparison.",
+      "published_date": "Jun 10",
+      "github_url": "https://github.com/RUC-NLPIR/Arbor",
+      "org_tag": "NLPIR Lab @ RUC"
+    },
+    {
+      "title": "MiniMax Sparse Attention",
+      "url": "https://huggingface.co/papers/2606.13392",
+      "likes": 107,
+      "date": "2026-06-14",
+      "abstract": "Ultra-long-context capability is becoming indispensable for frontier LLMs: agentic workflows, repository-scale code reasoning, and persistent memory all require the model to jointly attend over hundreds of thousands to millions of tokens, yet the quadratic cost of softmax attention makes this untenable at deployment scale. We introduce MiniMaxSparse Attention(MSA), ablockwise sparse attentionbuilt uponGrouped Query Attention(GQA). A lightweight Index Branch scores key-value blocks and independently selects a Top-k subset for each GQA group, enabling group-specific sparse retrieval while maintaining efficient block-level execution; the Main Branch then performs exact block-sparse attentionover only the selected blocks. Designed around a principle of simplicity and scalability, MSA is deliberately streamlined, making it straightforward to deploy efficiently across a broad range of GPUs. To translate sparsity into practical speedups, we co-design MSA with a GPU execution path that uses exp-freeTop-k selectionand KV-outersparse attentionto improvetensor-core utilizationunder block-granular access. On a 109B-parameter model with native multimodal training, MSA performs on par with GQA while reducing per-tokenattention computeby 28.4x at 1M context. Paired with our co-designed kernel, MSA achieves 14.2xprefilland 7.6xdecodingwall-clock speedups on H800. Our inference kernel is available at: https://github.com/MiniMax-AI/MSA. A production-grade natively multimodal model powered by MSA has been publicly released at: https://huggingface.co/MiniMaxAI/MiniMax-M3.",
+      "published_date": "Jun 11",
+      "github_url": "https://github.com/MiniMax-AI/MSA",
+      "org_tag": "MiniMax"
+    },
+    {
+      "title": "WeaveBench: A Long-Horizon, Real-World Benchmark for Computer-Use Agents with Hybrid Interfaces",
+      "url": "https://huggingface.co/papers/2606.09426",
+      "likes": 95,
+      "date": "2026-06-14",
+      "abstract": "Computer-use agents(CUAs) increasingly operate in runtimes that combine visual desktop control, command-line execution, code editing, browsers, and external tools. Existing benchmarks, however, often evaluate these interfaces as separable capabilities, leaving long-horizon cross-interface orchestration under-tested. Thus, we introduce WeaveBench, a long-horizonhybrid-interface benchmarkwith 114 tasks across 8real-world work domains, grounded in real user requests and publicly verifiable artifacts. Each task requires agents to combineGUI observations/actions with CLI/code operations within a single trajectory. We evaluate these tasks on a real Ubuntu desktop inside deployed CLI-agent runtimes, augmented with a minimal desktop-control plugin. We also propose a companiontrajectory-aware judgethat inspects deliverables, files, screenshots, logs, and action traces, while detecting shortcut behaviors such as fabricated visual evidence or hard-coded metrics. Across frontier model-runtime pairings, the best PassRate reaches only 41.2%, showing the benchmark remains far from saturated. Thetrajectory-aware judgefurther reveals thatoutcome-only gradingsubstantially overestimates agent performance. Overall, WeaveBench exposes a critical gap in CUA evaluation and provides an effective testbed to measure whether agents can orchestrate GUI, CLI, and code operations across long-horizon real-world tasks.",
+      "published_date": "Jun 8",
+      "github_url": "https://github.com/weavebench/WeaveBench",
+      "org_tag": "Microsoft"
+    },
+    {
+      "title": "Your UnEmbedding Matrix is Secretly a Feature Lens for Text Embeddings",
+      "url": "https://huggingface.co/papers/2606.07502",
+      "likes": 91,
+      "date": "2026-06-14",
+      "abstract": "Large language modelsexhibit impressive zero-shot capabilities across a wide range of downstream tasks. However, they struggle to function as off-the-shelf embedding models, leading to suboptimal performance on massive text embedding benchmarks. In this paper, we identify a potential cause underlying this deficiency. Our motivation stems from an unexpected observation:text embeddingstend to align with frequent but uninformative tokens when projected onto the vocabulary space. We argue that this excessive expression ofhigh-frequency tokenssuppresses the model's ability to capture nuanced semantics. To address this, we introduce EmbedFilter, a simplelinear transformationdesigned to refinetext embeddingsderived from LLMs directly. Specifically, we uncover that theunembedding matrixwithin LLMs encodes a latent space that is actively writing these frequent tokens into embedding space. By filtering out this subspace, EmbedFilter suppress the influence ofhigh-frequency tokens, thereby enhancingsemantic representations. As a compelling byproduct, this enables an inherentdimensionality reduction, lowering index storage and speedup retrieval while fully preserving the refined embedding quality. Our experiments across multiple LLM backbones demonstrate that LLMs equipped with EmbedFilter achieve superior zero-shot downstream performance even with significantly reduced embedding dimensions. We hope our findings provide deeper insights into the mechanisms of LLM-based representations and inspire more principled designs to improvetext embeddingstraining. Our code is available at https://github.com/CentreChen/EmbFilter.",
+      "published_date": "Jun 5",
+      "github_url": "https://github.com/CentreChen/EmbFilter",
+      "org_tag": null
+    },
+    {
+      "title": "ResearchClawBench: A Benchmark for End-to-End Autonomous Scientific Research",
+      "url": "https://huggingface.co/papers/2606.07591",
+      "likes": 87,
+      "date": "2026-06-14",
+      "abstract": "AI coding agents are increasingly used for scientific work, but their end-to-endautonomous researchcapability remains difficult to verify. We present ResearchClawBench, a benchmark for evaluating autonomousscientific researchacross 40 tasks from 10 scientific domains. Each task is grounded in a real published paper, provides related literature and raw data, and hides the target paper during evaluation. Expert-curatedmultimodal rubricsdecompose the target scientific artifacts into weighted criteria, enabling evaluation of target-paper-levelre-discoverywhile leaving room for new discovery. We evaluate sevenautonomous research(auto-research) agents under a unified protocol and seventeen native LLMs through the lightweight ResearchHarness. Current systems remain far from reliablere-discovery: the strongest autonomous agent, Claude Code, averages 21.5, and the strongest ResearchHarness LLM, Claude-Opus-4.7, averages 20.7, with an LLM frontier mean of only 26.5.Error analysisshows that failures concentrate inexperimental protocol mismatch,evidence mismatch, and missingscientific core. ResearchClawBench provides a reproducible evaluation frontier for measuring progress toward autonomousscientific research.",
+      "published_date": "May 28",
+      "github_url": "https://github.com/InternScience/ResearchClawBench",
+      "org_tag": "Intern Science"
+    },
+    {
+      "title": "SpatialClaw: Rethinking Action Interface for Agentic Spatial Reasoning",
+      "url": "https://huggingface.co/papers/2606.13673",
+      "likes": 83,
+      "date": "2026-06-14",
+      "abstract": "Spatial reasoning, the ability to determine where objects are, how they relate, and how they move in 3D, remains a fundamental challenge forvision-language models(VLMs).Tool-augmented agentsattempt to address this by augmenting VLMs with specialist perception modules, yet their effectiveness is bounded by theaction interfacethrough which those tools are invoked. In this work, we study how the design of this interface shapes the agent's capacity for open-endedspatial reasoning. Existing spatial agents either employ single-passcode execution, which commits to a full analysis strategy before any intermediate result is observed, or rely on a structured tool-call interface that often offers less flexibility for freely composing operations or tailoring the analysis to each task. Both designs offer limited flexibility for open-ended, complex3D/4D spatial reasoning. We therefore propose SpatialClaw, a training-free framework forspatial reasoningthat adopts code as theaction interface. SpatialClaw maintains a statefulPython kernelpre-loaded with input frames and a suite of perception andgeometry primitives, letting a VLM-backed agent write one executable cell per step conditioned on all prior outputs, enabling the agent to flexibly compose and manipulate perception results and adapt its analysis to both intermediate text and visual observations and the demands of each problem. Evaluated across 20spatial reasoningbenchmarksspanning a broad range of static and dynamic3D/4D spatial reasoningtasks, SpatialClaw achieves 59.9% average accuracy, outperforming the recent spatial agent by +11.2 points, with consistent gains across sixVLM backbonesfrom two model families without any benchmark- or model-specific adaptation.",
+      "published_date": "Jun 11",
+      "github_url": "https://github.com/NVlabs/SpatialClaw",
+      "org_tag": "NVIDIA"
+    },
+    {
+      "title": "Redesign Mixture-of-Experts Routers with Manifold Power Iteration",
+      "url": "https://huggingface.co/papers/2606.12397",
+      "likes": 83,
+      "date": "2026-06-14",
+      "abstract": "Routeris the cornerstone component to theMixture-of-Expertsmodels. Serving asexpert proxies, the rows of therouter matrixcompute their similarity to the MoE inputs to determine which subset of experts is activated. Ideally, eachrouterrow is designed to encode theexpert matrixinto this representative vector, such that its dot-product with token can better reflect token-expert affinity. However, there exists no design principles to enforce this condensation. In this paper, we propose to align eachrouterrow with theprincipal singular directionof the associated expert, as this direction provides the most expressive mathematical description of a matrix. Based on this principle, we propose arouterredesign withManifold Power Iteration(MPI). Specifically, it introduces a \"Power-then-Retract\" paradigm, where apower iterationstep is performed on therouterweights, followed by aretractionto impose a norm constraint to ensure both efficiency and stability. Theoretically, we show that MPI drivesrouterrows to converge toward theprincipal singular directions of associated experts. Empirically, we pretrain MoE model across scales from 1B to 11B parameters to confirm that this alignment facilitates more effective MoE models.",
+      "published_date": "Jun 10",
+      "github_url": "https://github.com/ericshwu/Router-with-Manifold-Power-Iteration",
+      "org_tag": null
+    },
+    {
+      "title": "InterleaveThinker: Reinforcing Agentic Interleaved Generation",
+      "url": "https://huggingface.co/papers/2606.13679",
+      "likes": 75,
+      "date": "2026-06-14",
+      "abstract": "Recentimage generators have demonstrated impressive photorealism and instruction-following capabilities in single-image generation and editing. However, constrained by their architectures, they cannot achieveinterleaved generation(text-image sequence), which has crucial applications in visual narratives, guidance, and embodied manipulation. Even the latest open-source Unified Multimodal Models (UMMs) exhibit limited performance in this regard. In this paper, we introduce InterleaveThinker, the firstmulti-agent pipelinedesigned to endow any existingimage generatorwithinterleaved generationcapabilities. Specifically, we employ aplanner agentto organize the image-text input sequence, instructing theimage generatoron the required execution at each step. Subsequently, we introduce acritic agentto evaluate the generator's outputs, identify samples that deviate from the planned instructions, and refine the instructions for regeneration. To implement this pipeline, we construct the Interleave-Planner-SFT-80k and Interleave-Critic-SFT-112k to perform a format cold-start. Then we develop Interleave-Critic-RL-13k to reinforce the step-wise instruction correction capability within a generation trajectory usingGRPO. Since a singleinterleaved generationtrajectory may involve over 25 generator calls, optimizing the entire trajectory is computationally impractical. Therefore, we proposeaccuracy rewardandstep-wise reward, allowing single-step RL to effectively guide the entire generation trajectory. The results show that InterleaveThinker improves performance across variousimage generators. Oninterleaved generationbenchmarks, it achieves performance comparable to Nano Banana and GPT-5. Surprisingly, it also significantly enhances the base model on reasoning-based benchmarks; for example, on 4-step FLUX.2-klein, we observe substantial gains on WISE and RISE.",
+      "published_date": "Jun 11",
+      "github_url": "https://github.com/zhengdian1/InterleaveThinker",
+      "org_tag": null
+    },
+    {
+      "title": "MaxProof: Scaling Mathematical Proof with Generative-Verifier RL and Population-Level Test-Time Scaling",
+      "url": "https://huggingface.co/papers/2606.13473",
+      "likes": 75,
+      "date": "2026-06-14",
+      "abstract": "We present MaxProof, a population-leveltest-time scalingframework for competition-levelmathematical proofin theMiniMax-M3 series. M3 first trains three proof-oriented capabilities --proof generation,proof verification, andcritique-conditioned proof repair-- using a defense-in-depthgenerative verifierengineered for low false-positive rate. These capabilities are merged into a single released M3 model. At test time, MaxProof treats the model as a generator, verifier, refiner, and ranker, searches over a population of candidate proofs, and returns one final proof throughtournament selection. With MaxProoftest-time scaling, the M3 model reaches 35/42 on IMO 2025 and 36/42 on USAMO 2026, exceeding the human gold-medal threshold on both.",
+      "published_date": "Jun 11",
+      "github_url": null,
+      "org_tag": "MiniMax"
+    },
+    {
+      "title": "Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution",
+      "url": "https://huggingface.co/papers/2606.10917",
+      "likes": 75,
+      "date": "2026-06-14",
+      "abstract": "AlthoughLarge Language Model(LLM) agents have demonstrated strong performance on complex tasks, their learning is often limited by inefficient interaction feedback and static training environments, which hinder broader generalization. To address these limitations, this paper introduces Role-Agent, black{a framework} that harnesses a single LLM to function concurrently as both the agent and the environment, enabling abootstrapped co-evolution. Role-Agent comprises two synergistic components:World-In-Agent(WIA) andAgent-In-World(AIW). In WIA, the LLM acts as the agent and predicts future states after each action; the alignment between predicted and actual states is then used as a process reward, encouragingenvironment-aware reasoning. In AIW, the LLM analyzes failure modes from failed trajectories and retrieves tasks with similar failure patterns, thereby reshaping the training data distribution fortargeted practice. Experiments on multiple benchmarks show that Role-Agent consistently improves performance, yielding an average gain of over 4\\% over strong baselines.",
+      "published_date": "Jun 9",
+      "github_url": "https://github.com/AMAP-ML/roleagent",
+      "org_tag": null
+    },
+    {
+      "title": "Robust-U1: Can MLLMs Self-Recover Corrupted Visual Content for Robust Understanding?",
+      "url": "https://huggingface.co/papers/2606.08063",
+      "likes": 74,
+      "date": "2026-06-14",
+      "abstract": "Multimodal Large Language Models(MLLMs) have demonstrated remarkable success in visual understanding, yet their performance degrades significantly under real-worldvisual corruptions. While existingrobustness enhancementapproaches exist, they are limited: black-box feature alignment lacks interpretability, and white-box text-based reasoning cannot restore lost pixel-level details. This work investigates a fundamental research question: Can MLLMs recover corrupted visual content by themselves? To address this, we propose Robust-U1, a novel framework that equips MLLMs with explicitvisual self-recoverycapability for robust understanding. The approach comprises three core stages:supervised fine-tuningfor initial reconstruction,reinforcement learningwithdual rewards(pixel-level SSIMandsemantic-level CLIP similarity) for aligning high visual quality, andmultimodal reasoningthat jointly considers both the corrupted input and the recovered image. Extensive experiments demonstrate that Robust-U1 achieves state-of-the-art robustness on the real-world corruption benchmark and maintains superior performance under adversarial corruptions on general VQA benchmarks. Analysis confirms that high-quality visual recovery directly enhances reasoning performance, establishing self-recovery as a critical mechanism for robust visual understanding. The source code is available at https://github.com/jqtangust/Robust-U1.",
+      "published_date": "Jun 6",
+      "github_url": "https://github.com/jqtangust/Robust-U1",
+      "org_tag": "Jiaqi-hkust/Robust-U1"
+    },
+    {
+      "title": "FORT-Searcher: Synthesizing Shortcut-Resistant Search Tasks for Training Deep Search Agents",
+      "url": "https://huggingface.co/papers/2606.12087",
+      "likes": 71,
+      "date": "2026-06-14",
+      "abstract": "Trainingdeep search agentsrequires verifiable questions whose answers remain unavailable until sufficient evidence has been acquired through search. Existing synthesis methods often increase apparent difficulty by enriching graph structures, but structural complexity alone does not guarantee realized search difficulty: the intended search process can collapse through a cheaper identifying route. We formalize this gap with ashortcut-aware difficulty frameworkand identify four actionableshortcut risks: evidence co-coverage, single-clue selectivity, exposed constants, and prior-knowledge binding. To diagnose their realized effects, we usetrajectory signaturesincluding solving cost, answer hit time, and prior-shortcut rate. Guided by this framework, we introduceFORT, a Framework of Shortcut-Resistant Training-Data Synthesis.FORTconstructs shortcut-resistant training data by controllingshortcut risksacross entity selection, evidence graph construction, question formulation, and adversarial refinement. Experiments show thatFORTinduces longer pre-answer search and fewer shortcut patterns than existing open-source deep search datasets. Using the resulting trajectories, we trainFORT-Searcher withsupervised fine-tuning(SFT) only, and it achieves the best overall performance among comparable-size open-source search agents on challengingdeep search benchmarks. Relevant resources will be made available at https://github.com/RUCAIBox/FORT-Searcher.",
+      "published_date": "Jun 10",
+      "github_url": "https://github.com/RUCAIBox/FORT-Searcher",
+      "org_tag": null
+    },
+    {
+      "title": "On the Geometry of On-Policy Distillation",
+      "url": "https://huggingface.co/papers/2606.07082",
+      "likes": 71,
+      "date": "2026-06-14",
+      "abstract": "On-policy distillation(OPD) is increasingly used to improve large language model reasoning, but its training dynamics remain poorly understood. We characterize the trajectory of OPD updates inparameter spaceand compare it withsupervised fine-tuning(SFT) andreinforcement learningwithverifiable rewards(RLVR). A suite ofparameter-space diagnosticsconsistently places OPD in a relaxed off-principal regime: compared with SFT, its updates affect fewer weights and avoid principal directions more strongly, while compared with RLVR, they remain less tightly constrained. Beyond this static localization, OPD exhibitssubspace locking: its cumulative updates rapidly enter a narrow low-dimensional channel. Constraining training to theupdate subspaceformed early in training preserves OPD performance but substantially degrades SFT, indicating that the locked subspace is functionally sufficient for OPD. Control experiments further show that sparsifying the update tokens and shifting rollout generation off-policy preserve therank dynamics, whereas mixing the OPD objective with RLVR changes them. Overall, these results suggest that OPD is not merely an intermediate point between SFT and RLVR, but induces its own update geometry inparameter space.",
+      "published_date": "Jun 5",
+      "github_url": null,
+      "org_tag": "香港科技大学"
+    },
+    {
+      "title": "Latent Spatial Memory for Video World Models",
+      "url": "https://huggingface.co/papers/2606.09828",
+      "likes": 65,
+      "date": "2026-06-14",
+      "abstract": "Video world modelsthat maintain 3D spatial consistency across generated frames typically rely on explicitpoint cloud memoryconstructed inRGB space. This design is both computationally expensive, requiring repeated rendering and VAE encoding, and inherently lossy, as the round trip through pixel space discards rich features of the learned latent representation. In this paper, we introducelatent spatial memoryforvideo world models, a persistent 3D cache that stores scene information directly in thediffusion latent space, avoiding pixel-space reconstruction. Building on this, we propose Mirage, a latent-space spatial memory framework that constructs the memory by lifting latent tokens into 3D viadepth-guided back-projectionand queries it by synthesizing novel views through directlatent-space warping. This unified formulation eliminates both the information loss of pixel-space reconstruction and the computational burden of repeated encoding and rendering. Experiments show thatlatent spatial memoryachieves up to 10.57times fasterend-to-end video generationand 55times reduction inmemory footprintrelative to explicit 3D baselines. Leveraging the geometric prior of the diffusion model, Mirage attains state-of-the-art performance onWorldScoreand strong reconstruction quality onRealEstate10K.",
+      "published_date": "Jun 8",
+      "github_url": "https://github.com/microsoft/LatentSpatialMemory",
+      "org_tag": "Microsoft Research"
     }
   ]
 }
