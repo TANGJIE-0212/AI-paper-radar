@@ -1,206 +1,206 @@
 {
-  "week": "2026-W27",
-  "dateRange": "2026-06-28 to 2026-07-04",
+  "week": "2026-W28",
+  "dateRange": "2026-07-05 to 2026-07-11",
   "papers": [
     {
-      "title": "Orca: The World is in Your Mind",
-      "url": "https://huggingface.co/papers/2606.30534",
-      "likes": 230,
-      "date": "2026-07-05",
-      "abstract": "We introduce Orca, an initial instantiation of a generalworld foundation model. Orca learns a unifiedworld latent spacefrom multimodal world signals and exposes it throughmultimodal readout interfaces. Rather than optimizing isolated next-token, next-frame, or next-action prediction, we are centered onNext-State-Prediction modeling, offering a unified state-transition modeling route toward understanding, predicting, and acting upon the world. Orca learns through two complementary paradigms:unconscious learningcaptures dense natural state transitions from continuous videos, andconscious learningmodels sparse meaningful state transitions by language-described events and VQA supervision. For pre-training, we construct a large-scaleworld-learning inventory data, including 125K hours of video data and 160M event annotations. After pre-training, Orca learns a unifiedworld latent space. To examine whether the learned latent supports downstream, we evaluate it by three representativedownstream readouts: text generation, image prediction, andembodied action generation. Orca's backbone is frozen, and only the lightweightmodality-specific decodersare trainable. Experiments show the scalability of the proposed paradigm and verify that stronger world latent enables strongerdownstream readouts. Orca outperforms similar-sized specialized baselines. These results show that Orca, as a generalworld foundation model, presents a promising approach to understanding, predicting, and acting upon the world. Finally, we discuss the current limitations, aiming to provide useful insights and inspiration for the community.",
-      "published_date": "Jun 29",
-      "github_url": null,
-      "org_tag": null
-    },
-    {
-      "title": "Agentic Abstention: Do Agents Know When to Stop Instead of Act?",
-      "url": "https://huggingface.co/papers/2606.28733",
-      "likes": 141,
-      "date": "2026-07-05",
-      "abstract": "LLM agents are expected to act over multiple turns, using search, browsing interfaces, and terminal tools to complete user goals. Yet not every goal is well specified or achievable in the available environment. In such cases, a reliable agent should recognize that further interaction is unlikely to help and abstain from additional tool calls. We defineAgentic Abstention, the problem of deciding when an agent should stop acting under uncertainty. Unlike standard LLM abstention, which is usually evaluated as a single-turn answer-or-abstain decision,agentic abstentionis asequential decision problem: an agent can answer, abstain, or gather more information at each turn, and the need to abstain may only become clear after interacting with the environment. We study this problem acrossweb shopping,terminal environments, andquestion answering, evaluating 13LLM-as-agent systemsand 2 agent scaffolds on more than 28,000 tasks. Our results show that the main challenge is not only whether agents can abstain, but also when they abstain. Some agents never abstain when they should, while others do so only after many unnecessary interactions. This gap is especially large on tasks where the instruction appears feasible until the environment reveals otherwise (e.g., no valid result matches the instruction). We further find that model scale, reasoning, and agent scaffolding affect abstention in different ways, where larger or more capable models sometimes perform worse at timely abstention. Finally, we introduceCONVOLVE, acontext engineeringmethod for improvingagentic abstentionthat distills full interaction trajectories into reusablestopping rules. On WebShop,CONVOLVEsubstantially improves timely abstention without updating model parameters, raising Llama-3.3-70B's timely recall rate from 26.7 to 57.4. Our dataset and code are available at https://lhannnn.github.io/agentic-abstention",
-      "published_date": "Jun 27",
-      "github_url": "https://github.com/lhannnn/agentic-abstention",
-      "org_tag": "University of Washington"
-    },
-    {
-      "title": "Dockerless: Environment-Free Program Verifier for Coding Agents",
-      "url": "https://huggingface.co/papers/2606.28436",
-      "likes": 103,
-      "date": "2026-07-05",
-      "abstract": "Program verifiersplay a central role in training coding agents, including selecting trajectories forsupervised fine-tuning(SFT) andproviding rewards forreinforcement learning(RL). Standard execution-based verification requires running unit tests inside per-repository environments such as Docker images, incurring substantial environment setup costs. WeproposeDockerless, anenvironment-freeagentic patch verifierthat evaluates generated code patches without executing them. Rather than simply matching candidate patches to references,Dockerlessjudges patch correctness using evidence gathered through agenticrepository exploration. On a verifier evaluation benchmark,Dockerlessoutperforms the strongest open-source verifier by 14.3 AUC points. UsingDockerlessas both the SFT trajectory filter and the RL reward enables a fullyenvironment-freepost-training pipeline. The resulting model reaches 62.0%, 50.0%, and 35.2% resolve rate onSWE-bench Verified,Multilingual, andPro, respectively. It surpasses the Qwen3.5-9B baseline by 2.4, 8.7, and 2.9 points, matching environment-based post-training.",
-      "published_date": "Jun 26",
-      "github_url": null,
-      "org_tag": "ByteDance"
-    },
-    {
-      "title": "DOPD: Dual On-policy Distillation",
-      "url": "https://huggingface.co/papers/2606.30626",
-      "likes": 93,
-      "date": "2026-07-05",
-      "abstract": "On-policy distillation(OPD) offers superior capacity transfer by supervising student-sampled trajectories with densetoken-level signals. To furnish high-quality supervision sources and thereby elevate the performance frontier of distillation, an intuitive direction is to infuseprivileged informationto either teacher or student itself. However, this additional input induces a potential failure mode we dubprivilege illusion: a pattern that conflates the transferable capability gap that students are meant to close, and the information asymmetry gap that can only be mimicked but never replicated. This issue is further amplified by the inherent non-uniformity of token-level supervision, where only a small subset of tokens carries pivotal capability-bearing signals. To this end, we propose DOPD, anadvantage-aware dual distillationparadigm that dynamically routes token-level supervision between privileged teacher and privileged student policies based on their advantage gap and relative probabilities. Each token receives supervision of different strength, objective, and strategy from either teacher or student itself, which transfers credible capability while simultaneously receiving auxiliary signals, to alleviateprivilege illusion. Extensive experiments on both large language model (LLM) and vision-language model (VLM) settings demonstrate that DOPD consistently outperforms Vanilla OPD and other counterparts. Further results on stability, robustness, continual learning, and out-of-distribution tasks validate its superiority.",
-      "published_date": "Jun 29",
-      "github_url": null,
-      "org_tag": null
-    },
-    {
-      "title": "Scaling the Horizon, Not the Parameters: Reaching Trillion-Parameter Performance with a 35B Agent",
-      "url": "https://huggingface.co/papers/2606.30616",
-      "likes": 86,
-      "date": "2026-07-05",
-      "abstract": "We introduce Agents-A1, a 35BMixture-of-ExpertsAgentic Modelthat reaches trillion-parameter-level performance by scaling theagent horizon. We investigate agent-horizon scaling from two perspectives: scalinglong-horizon trajectoriesand scalingheterogeneous agent abilities. To support this goal, we build a long-horizonknowledge-action infrastructurethat connects external knowledge, actions, observations, and verifier outcomes, producingagentic trajectorieswith an average length of 45K tokens. Based on this, we train Agents-A1 with a three-stage recipe. First, we perform full-domainsupervised fine-tuningto align the base model with broad agentic behaviors. Second, we traindomain-level teacher modelsto capture specialized expertise in each domain. Third, we propose amulti-teacher domain-routed on-policy distillationwithsalient vocabulary alignmentto improve knowledge transfer efficiency across different domains, unifying six heterogeneous domains into one deployable student model. Agents-A1 achieves strong and broad performance for long-horizon agent benchmarks. Compared with 1T-parameter model such as Kimi-K2.6 and DeepSeek-V4-pro, Agents-A1 achieves leading results on SEAL-0 (56.4), IFBench (80.6), HiPhO (46.4), FrontierScience-Olympiad (79.0), and MolBench-Bind (56.8), and remains highly competitive on SciCode (44.3), HLE (47.6) and BrowseComp (75.5). We hope this work provides the community with a practical path for scaling the horizon using a 35B agent that can reach or match the performance of 1T models on long-horizon tasks.",
-      "published_date": "Jun 29",
-      "github_url": "https://github.com/InternScience/Agents-A1",
-      "org_tag": "Intern Science"
-    },
-    {
-      "title": "LiveEdit: Towards Real-Time Diffusion-Based Streaming Video Editing",
-      "url": "https://huggingface.co/papers/2606.26740",
-      "likes": 81,
-      "date": "2026-07-05",
-      "abstract": "Streaming video editinghas made rapid progress, yet practical deployment is still limited by two core issues: maintaining stable backgrounds and non-edited regions over time, and achieving the low latency required for real-time interactive scenarios. Meanwhile, recent streaming video generation methods are mostly developed for synthesis and cannot be directly applied to editing due to the strict preservation requirement and region-specific control. In this work, we present a novelstreaming video editingframework that performs causal,frame-by-frame editingwith strongcontent preservationandreal-time responsiveness. Our key design is athree-stage distillation pipelinethat progressively transfers editing capability from a powerfulbidirectional foundation modelto an efficientunidirectional streaming editor, enabling stablelong-horizon editswithout sacrificing visual fidelity. To further support real-time deployment, we introduce anAR-oriented mask cachethat reuses region-related computation across frames, substantially reducing redundant processing and accelerating inference. Finally, we establish a dedicated benchmark forstreaming video editing. Extensive evaluations demonstrate that our method achieves state-of-the-art visual quality among streaming baselines while drastically boostinginference speedto 12.66 FPS, making it suitable for interactive andaugmented realityapplications.",
-      "published_date": "Jun 25",
-      "github_url": "https://github.com/cp-cp/LiveEdit",
-      "org_tag": "Tsinghua University"
-    },
-    {
-      "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
-      "url": "https://huggingface.co/papers/2607.02512",
-      "likes": 74,
-      "date": "2026-07-05",
-      "abstract": "Many everyday programming tasks resist clean rule-based implementation, such as alerting on important log lines, repairing malformed JSON, or ranking search results by intent, and are increasingly outsourced to large language model APIs at the cost of locality, reproducibility, and price. We propose fuzzy-function programming: compiling such a function from a natural-language specification into a compact, locally-executableneural artifact. We instantiate this paradigm withProgram-as-Weights(PAW), in which a 4B compiler trained onFuzzyBench, a 10M-example dataset we release, emitsparameter-efficient adaptersfor a frozen, lightweight interpreter. A 0.6B Qwen3 interpreter executing PAW programs matches the performance of direct prompting of Qwen3-32B, while using roughly one fiftieth of the inference memory and running at 30 tokens/s on a MacBook M3. PAW reframes thefoundation modelfrom a per-input problem solver into atool builder: invoked once per function definition, it produces a small reusable artifact whose subsequent calls per function application are cheap and offline.",
-      "published_date": "Jul 2",
-      "github_url": "https://github.com/programasweights/programasweights-python",
-      "org_tag": "University of Waterloo"
-    },
-    {
-      "title": "BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding",
-      "url": "https://huggingface.co/papers/2606.31315",
-      "likes": 73,
-      "date": "2026-07-05",
-      "abstract": "Speculative decodingaccelerates inference by using a lightweightdraft modelto generate candidate tokens in parallel, and are then verified by thetarget model, enabling lossless acceleration. Recently,diffusion-based speculative decodingfurther improves parallelism by generating multiple tokens per forward pass viablock-level diffusion, achieving state-of-the-art (SOTA) performance. However, existing methods adopt a fixedinference block sizeand assume a uniform optimal decoding strategy across all inputs. In this paper, we show that this assumption is suboptimal, as the optimal block size varies across samples and plays a critical role inspeculative decodingperformance. Moreover, these values exhibit a clear local structure, concentrating around the training block size, which reduces the problem to a low-dimensional and structured decision space. Based on these insights, we propose BlockPilot, a sample-adaptive policy that predicts the optimal block size from theprefilling representation. Specifically, we formulate block size selection as a lightweightpolicy learningproblem and propose aninstance-adaptive decision mechanismthat predicts the optimal block size based on the representation of the prefilling stage. The prediction is performed only once after prefilling, allowing for seamless integration. Extensive experiments demonstrate that our method is plug-and-play, introduces minimal overhead, and consistently improves efficiency, achieving an acceptance length of 5.92 and a 4.20times speedup on Qwen3-4B under temperature T=1.",
-      "published_date": "Jun 30",
-      "github_url": "https://github.com/AMAP-ML/BlockPilot",
-      "org_tag": null
-    },
-    {
-      "title": "Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models",
-      "url": "https://huggingface.co/papers/2606.19297",
-      "likes": 68,
-      "date": "2026-07-05",
-      "abstract": "Embodied Vision-Language-Action (VLA) models are typically obtained by fine-tuning powerfulpretrained VLMsonrobotics data, yet it is unclear how much commonsense and factual knowledge they retain after adaptation. Failures onknowledge-sensitive tasksare ambiguous, conflating missing knowledge with poor generalization of low-level control. We introduce Act2Answer, a lightweight protocol that adapts VLM knowledge benchmarks to VLA evaluation by requiring agents to answer through action. Each question becomes a short tabletop episode where the agent performs a single object-placement action to select among candidate answers, yielding anaction-grounded success ratewith reduced control confounds. We curate a test suite of such environments across diverse commonsense andworld-knowledge categoriesand introducelayerwise intent probingto localize answer-relevant information across the VLM backbone and action head. In a large-scale study of 7 VLA models and 9 VLM baselines, we systematically rank models across categories, finding that VLAs show solid performance on simple concepts while exhibiting larger gaps on richersemantic categoriesrelative to their source VLMs, thatVQA co-trainingis associated with better knowledge retention, and that answer-relevant signals peak in middle VLA layers but attenuate in upper layers. Act2Answer is available at https://tttonyalpha.github.io/act2answer/.",
-      "published_date": "Jun 17",
-      "github_url": "https://github.com/CognitiveAISystems/Act2Answer",
-      "org_tag": null
-    },
-    {
-      "title": "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
-      "url": "https://huggingface.co/papers/2606.27378",
-      "likes": 58,
-      "date": "2026-07-05",
-      "abstract": "We introduce anaxiomatic evaluation frameworkforlatent thought representationsinLLMs, comprising metrics that are independent ofdownstream benchmark scoresand reveal representational failures that benchmark accuracy masks. Existing evaluations conflaterepresentation qualitywithmodel capacity. Therefore, failures cannot be attributed to the representation rather than to the model that processes it. We formalize fourfunctional axioms(Causality,Minimality,Separability, andStability) and define a quantitative measure for each, computed directly on the representation independently of downstream accuracy. We auditopen-weight LLMsacross 23reasoning tasks(e.g.,Spatial Reasoning,Factual QA). We find that no candidate satisfies all four axioms simultaneously, that the representations distinguish task type reliably but cannot distinguish between two questions within the same task, and that the representations encode little information beyond what is already present in the input embedding. The failure is consistent across dense, reasoning-distilled, and RL-trained model families, indicating that the gap is structural rather than a property of model size or training procedure.",
-      "published_date": "May 7",
-      "github_url": "https://github.com/fard-lab/formalize-thoughts",
-      "org_tag": null
-    },
-    {
-      "title": "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation",
-      "url": "https://huggingface.co/papers/2606.28128",
-      "likes": 50,
-      "date": "2026-07-05",
-      "abstract": "Video generation modelshave emerged as a promising paradigm forembodied world simulation. However, both general-domain video generators and robot-specific data fine-tuned models can still produce physically implausible manipulations, including discontinuous motion trajectories and inconsistent robot-object interactions, which limits their reliability as world simulators. Through extensive experiments, we find that such physical instability mainly arises from two factors: deformation of moving objects and implausible spatio-temporal correlations among interacting entities, particularly during contact. Building on this observation, we propose PhysisForcing, a scalable training framework that strengthensphysical consistencyby focusing supervision on physics-informative regions through joint optimization of pixel-level and semantic-level features. The framework consists of apixel-level trajectory alignment loss, which supervisesDiT featuresusing reference point trajectories, and asemantic-level relational alignment loss, which alignsDiT featureswith inter-region relations extracted from a frozenvideo understanding encoder. Extensive experiments onR-Bench,PAI-Bench, andEZS-Benchshow that PhysisForcing consistently improves embodied video generation over strong baselines, improving the Wan2.2-I2V-A14B and Cosmos3-Nano base models onR-Benchby 22.3\\% and 9.2\\% (7.1\\% and 3.7\\% over vanilla finetuning), with the Cosmos3-Nano variant attaining the best overall score. Beyond generation, as a world model under theWorldArenaaction-planner protocolit raises theclosed-loop success ratefrom 16.0\\% to 24.0\\% and further improves downstream policy success, indicating that physically aligned video models yield stronger representations forrobotic manipulation.",
-      "published_date": "Jun 26",
-      "github_url": "https://github.com/DAGroup-PKU/PhysisForcing",
-      "org_tag": "NVIDIA"
-    },
-    {
-      "title": "Scenes as Objects, Not Primitives: Instance-Structured 3D Tokenization from Unposed Views",
-      "url": "https://huggingface.co/papers/2606.29513",
-      "likes": 49,
-      "date": "2026-07-05",
-      "abstract": "A 3D scene is understood through its objects, not the primitives that compose them. Yet feed-forward reconstruction methods output dense, unstructured sets of points or Gaussians, leaving object-level structure to be recovered after the fact. We propose afeed-forward frameworkthat decomposes a scene into instance-structured 3D token groups directly fromunposed multi-view images-- compact object-centric units from which reconstruction, segmentation, and manipulation all follow. Each token group pairs an instance token capturing entity-level identity with anchor tokens that encode local geometry and appearance, which are decoded into a set of3D Gaussians. This two-level factorization decouples object identity from local appearance, making object instances a native interface of the representation rather than a derived product. The token groups are learned throughdifferentiable renderingwithjoint reconstruction and segmentation supervision, requiring no 3D annotations. Our feed-forward model surpasses per-scene optimization baselines inclass-agnostic instance segmentationwhile remaining competitive innovel view synthesis. Beyond these metrics, the same token groups directly unlockinstance-level scene editing-- removing, translating, or inserting objects by operating on their groups -- as well as efficientopen-vocabulary 3D instance retrieval, where retrieval complexity scales with the number of instances rather than primitives.",
+      "title": "The Mirage of Optimizing Training Policies: Monotonic Inference Policies as the Real Objective for LLM Reinforcement Learning",
+      "url": "https://huggingface.co/papers/2606.29526",
+      "likes": 161,
+      "date": "2026-07-12",
+      "abstract": "Reinforcement learning(RL) has gained growing attention in large language model (LLM) post-training, yet RL training remains fragile and can suffer from instability or collapse. One vital cause istraining-inference mismatch: LLM adopts separate inference and training engines for generation efficiency and training precision, which in practice exhibits inconsistent probabilities for the same trajectories on training and inference sides, even with synchronized model parameters. This naturally induces a special type ofoff-policyness ever existing and poisoning the training. Prior works have made various efforts in addressing theoff-policyness to stabilize the training policies under the mismatch. In this paper, we point out the objective misalignment neglected by existing works that an effective update to the policy in the training engine not necessarily ensures the improvement of theinference policy, i.e., the one used in deployment. To this end, we propose a newpolicy optimizationobjective for LLM RL, named MonotonicInference PolicyImprovement (MIPI). Following this principle, we introduce MonotonicInference PolicyUpdate (MIPU), a two-step LLM RL framework that constructs sampler-referenced candidate updates and selectively accepts synchronized candidates using an inference-side gap proxy. Experiments conducted on two model scales under high mismatch show that MIPU improves averagereasoning performanceandtraining stability.",
       "published_date": "Jun 28",
       "github_url": null,
       "org_tag": null
     },
     {
-      "title": "Qwen-Image-2.0-RL Technical Report",
-      "url": "https://huggingface.co/papers/2606.27608",
-      "likes": 48,
-      "date": "2026-07-05",
-      "abstract": "We present Qwen-Image-2.0-RL, a post-training pipeline that appliesreinforcement learning from human feedback(RLHF) andon-policy distillation(OPD) to improve both the visual quality and instruction-following capability of the Qwen-Image-2.0 diffusion model. To provide reliable reward signals, we construct task-specific composite reward models by fine-tuningvision-language modelswith apointwise scoring paradigmandchain-of-thought reasoning. Fortext-to-image generation, the reward models cover alignment, aesthetics, and portrait fidelity dimensions. Forimage editingtasks, the reward system addresses instruction-following accuracy and face identity preservation. Building on this reward system, we develop a scalableGRPO-based RL training framework, incorporating ahybrid classifier-free guidance(CFG) strategy to preserve pre-trained knowledge, prompt curation viaintra-group reward range filtering, andper-category reward weight calibration. To merge the task-specialized RL policies for T2I and editing, we proposeon-policy distillationas the final training stage, which consolidates multiple teachers into a single student model throughtrajectory-level velocity matching. Extensive evaluation shows that Qwen-Image-2.0-RL achieves 57.84 overall score on Qwen-Image-Bench (+2.61 over the base model), Elo ratings of 1193 in text-to-image arena (+78) and 1349 in image edit arena (+93), demonstrating consistent gains in aesthetic quality, prompt adherence, and editing accuracy.",
-      "published_date": "Jun 25",
+      "title": "Vidu S1: A Real-Time Interactive Video Generation Model",
+      "url": "https://huggingface.co/papers/2607.03118",
+      "likes": 119,
+      "date": "2026-07-12",
+      "abstract": "We introduce Vidu S1, a real-time interactive video generation model supportingvoice controlofdigital characters. Users can control video generation content at any moment through voice instructions. Vidu S1 supports infinite-lengthreal-time video generationwithout blurring, drift, or visual distortion. Built withTurboDiffusionandTurboServe, Vidu S1 outputs 540p real-time videos at up to 42 FPS on regularconsumer GPUs. Users can upload custom images of real people, anime, and pets, and choose different voice tones for personalized experiences. Experiments show that Vidu S1 achieves the best performance across all test metrics while fully meeting real-time inference requirements. A playable online demo is available at https://vidu.com/vidu-stream.",
+      "published_date": "Jul 3",
+      "github_url": "https://github.com/shengshu-ai/Vidu-S1",
+      "org_tag": "Tsinghua University"
+    },
+    {
+      "title": "RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation",
+      "url": "https://huggingface.co/papers/2607.06559",
+      "likes": 89,
+      "date": "2026-07-12",
+      "abstract": "Robotic manipulation in the open world requires not only recognizing what a scene looks like, but also anticipating how its 3D structure moves under interaction. We argue that synchronized RGB, depth, and optical flow, namelyRGB-DF, provide a physically grounded representation that captures the underlying 4D dynamics of a scene. Compared to 2D pixel videos, this multi-modal synergy aligns visual appearance with geometric structure and temporal motion, creating a representation space significantly closer to the low-level end-effector actions demanded by robotic systems, thereby narrowing the gap between world prediction and policy learning. Building on this insight, we introduce RynnWorld-4D, a generative model that co-produces future RGB frames, depth maps, and optical flow from a single RGB-D image and a language instruction within one unified diffusion process. This4D world modelfeatures atri-branch architecturethat integratescross-modal attentionwith frame-wise3D RoPE, ensuring that appearance, geometry, and motion evolve consistently. To supply training data at scale, we curateRynn4DDataset1.0, a massive dataset of over 254.4 million frames across egocentric human and robotic manipulation videos with high-quality pseudo-labels for depth and optical flow. We further propose RynnWorld-4D-Policy, aninverse dynamicshead that consumes the internal 4D representations of RynnWorld-4D in a single forward pass, bypassing expensive multi-step denoising, to output robot actions in a closed-loop manner. Experiments show that RynnWorld-4D produces temporally and spatially coherent 4D predictions, and that RynnWorld-4D-Policy achieves state-of-the-art performance on real-world dexterous bimanual manipulation tasks, particularly excelling in tasks demanding spatial precision and temporal coordination.",
+      "published_date": "Jul 7",
+      "github_url": "https://github.com/alibaba-damo-academy/RynnWorld-4D",
+      "org_tag": null
+    },
+    {
+      "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+      "url": "https://huggingface.co/papers/2607.07708",
+      "likes": 83,
+      "date": "2026-07-12",
+      "abstract": "Structure-property relationships are foundational to biology, chemistry and materials science, where function, reactivity and physical response emerge from spatial, chemical and periodic organization. Mechanistically explaining these relationships requires interpreting structural evidence through scientific principles and physical constraints, from stereochemistry and bonding to symmetry, energetics and periodic order. However, applying artificial intelligence to this process presents a joint challenge of representation and reasoning: models must preserve domain-native structural information while showing how specific evidence supports predictions under these constraints. Here we introduce SciReasoner, amultimodal scientific foundation modelfor nativestructural reasoningacross proteins, small molecules and inorganic crystals. SciReasoner discretizes coordinates, topologies and periodic connectivities into a unified structure-aware vocabulary, treating structural tokens as addressable evidence units during reasoning. Inhomology-controlled Gene Ontology prediction, SciReasoner improves Cellular Component annotation for low-homology and orphan-like proteins, increasing F_{max} from 0.42 to 0.55. In chemistry, it raisessingle-step retrosynthesisaccuracy from 0.63 to 0.72 while generatingfragment-level disconnectionandprecursor-verification traces. In materials science, its representations separateelemental and compound phasesand resolvehigh- and low-band-gap regimes. Across 86 benchmarks, SciReasoner achieves state-of-the-art performance on 67 tasks.Double-blind expert evaluationrates itsreasoning tracesas preferred or at least comparable to those of a frontier large language model in 98% of cases. By making structure an inspectable substrate for reasoning under scientific constraints, SciReasoner connects accurate prediction with interpretable scientific inference.",
+      "published_date": "Jul 8",
+      "github_url": "https://github.com/SpectrAI-Initiative/SciReasoner",
+      "org_tag": "Shanghai AI Laboratory"
+    },
+    {
+      "title": "AlayaWorld: Long-Horizon and Playable Video World Generation",
+      "url": "https://huggingface.co/papers/2607.06291",
+      "likes": 83,
+      "date": "2026-07-12",
+      "abstract": "Game worlds have traditionally been built through labor-intensive production pipelines, making them costly to develop, difficult to customization, and expensive to modify after deployment. Recent advances invideo world modelsoffer a fundamentally different paradigm. Rather than explicitly authoring every component of a virtual environment, these models autoregressively synthesize future observations conditioned on the current world state and user interactions, enabling playable worlds to be generated online. Trained on both gameplay recordings and real-world videos, they can capture diverse visual appearances and physical dynamics, opening new opportunities for interactive applications beyond gaming, including embodied intelligence. In this paper, we present AlayaWorld, a full-stack open-source framework for building interactivegenerative worlds. AlayaWorld enables open-endedreal-time interaction, allowing users to freely navigate and perform diverse actions such as combat, spell casting, and monster summoning. The framework unifies the complete development-from data preparation model architecture, model training, inference acceleration, and deployment-within a modular and extensible architecture. Alongside the framework, we releasereproducible pipelines,reference implementations,evaluation tools, and comprehensive documentation, establishing a practical foundation for future research and real-time applications of generative world models.",
+      "published_date": "Jul 7",
+      "github_url": "https://github.com/AlayaLab/AlayaWorld",
+      "org_tag": null
+    },
+    {
+      "title": "RynnWorld-Teleop: An Action-Conditioned World Model for Digital Teleoperation",
+      "url": "https://huggingface.co/papers/2607.06558",
+      "likes": 76,
+      "date": "2026-07-12",
+      "abstract": "Scaling robot learning requires massive, diverse trajectory data, yet collection is currently bottlenecked by physical teleoperation, where every demonstration binds operator time to specific hardware and workspaces. We introduce digital teleoperation, a paradigm that decouples data collection from physical constraints by replacing the real robot with agenerative world model. In this framework, an operator's hand-pose stream drives a robot-centricgenerative world modelto synthesize high-fidelity egocentric videos from a single reference image. The recorded pose stream serves as an embodiment-agnostic action label transferable to any target robot via standard retargeting, yielding complete state-action trajectories for imitation learning independent of physical hardware. We instantiate this paradigm in RynnWorld-Teleop, a system that integratesdepth-aware skeletal conditioning,progressive human-to-robot trainingon avideo Diffusion Transformer, andstreaming autoregressive distillation. This pipeline compresses the generative process into a single-pass inference, enabling 40+ FPS, real-time interactive generation on a single H100 GPU. Policies trained exclusively on RynnWorld-Teleop-generated data achieve effectivezero-shot Sim2Real transferacross dexterous and diverse bimanual tasks. Moreover, augmenting real-world datasets with our digitally teleoperated data consistently improves success rates, demonstrating that RynnWorld-Teleop serves as a high-fidelity, scalable data engine for the next generation ofrobotic agents.",
+      "published_date": "Jul 7",
       "github_url": null,
-      "org_tag": "Qwen"
+      "org_tag": null
     },
     {
-      "title": "TUA-Bench: A Benchmark for General-Purpose Terminal-Use Agents",
-      "url": "https://huggingface.co/papers/2606.28480",
-      "likes": 47,
-      "date": "2026-07-05",
-      "abstract": "As large language models and harness frameworks continue to advance, agents operating in terminals are increasingly capable of performing a broader range of generalcomputer-use tasksbeyond coding. However, existing benchmarks do not adequately evaluate general-purpose terminal computer-use agents (TUAs): general computer-use benchmarks primarily targetgraphical user interfaces(GUIs), whereas terminal-based benchmarks largely emphasize technical and programming-centric workflows historically native to the shell. We introduce TUA-Bench, a general-purpose benchmark forterminal-use agents. TUA-Bench includes 120 real-world tasks across five task families, covering routinedigital activities-including document editing, email management, and live-web information seeking-as well as scientific and engineering workflows co-designed with PhD-level domain experts that requirespecialized software. This breadth distinguishes TUA-Bench from prior shell-focused or domain-specific benchmarks. Each task is manually designed, runs in a real terminal with a deterministic setup script, and is evaluated by anexecution-based scoring protocol. We find that the strongest frontier agent, Claude Code with Claude Opus 4.8 max reasoning effort, achieves 65.8% overall performance, with substantial gaps across both tracks. By providing a broad and realistic evaluation of terminal-use capabilities, TUA-Bench aims to accelerate the transition from narrow, task-specific assistants togeneral-purpose agentscapable of operating reliably across diverse digital environments.",
+      "title": "OmniOpt: Taxonomy, Geometry, and Benchmarking of Modern Optimizers",
+      "url": "https://huggingface.co/papers/2607.04033",
+      "likes": 74,
+      "date": "2026-07-12",
+      "abstract": "Optimizer selectionforlarge-scale model traininghas become a system-level design decision constrained jointly by compute, memory, tuning budget, and task diversity, yet the landscape of over one hundred methods remains fragmented. We therefore present OmniOpt, a unified survey and benchmark cookbook of optimizers for the research community. OmniOpt rests on four coupled components. First, we treat every optimizer update as a structured transformation through a five-stagemeta-pipeline, and show that most methods engage only one or two of these stages. Second, we usenorm-constrained linear minimization oracles(LMOs) to unify different optimizers. Third, these two views ground a dual-dimension taxonomy, one dimension assigning each method to a mechanism family and the other recording the measurabletraining objectivesit aims to improve. Fourth, and at the core of this paper, we instantiate the full taxonomy in a unifiedcross-domain benchmarkspanning representative optimizers,model scales, and training regimes from language model pretraining to image classification, systematically analyzing each method family across multiple effect objectives and laying out theirtrade-offs. OmniOpt thus supplies the research community with an operational coordinate system for selecting optimizers under explicit mechanism and objective assumptions, and charts a direction for the future development of the optimizer community.",
+      "published_date": "Jul 4",
+      "github_url": "https://github.com/OpenRaiser/OmniOpt",
+      "org_tag": "OpenDataLab"
+    },
+    {
+      "title": "UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning",
+      "url": "https://huggingface.co/papers/2607.04425",
+      "likes": 68,
+      "date": "2026-07-12",
+      "abstract": "Recent advances inmultimodal foundation modelsandagent systemshave drivenGUI agentsfrom single-platform task execution towardcross-platform interaction. However, building multi-platformGUI agentsremains challenging. On one hand, high-quality and executablecross-platform interactiontrajectories are still scarce, and existing data often suffer from limited platform coverage. On the other hand, different platforms exhibit distinct interaction conventions, making joint or continual training prone tobehavioral pattern mixing, platform-specific capability degradation, andcatastrophic forgetting. To address these challenges, we construct Uni-GUI, a high-quality cross-platform GUI interaction dataset, and propose UI-MOPD, the first method that incorporatesmulti-teacher on-policy distillationintocontinual learningforGUI agents. UI-MOPD dynamically selects a platform-specific teacher according to the current environment and transfers platform-specific behavioral priors to a shared policy throughplatform-conditioned distillation, enabling adaptation to new platforms while preserving capabilities on existing ones. Experiments on OSWorld and MobileWorld show that UI-MOPD achieves task success rates of 38.2% and 12.0%, respectively, demonstrating its effectiveness in balancing cross-platform capability retention and new-platform adaptation.\n  Project page: https://elispectre.github.io/UI-MOPD/.",
+      "published_date": "Jul 5",
+      "github_url": "https://github.com/EliSpectre/UI-MOPD",
+      "org_tag": null
+    },
+    {
+      "title": "Hierarchical Sparse Attention Done Right: Toward Infinite Context Modeling",
+      "url": "https://huggingface.co/papers/2607.02980",
+      "likes": 63,
+      "date": "2026-07-12",
+      "abstract": "Scaling modernlarge language models(LLMs) to long contexts is limited by the quadratic computation cost, and poor length extrapolation ofdense attention.Chunk-wise sparse attentionoffers a promising alternative, but all existing methods fall short of full attention because of their inaccurate chunk selection. We propose Hierarchical Landmark Sparse (HiLS) Attention, achunk-wise sparse attentionmechanism that learns chunk selection end-to-end under the language-modeling (LM) loss. HiLS factorizes attention hierarchically: each query performs attention independently with each retrieved chunk to extract chunk-specific information, and the resulting outputs are fused according to chunkretrieval scores. By incorporatingretrieval scoresinto the forward attention computation, HiLS optimizes them directly with the LM loss, enabling end-to-end retrieval learning and native sparse training. Experimental results show that HiLS-Attention achieves performance comparable to, and in some cases better than, full attention at in-domain context lengths. Meanwhile, HiLS-Attention extrapolates more than 64times the training context length with 90% retrieval accuracy, far beyond full attention. Moreover, existing full-attention models can be converted to HiLS-Attention with lightweight continued pretraining, preserving in-domain performance while acquiring ultra-long-context extrapolation. Together with itssparse KV accessand computation, HiLS-Attention breaks the usual efficiency-performance trade-off, enabling long-context LLMs that are both more efficient and more effective on general long-context tasks than their full-attention counterparts.",
+      "published_date": "Jul 3",
+      "github_url": "https://github.com/Tencent-Hunyuan/HiLS-Attention",
+      "org_tag": "Tencent Hunyuan"
+    },
+    {
+      "title": "PixWorld: Unifying 3D Scene Generation and Reconstruction in Pixel Space",
+      "url": "https://huggingface.co/papers/2607.05373",
+      "likes": 61,
+      "date": "2026-07-12",
+      "abstract": "3D reconstructionand generation are commonly tackled by separate paradigms: pixel-based regression for reconstruction, and latent diffusion for generation. Recent works attempt to unify them inlatent space, but with notable drawbacks: the diffusion objective is defined on latent features rather than the underlying 3D representation, and both branches suffer from information loss introduced by latent encoding, while requiring a pretrainedVariational Autoencoder(VAE) orRepresentation Autoencoder(RAE). In this paper, we reformulate these two tasks under a unified pixel-space diffusion paradigm and introduce PixWorld, a single model that jointly addresses3D reconstructionand generation. By supervising diffusion directly onrendered images, PixWorld removes the above limitations and aligns optimization with3D scene fidelity. Beyond photometric and perceptual supervision that operates at the 2D image level and lacks 3D geometric awareness, we further introduce ageometry perception lossthat aligns rendered views with their ground truth in the geometry-aware feature space of a pretrained3D foundation model, providing 3D structural supervision. PixWorld consistently outperforms prior latent-space generation methods and matches state-of-the-art reconstruction methods, demonstrating the superiority of a unified pixel-space approach.",
+      "published_date": "Jul 6",
+      "github_url": "https://github.com/SensenGao/PixWorld",
+      "org_tag": "Nanyang Technological University"
+    },
+    {
+      "title": "ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog",
+      "url": "https://huggingface.co/papers/2607.04438",
+      "likes": 59,
+      "date": "2026-07-12",
+      "abstract": "Research dissemination, turning a paper into a poster, a talk video, and a blog post, is still a manual last mile. Prior automation treats each artifact in isolation that each re-extract the paper from scratch, usually ship one-way renders the author cannot reopen in PowerPoint or Word, and gates quality on soft VLM-preference scores that plateau while load-bearing sections still read as empty. We argue this last mile is best built as a composition of skills: thin agent-readable contracts that share one upstream extractor and wrapdeterministic primitivesin ameasured-fill loopwhose exits are hard pass/failrender gates. We instantiate this as ResearchStudio-Reel, five Claude Code and Codex skills organized into one shared extractor (Paper2Assets), threeeditable generators(Paper2Poster, Paper2Video, Paper2Blog), and oneinteractive convergence layer(Paper2Reel). Paper2Assets extracts each paper once into a shared bundle that can be reused by every downstream skill; The three generators produce a print-ready poster, a synchronized talk video, and a bilingual blog that stay factually consistent and round-trip through PowerPoint or Word; Paper2Reel then binds all three into a self-containedHTML viewerwhose section-level clicks jump the video, slides, captions, and blog to matching content. On the Paper2Poster benchmark, our posters lead every aesthetic and information sub-criterion against both prior automated systems and single-shot frontier LLMs, surpassing the authors' own on aesthetics under two held-out VLM judges and winning overall on 84% to 93% of papers;capability audits further show that, by uniquely pairing narration-aligned on-slide highlights with a bilingual blog gated bylayout-aware DOCX repair, ResearchStudio-Reel is the only pipeline to ship all three editable artifacts. Project is available at https://aka.ms/ResearchStudio",
+      "published_date": "Jul 5",
+      "github_url": null,
+      "org_tag": "Microsoft"
+    },
+    {
+      "title": "Gemma 4 Technical Report",
+      "url": "https://huggingface.co/papers/2607.02770",
+      "likes": 57,
+      "date": "2026-07-12",
+      "abstract": "We introduce Gemma 4, a new generation of open-weight, natively multimodal language models in the Gemma model family. Designed to advance compute efficiency and reasoning, the Gemma 4 model suite features dense andMixture-of-Experts architectures, ranging from 2.3B to 31B parameters. Alongside improved vision andaudio encodersfor all model sizes, we propose a unified,encoder-free architecturefor our 12B model, which ingests raw audio and image patches. Furthermore, we integrate athinking mode, enabling Gemma models to generate reasoning traces prior to responding. We improve inference speed, memory, and compute efficiency, as well aslong-context abilitiesthrough critical design choices. Gemma 4 establishes a leap in performance across STEM, multimodal, and long-context benchmarks, and rivals larger, frontier open models in human-rated tasks.",
+      "published_date": "Jul 2",
+      "github_url": null,
+      "org_tag": "Google"
+    },
+    {
+      "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+      "url": "https://huggingface.co/papers/2607.02501",
+      "likes": 56,
+      "date": "2026-07-12",
+      "abstract": "Embodied AI models now span vision-language-action (VLA) models andworld-action models(WAMs), but practical deployment remains fragmented across model-specific Python stacks, backend assumptions, and robot-side glue code, especially on heterogeneous edge devices. Existinginference runtimes are designed mainly for request-response serving and therefore do not satisfy the runtime contract of embodied deployment:multi-rate executioninsideclosed-loop control, latency-first batch-1 inference on heterogeneous hardware, and extensibleembodied interfacesbeyond fixed token I/O. We present Embodied.cpp, a portable C++inference runtimefor embodied models. Based on an architectural analysis of representative VLA models and WAMs, Embodied.cpp captures a shared execution path and organizes it into five layers: input adapters, sequence builders, backbone execution, head plugins, and deployment adapters. The runtime provides modularmulti-rate execution, latency-firstfused inference, and extensible operator and I/O support, enabling deployment across heterogeneous devices, robots, and simulators through one backend abstraction. We evaluate Embodied.cpp on two VLA models, HY-VLA and pi0.5, and on a preliminary WAM benchmark using a LingBot-VA Transformer block. The VLA deployments achieve successful closed-loop execution with 100.0% and 91.0% task success rates, respectively. The WAM benchmark reduces block memory from 312.2 MiB to 88.1 MiB. These results show that Embodied.cpp improves deployment efficiency while preserving high accuracy across diverse embodied model architectures.",
+      "published_date": "Jul 2",
+      "github_url": "https://github.com/SEU-PAISys/Embodied.cpp",
+      "org_tag": null
+    },
+    {
+      "title": "Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation",
+      "url": "https://huggingface.co/papers/2607.07608",
+      "likes": 51,
+      "date": "2026-07-12",
+      "abstract": "Mainstream Vision-Language-Action (VLA) models predict actions primarily from the current observation under aMarkovian assumption, thus struggling with long-horizon, temporally dependent tasks. Existingmemory-augmented VLAseither expand the observation window or retrieve history from the memory bank as auxiliary policy-side context. However, they leave memory outside the nativelatent embedding spaceof VLA reasoning, preventing historical experience from being fluidly interleaved with multimodal reasoning and action formation. To this end, we introduce LaMem-VLA, a latent-memory-native framework that reconstructs historical experience intolatent memory tokensand directly interweaves them with VLA reasoning. At its core, LaMem-VLA introduces four coordinated components: (i) a curator that organizes historical experience into two complementary short-term andlong-term memory vaults; (ii) a seeker that queries both vaults using themultimodal cognitionto retrievecontext-relevant evidence; (iii) a condenser that reconstructs the retrieved evidence into compact short-term and long-termlatent memory tokens; and (iv) a weaver that injects these memory tokens with the current observation and instruction into onecontinuous embedding sequence. By representing, retrieving, and consuming historical experience entirely in the same continuous latent space, LaMem-VLA enables memory to directly participate in VLA reasoning and guide action generation under abounded context. Extensive experiments on SimplerEnv and LIBERO demonstrate the superiority of our LaMem-VLA.",
+      "published_date": "Jul 8",
+      "github_url": "https://github.com/quhongyu/LaMem-VLA",
+      "org_tag": null
+    },
+    {
+      "title": "ResearchStudio-Idea: An Evidence-Grounded Research-Ideation Skill Suite from ML Conference Outcomes",
+      "url": "https://huggingface.co/papers/2607.04439",
+      "likes": 51,
+      "date": "2026-07-12",
+      "abstract": "Large language models have maderesearch ideationincreasingly accessible, yet effective idea development requires more than generating candidate directions. Researchers must ground a problem in current literature, identify meaningful bottlenecks, differentiate from existing solutions, and evaluate risks before committing to implementation. We present ResearchStudio-Idea as a reusable skill suite for this first mile ofresearch ideation. The suite includes Paper-Search, a standalone multi-sourceliterature searchskill; Scoop-Check, a standaloneprior-art collision checkerfor novelty claims; and IdeaSpark, the end-to-end skill that composesevidence grounding,pattern-guided generation, collision retrieval, audit, andidea-card renderinginto one workflow. IdeaSpark is constructed from a corpus of 1,947 machine learning conference papers collected from ICLR, ICML, and NeurIPS between 2021 and 2025, including Oral papers, a separately tracked high-citation subset, and rejected submissions. Analysis of these outcomes reveals 31 recurring ideation sub-patterns, consolidated into 15reusable ideation patterns. Each pattern is operationalized as a structured card containingresearch contexts, bottleneck types,differentiation strategies, supporting precedents, and common failure modes. Given a research problem and an evidence bundle, IdeaSpark evaluates evidence readiness, reconstructs the surroundingresearch context, identifies unresolved bottlenecks, selects relevant patterns, instantiates one candidate direction, retrieves potentially conflicting prior work, and performsoutcome-informed auditing. This workflow transformsreusable ideation patternsinto traceable research proposals. Blind automated-judge evaluations show that IdeaSpark consistently produces stronger research proposals than no-skill and generic-skill baselines while maintaining competitive novelty.",
+      "published_date": "Jul 5",
+      "github_url": "https://github.com/microsoft/ResearchStudio",
+      "org_tag": "Microsoft"
+    },
+    {
+      "title": "Video-Oasis: Rethinking Evaluation of Video Understanding",
+      "url": "https://huggingface.co/papers/2603.29616",
+      "likes": 50,
+      "date": "2026-07-12",
+      "abstract": "The inherent complexity ofvideo understandingmakes it difficult to determine whetherVideo-LLMbenchmark performance stems fromvisual perception,linguistic reasoning, orknowledge priors. While many benchmarks have emerged to assess high-level reasoning, shared criteria for evaluatingvideo understandingremain largely overlooked. Instead of introducing yet another benchmark, we take a step back to re-examine the criteria for evaluatingvideo understanding. In this work, we introduce Video-Oasis, a sustainablediagnostic suitefor systematically auditing existingvideo understandingbenchmarks. This audit reveals that 55\\% of existing benchmark samples are solvable without visual input or temporal context. After filtering these shortcuts, the remainingvideo-native challengesexpose a substantial capability gap: state-of-the-art models perform only marginally above random guessing. Building on these findings, we use the distilled challenges as a testbed to investigate whichalgorithmic design choicescontribute to robustvideo understanding. We hope our work provides a practical foundation for constructing rigorous video benchmarks and evaluating futureVideo-LLMs. Code is available at https://github.com/sejong-rcv/Video-Oasis.",
+      "published_date": "Jul 2",
+      "github_url": "https://github.com/sejong-rcv/Video-Oasis",
+      "org_tag": "NAVER"
+    },
+    {
+      "title": "DataComp-VLM: Improved Open Datasets for Vision-Language Models",
+      "url": "https://huggingface.co/papers/2606.28551",
+      "likes": 49,
+      "date": "2026-07-12",
+      "abstract": "Building performantVision-Language Models(VLMs) requires carefully curating large-scale training datasets, yet the community lacks systematic benchmarks for evaluating such curation strategies. We introduce DataComp for VLMs (DCVLM), a benchmark for controlled data-centric experiments to improve VLM training. As part of DCVLM, we collect 160 datasets spanning four data types -- image-caption pairs, multimodal interleaved documents, text-only, and instruction-tuning data -- into a corpus of 6Tmultimodal tokens. DCVLM allows participants to test curation strategies (filtering, mixing, formatting, sampling) across 1B-8B models and 6.25B-200B token budgets. Models are then evaluated on a carefully selected suite of up to 52downstream benchmarksacross 9 domains. We conduct extensive experiments on DCVLM and find thatdata mixing, not filtering, is key to a high-quality training dataset: instruction-heavy mixtures scale better than caption-heavy ones, with gains widening at larger scales. The resulting dataset, DCVLM-Baseline, enables training an 8B VLM to 63.6% accuracy on our 33-task core suite with 200B training tokens. Compared to FineVision, the state-of-the-art open VLM training dataset, this represents an improvement of +5.4pp. DCVLM and all accompanying artifacts will be made publicly available at https://www.datacomp.ai/dcvlm/.",
       "published_date": "Jun 26",
-      "github_url": "https://github.com/facebookresearch/TUA-Bench",
-      "org_tag": "AI at Meta"
+      "github_url": "https://github.com/mlfoundations/dcvlm",
+      "org_tag": null
     },
     {
-      "title": "ReFreeKV: Towards Threshold-Free KV Cache Compression",
-      "url": "https://huggingface.co/papers/2502.16886",
+      "title": "Why Can't I Open My Drawer? Mitigating Object-Driven Shortcuts in Zero-Shot Compositional Action Recognition",
+      "url": "https://huggingface.co/papers/2601.16211",
       "likes": 47,
-      "date": "2026-07-05",
-      "abstract": "To reduce memory consumption duringLLM inference, a handful of methods have been proposed forKV cache pruning. While these techniques can accomplish lossless memory reduction on many datasets, they often hinge on an under-emphasized condition: an input/domain-specific threshold for KV cache budget needs to be pre-determined to achieve the optimal performance. However, such input-sensitive design may be considerably limited in real-world scenarios, as open-domain inputs span diverse domains, lengths and difficulty levels, without clear boundaries for threshold selection. As a result, the dependence of such input-sensitive threshold can be a fundamental limitation that causes large degradation on arbitrary inputs. In this work, we propose a new objective that lifts the threshold constraints for robust KV compression, advocating for \"threshold-free\" methods that adaptively adjust budget allocation while preserving full-cache performance. We then propose a novel method, ReFreeKV, serving as the first instantiation of this objective. Extensive experiments across 13 datasets with diverse context lengths, task types, and model sizes demonstrate its efficacy and efficiency. Our code is publicly released at https://github.com/Patrick-Ni/ReFreeKV.",
-      "published_date": "Jun 26",
-      "github_url": "https://github.com/Patrick-Ni/ReFreeKV",
-      "org_tag": "Tencent"
+      "date": "2026-07-12",
+      "abstract": "Zero-Shot Compositional Action Recognition(ZS-CAR) requires recognizing novelverb-object combinationscomposed of previously observed primitives. In this work, we tackle a key failure mode: models predict verbs viaobject-driven shortcuts(i.e., relying on the labeled object class) rather than temporal evidence. We argue thatsparse compositional supervisionandverb-object learning asymmetrycan promote object-driven shortcut learning. Our analysis with proposeddiagnostic metricsshows that existing methods overfit to training co-occurrence patterns and underuse temporal verb cues, resulting in weak generalization to unseen compositions. To addressobject-driven shortcuts, we propose Robust COmpositional REpresentations (RCORE) with two components.Co-occurrence Prior Regularization(CPR) adds explicit supervision for unseen compositions and regularizes the model against frequent co-occurrence priors by treating them as hard negatives.Temporal Order Regularizationfor Composition (TORC) enforces temporal-order sensitivity to learn temporally grounded verb representations. Across Sth-com and EK100-com, RCORE reduces shortcut diagnostics and consequently improvescompositional generalization.",
+      "published_date": "Jul 2",
+      "github_url": "https://github.com/KHU-VLL/RCORE",
+      "org_tag": "NAVER"
     },
     {
-      "title": "AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents",
-      "url": "https://huggingface.co/papers/2607.02255",
+      "title": "Scaling Mixture-of-Experts Video Pretraining for Embodied Intelligence",
+      "url": "https://huggingface.co/papers/2607.07675",
+      "likes": 46,
+      "date": "2026-07-12",
+      "abstract": "Despite the recent promise in robot control, video generative models suffer from a domain mismatch due to their primary focus on content creation. For example, their design inherently prioritizes visual fidelity and creativity over computational efficiency and physical realism. In this work, we present LingBot-Video, aDiT-based video pretrainingparadigm specifically tailored forembodied intelligence. From the architecture perspective, we adopt theMixture-of-Experts(MoE), instead of dense, framework to achieve a better trade-off between modeling capacity and inference efficiency, and manage to scale it up from scratch. From the data perspective, we construct adata profiling enginethat augments standard internet videos with extensiverobot-oriented footage, encompassing manipulation, navigation, and egocentric perspectives, to equip the base model with an intrinsic understanding of actions and world dynamics. From the training perspective, we develop amulti-dimensional reward systemto enforce the alignment regardingphysical rationalityandtask completion, going beyond standard criteria such as aesthetics, prompt-following, and motion consistency. Comprehensive evaluations validate its performance and efficiency as a video foundation model. We contribute LingBot-Video as the inaugural large-scale, open-source MoE video foundation model to the community, in a pioneering effort to bridge digital creativity and physical actuation.",
+      "published_date": "Jul 8",
+      "github_url": "https://github.com/robbyant/lingbot-video",
+      "org_tag": "Robbyant"
+    },
+    {
+      "title": "Vision as Unified Multimodal Generation",
+      "url": "https://huggingface.co/papers/2607.06560",
       "likes": 44,
-      "date": "2026-07-05",
-      "abstract": "Memory for along-horizon LLM agentis a contract about what each future decision is allowed to see. The simplest contract appends past observations, tool calls, and reflections to every prompt, which makes prior context easy to access but also turns it into a jumbled mixture in which the effect of any single memory component is hard to isolate. We introduce and instrument an alternativebounded contract: every decision is made from a fresh user message assembled bytyped retrieval, with no raw cross-decision transcript appended. The prompt thus stays bounded across runs of any length, and any single layer can be ablated in isolation. We instantiate the contract inSlay the Spire 2, a closed-rule stochastic deck-building game whose runs require hundreds of tactical and strategic decisions. A public online benchmark of frontier LLMs on the same game reports zero wins at the lowest difficulty across five configurations, and the developer-reported human win rate at the same difficulty is 16%; the task is hard but not saturated. Within our harness, a fixed-A0 ablation shows the largest observed difference when triggeredstrategic skillsare enabled: the no-store baseline wins 3/10 games and adding the skill layer 6/10. At this sample size the comparison is directional rather than statistically decisive (Fisher exact p\\approx0.37); a cross-backbone probe and public accumulating-context baselines are reported as operational comparisons rather than controlled tests of the contract variable itself. We release a reproducible testbed: 298 completed trajectories with condition tags, frozen memory/skill snapshots, prompt records, and analysis scripts -- an agent design and a validated, reusable methodology for studying howexplicit memorylayers shape long-horizon LLM-agent decisions.",
-      "published_date": "Jul 2",
-      "github_url": "https://github.com/AlayaLab/AgenticSTS",
-      "org_tag": "Alaya Studio"
-    },
-    {
-      "title": "EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments",
-      "url": "https://huggingface.co/papers/2607.02440",
-      "likes": 42,
-      "date": "2026-07-05",
-      "abstract": "Autonomous agentsare increasingly expected to improveexecutable policiesthrough feedback, yet existing evaluations often collapse this process into a final score or confound it with open-ended software-engineering progress. We introduce AutonomousPolicy Evolution, a controlled evaluation setting in which a harness-model agent repeatedly edits an executable policy system under a fixed interaction budget. We instantiate this setting in EvoPolicyGym, a benchmark built from compact interactive RL environments that evaluates how agents iteratively improve explored policies. On the EvoPolicyGym suite, GPT-5.5 achieves the strongest aggregate rank score and top-two performance on all 16 environments. Beyond leaderboard results, EvoPolicyGym also providestrajectory-level diagnosticsthat distinguish how agents allocate budget, convert feedback intoparametric tuning. These analyses show that strong autonomouspolicy evolutiondepends not only on isolated task wins, but on discoveringtask-appropriate mechanismsand refining policies under bounded feedback.",
-      "published_date": "Jul 2",
-      "github_url": null,
-      "org_tag": null
-    },
-    {
-      "title": "Trimming the Long-Tail of Visual World Modeling Evaluation",
-      "url": "https://huggingface.co/papers/2606.24256",
-      "likes": 40,
-      "date": "2026-07-05",
-      "abstract": "Physical interactionsfollow along-tailed distribution: a set of common and regular interactions dominates human experience and visual data, while a broad spectrum of rare and irregular interactions remains underrepresented. Although recentvisual world models, including image andvideo generationmodels, achieve impressive realism on existing benchmarks, they primarily focus on simulating commonphysical interactions. This raises a central question: Do currentvisual world modelsinternalize and generalize physical principles? In this work, we introduce Tailor-Bench, a benchmark that challenges world models to simulate irregularphysical interactions. To enable systematic evaluation, we design threescenario modesthat progressively challenge model reasoning:Regular scenariosreflect common tool-task pairs,Unconventional scenariosreplace conventional tools with attribute-compatible substitutes to testaffordance generalization, andImpossible scenariosintroduce attribute-violating tools to probeconstraint awareness. Additionally, we design two complementary settings under a unified evaluation protocol:predictive generationrequires inferring outcomes without guidance, whiledescriptive generationspecifies the target outcome for faithful realization. Our experimental results reveal a clear long-tail gap in physical world modeling: performance degrades from Regular to Unconventional andImpossible scenarios, indicating limited generalization beyond common interactions. Failure analysis further shows that models rely on superficial visual patterns: image models fail to realize correct state changes, while video models further suffer from temporal inconsistencies.",
-      "published_date": "Jun 23",
-      "github_url": "https://github.com/tailor-bench/code",
-      "org_tag": null
-    },
-    {
-      "title": "Beyond IID: How General Are Tabular Foundation Models, Really?",
-      "url": "https://huggingface.co/papers/2606.30410",
-      "likes": 39,
-      "date": "2026-07-05",
-      "abstract": "Foundation models forpredictive machine learningon tabular data have recently gained significant traction in academia and industry. Research communities across disciplines are increasingly evaluatingtabular foundation modelson diverse datasets and tasks. However, these task- and discipline-specific evaluations remain largely inaccessible to model researchers because benchmark software and evaluation protocols are fragmented. As a result, model researchers rely on standard benchmarks, which are mostly defined for tasks wheretabular foundation modelsalready excel. The most challenging scenarios are excluded, limiting meaningful progress in the field by focusing on marginal improvements onIID datarather than on broader, more demanding challenges. To overcome this, we introduce BeyondArena, the first unified holistic benchmark for tabular data that supports diverse task types (IID, temporal, grouped), across sample size and feature dimensionality scales, with diverse feature types (with text, with high cardinality) from a broad range of disciplines. To enable unifiedbenchmarkingbeyond standard benchmarks, we introduceData Foundry, a Python framework and metadata schema for curating tabular datasets forpredictive machine learning. Our results across 11 models and 142 curated datasets show that existingtabular foundation modelsexcel on tiny- to medium-sizedIID data, while traditional tree-based anddeep learning modelsstill dominate on non-IID, large, andhigh-dimensional datasets. BeyondArena guides model research for the most demanding challenges in tabular data, enabling progress towards truly foundational tabular models.",
-      "published_date": "Jun 29",
-      "github_url": "https://github.com/TabArena/data-foundry",
-      "org_tag": "TabArena"
-    },
-    {
-      "title": "Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots",
-      "url": "https://huggingface.co/papers/2606.28133",
-      "likes": 39,
-      "date": "2026-07-05",
-      "abstract": "We study whether we can learn novel manipulation skills from human actions to a bi-manual robot withparallel grippers. Human action data is cheap, abundant, and diverse, making it one of the most promising resources for scaling up robot learning. Yet transferring skills from humans to robots remains hard: most prior work treats humans as just another bi-manual 6DoF embodiment, where hand-pose estimates are noisy and the contact patterns of human fingers differ fundamentally from those of a parallel gripper. We argue that learning rotation-inclusive action signals from human data is therefore sub-optimal, and instead propose a bridging action representation: therelative wrist translationwithin the initialhead-camera frame, an action space shared by humans and robots. To handle the potential absence of certain action components in different embodiments, we build a π_0-likevision-language-action modelwithinterleaved action tokensandattention masking. On a suite of novelbi-manual manipulationtasks, our bridging action transfers human manipulation knowledge to robots far more effectively than noisy 6DoF human actions and scales with the amount of human data.",
-      "published_date": "Jun 26",
-      "github_url": null,
-      "org_tag": "ByteDance Seed"
+      "date": "2026-07-12",
+      "abstract": "We formulate computer vision as unifiedmultimodal generation, where heterogeneous visual tasks are expressed in the native text and image generation spaces of aunified multimodal model, without task-specific architectures. Under this formulation, SenseNova-Vision uses natural-language instructions and optional visual prompts to specify tasks, target regions or views, and decoding conventions, and generates responses as text for symbolic outputs, images for dense spatial predictions, or mixed text-and-image outputs for compositional tasks. To support large-scale training, we convert diverse computer vision annotations intoinstruction-response examplescompatible with these generation spaces, resulting in theSenseNova-Vision Corpus, a computer-vision instruction-response corpus spanning text, image, and mixed targets. Starting from an off-the-shelfpretrained unified multimodal model, SenseNova-Vision is trained primarily on this corpus, with auxiliary multimodal data used as a capability-preserving mixture, and requires no task-specific prediction heads or architectural modifications. The resulting model covers a broad range of vision tasks, including detection, OCR, keypoint estimation,segmentation, depth estimation, surface normal prediction, point maps, and camera pose estimation, while supporting language-defined variants that combine category, color, region, and other visual cues. Experiments show that a single unified model can match leadingtask-specialized systemsacross structured visual understanding,dense geometric prediction,segmentation, andmulti-view visual geometry. These results suggest unifiedmultimodal generationas a scalable route for integrating computer vision capabilities into general-purpose foundation models. The model and corpus are publicly available.",
+      "published_date": "Jul 7",
+      "github_url": "https://github.com/OpenSenseNova/SenseNova-Vision",
+      "org_tag": "SenseNova"
     }
   ]
 }
