@@ -1,206 +1,206 @@
 {
-  "week": "2026-W40",
-  "dateRange": "2026-09-27 to 2026-10-03",
+  "week": "2026-W41",
+  "dateRange": "2026-10-04 to 2026-10-10",
   "papers": [
     {
-      "title": "Raven: The Harness of Harnesses for Composable Agentic Intelligence",
-      "url": "https://huggingface.co/papers/2609.33439",
-      "likes": 551,
-      "date": "2026-10-04",
-      "abstract": "Aslargelanguagemodelsadvance,AIagentsaremovingbeyondisolated,domain-specifictaskstowardlong-horizon,cross-domainworkflows.Thistransitionexposestwochallenges:increasingharnesscomplexitymakesmanualdesigndifficulttoscale,whiletightercouplingtospecificdomainslimitsthegeneralityofasingleharness.Thecentralquestionthusshiftsfromhowtoengineerastrongerharnessforonedomaintohowtoautonomouslyconstructspecializedharnesses,improvethemthroughexperience,andorchestratethemacrossdomains.WeintroduceRaven,TheHarnessofHarnesses,anopen-sourcemulti-agentecosystemthatautomaticallyconstructsandevolvesmodularharnessesforspecificmodelsanddomains,treatingeachexecutablemodel--harnesspairasacomposableunitofintelligence.TosupportanAll-DomainCollaborationNetwork,itsHostAgentdecomposesgoals,matchessubtaskstospecializedagents,coordinatesexecutiondependencies,andintegratesresults,whileahostarchiveandEverOSpreserveexperienceacrosstasksandSkillForgemakesthatexperienceavailableasreusableprocedures.Ourtheoryestablishessufficientconditionsforsuchcompositiontoexpandreliabletaskcoveragebeyondthatoftheavailableindividualagentsunderasharedresourcebudget.Oncomplexandlong-horizontasks,Ravensignificantlyoutperformsthestate-of-the-artagentsystems,pushingthefrontierofcomposableagenticintelligence.",
-      "published_date": "Sep 27",
-      "github_url": "https://github.com/EverMind-AI/Raven",
-      "org_tag": "EverMind"
-    },
-    {
-      "title": "The Teacher Is a Direction, Not a Destination: Extrapolating RL-Induced Representation Residuals in On-Policy Distillation",
-      "url": "https://huggingface.co/papers/2609.36484",
-      "likes": 418,
-      "date": "2026-10-04",
-      "abstract": "On-policydistillation(OPD)trainsastudenttomatchtheteacher'snext-tokendistributionsonthestudent'sowntrajectoriesandhasyieldedsubstantialempiricalgains.Generalizedvariantsallowthestudenttosurpasstheteacherbyextrapolatinganimplicitrewardinoutputspace.Thelanguage-modelhead,however,attenuatesthischangeanisotropically:muchofthechangeencodedintheteacher'shiddenstatesreachesthelogitsatasmallfractionofitsweight,andthesampled-tokenlog-probabilityratiosonwhichoutput-spaceextrapolationreliesinjectnoisethattheextrapolationamplifies,makingtrainingunstable.Weobservethatreinforcementlearning(RL)shiftsamodel'sinternalrepresentationsrelativetoitsbasecheckpoint,andthatthedirectionofthisshiftcanbemeasuredateverylayer.Motivatedbythisobservation,weproposeRIDE(RL-InducedDirectionExtrapolation),whichextrapolatestheRL-inducedchangedirectlyinrepresentationspace:ateverylayerandtokenposition,RIDEcomputestheresidualbetweentheteacheranditspre-RLcheckpointandregressesthestudent'shiddenstatestowardtargetsdisplacedbeyondtheteacheralongthisresidual.Conditionedonasampledtrajectory,thisregressionisequivalenttomaximizingalineardirectionalrewarddefinedbytheresidualunderaquadraticpenaltycenteredattheteacher,whichmakesexplicithowtheobjectivemovesthestudentalongtheRL-induceddirectionwhilelimitingitsdeviationfromtheteacher.Acrossfourbase/RL-teacherpairsspanningdifferentscales,architectures,andpre-traininglineages,RIDEapproachesorexceedstheRL-trainedteacheroneverypairandistheonlymethodwhosemeandoesso,anditconsistentlyoutperformsoutput-spaceextrapolation,whichdegradesthestudentwhenevertheteacherisclosetoitsbase.Projectpage:https://github.com/xixixixixxxx/RIDE.",
-      "published_date": "Sep 29",
-      "github_url": "https://github.com/xixixixixxxx/RIDE",
-      "org_tag": null
-    },
-    {
-      "title": "MaLiang-Harness: A Programmable Path to Image and Video Generation",
-      "url": "https://huggingface.co/papers/2609.34309",
-      "likes": 405,
-      "date": "2026-10-04",
-      "abstract": "Executableprogramsofferexplicitcontroloverhowimagesandvideosareconstructed,butgeneratingrunnablecodeisonlythebeginningofvisualcreation.Aprogramcanexecutecorrectlywhileviolatingtherequestedcomposition,appearance,ormotion.WedefinethisdiscrepancyastheProgram-to-Visual(P2V)gapandintroduceMaLiang-Harness,aunifiedframeworkfororganizingMLLM-drivenvisualgenerationintoapersistentprocessofconstruction,inspection,andrevision.Itscentraldesignistomaketheevolvingvisualprogram,itsconstructionhistory,anditsverificationshareacommonrevisionreference.WedefinethePersistentExecutableGeneration(PEG)stateaspreservingprogramsandtaskcontext.TraceableGenerationProcess(TGP)connectseditstorenderedevidence,andRevision-awareEditingandVerification(REV)supportsrestorationandchecksthecurrentrevisionbeforecompletion.Together,thesemechanismscoordinateplanning,execution,andvisualfeedbackacrossrenderingbackends.Weevaluate11powerfulclosed-sourceMLLMsonMaLiang-IBenchandfouronMaLiang-VBench,measuringgenerationsuccess,visualquality,andcomputationalcost.GPT-6-Astraachieves100%generationsuccessonbothbenchmarks,with96.0%ofimagetasksand76.9%ofvideotasksmeetingallqualitythresholds.Thecomparisonalsorevealsamismatchbetweengeneralcapabilityscoresandvisualgenerationperformance,withsimilarlyscoredmodelsdifferingsubstantiallyintheirabilitytosatisfyvisualrequirements.MaLiang-HarnessprovidesasystematicbasisforstudyinghowMLLMstranslateexecutablecodeintovisualoutcomes,exposingboththepotentialofprogrammablegenerationandthelimitationsofgeneralbenchmarksaspredictorsofthisability.Theprojectisavailableathttps://github.com/gulucaptain/MaLiang-Harness.",
-      "published_date": "Sep 28",
-      "github_url": "https://github.com/gulucaptain/MaLiang-Harness",
-      "org_tag": "National University of Singapore"
-    },
-    {
-      "title": "False Frontiers: Diagnosing and Mitigating Co-Cheating in Self-Evolving Search Agents",
-      "url": "https://huggingface.co/papers/2609.39102",
-      "likes": 391,
-      "date": "2026-10-04",
-      "abstract": "Self-evolvingsearchagentsbuildtheirowntrainingcurriculabyjointlyoptimizingaproposerthatgeneratesquestionsandasolverthatanswersthem.Thisclosedloopintroducesafailuremodewecallco-cheating:theproposerandsolverincreasinglyagreeonsharederrors,sointernalrewardimproveswithoutamatchinggaininexternalcorrectness.Apost-hocauditagainstsourceevidenceshowsco-cheatinggrowingmoresevereoversuccessiveroundsofself-evolution,withpseudo-labelcorrectnessstagnatingordecliningevenasthein-looptrainingsignalimproves.Themostdirectmitigationistoverifyproposalsbeforetraining:weintroducemulti-sampleverification(MSV),whichqueriesthesamemodelthreetimeswiththesourceandthreetimeswithoutittodecidetaskadmissionandreplaceunreliablepseudo-labels.MSVpartiallyreducesfalseagreementbutleavessubstantialresidualco-cheatingandcostssixextralabelergenerationspercandidate.TheselimitationsmotivateCrossFit,ourmainmethod:itpartitionstheproposer'ssourcedocumentsintogroupsAandB;questionsgeneratedfromAarescoredbyanauxiliarysolvertrainedonlyonB,andviceversa.Thecross-fittedagreementdeterminesproposerreward,soasame-sourcepseudo-labelcannotbereproducedthroughthefeedbacksolver,whiletheoriginalsolver'supdateruleisunchanged.RerunningtheloopwithQwen3.5-4BandQwen3.5-9B,MSVreducesfalse-agreementmassfrom6.1%to5.7%andfrom8.8%to7.2%,whereasCrossFitreducesitto3.0%and3.7%.Replayingidenticalproposalswithsource-excludedfeedbackfurtherreducesfalseagreementto0.4%and0.1%,isolatingfeedbackancestryfromcurriculumchanges.Acrosssevendownstreamsearchbenchmarks,CrossFitimprovesaverageperformanceoverstandardcoupledself-evolutionby8.8and8.4pointsandoverSearch-R1by8.7and7.8pointsat4Band9B.",
-      "published_date": "Sep 30",
-      "github_url": null,
-      "org_tag": "Rutgers University"
-    },
-    {
-      "title": "In-Context Learning for Robots: Methods and Applications",
-      "url": "https://huggingface.co/papers/2609.36012",
-      "likes": 381,
-      "date": "2026-10-04",
-      "abstract": "General-purposerobotsmustinferwhatanewtaskrequiresandtranslatethatunderstandingintoappropriatephysicalaction.In-contextlearning(ICL)forrobotssupportsthisprocessbyusingdemonstrationsandinteractiontodirectexistingcompetencewithneuralparametersheldfixedduringdeployment.Weorganizethisliteraturereviewaroundtheinterfacesconnectingcontextualevidencetoexecution,distinguishingfourfamilies:context-conditionedpolicies,geometricdemonstrationtransfer,world-model-basedcontrol,andskill-andagent-basedexecution.Comparingtheseinterfacesclarifiestheirtransferassumptionsandtherolesoftraining,correspondence,andmemoryinmakingcontextuseful.Acrossmanipulationandnavigation,weexaminehowthesemechanismspreservetaughtrequirementsasobjects,environments,andexecutionconditionschange.Thisanalysislinksmethoddesigntoevaluationpracticesthatdistinguishresponsivenesstoteaching,physicaltransfer,andbenefitsfromretainedexperience.Theresultingagendaconnectscompositionaltaskacquisitionandfaithfultransferwithphysicalrecursiveself-improvement,inwhichexperienceimprovestheabilitytolearnsubsequenttasks.",
-      "published_date": "Sep 28",
-      "github_url": "https://github.com/JethroJames/awesome-robots-icl",
-      "org_tag": "Knowin AI"
-    },
-    {
-      "title": "Scaling Properties of Same-Family On-Policy Distillation",
-      "url": "https://huggingface.co/papers/2609.32722",
-      "likes": 316,
-      "date": "2026-10-04",
-      "abstract": "*Reinforcementlearning(RL)*caninducesubstantialreasoningcapabilitiesinlargelanguagemodels(LLMs),buthowmuchofthiscapabilitytransfersacrossmodelscales,andhowquickly,remainsunclear.Westudythescalingpropertiesof*on-policydistillation(OPD)*across*weak-to-strong*,*same-base*,and*strong-to-weak*teacher--studentsetups.WefindthatearlyOPDtrainingdynamicsuniformlyexhibitaregular*useful-transfer*regime,inwhichheld-outaccuracy(the*goldscore*,G)risesapproximatelylinearlyind=mathrm{KL(π_θVertπ_{ref})},thesquarerootoftoken-levelreverseKLdivergencefromthestudentinitialization.Ineveryobservedweak-to-strongpair,thestudent'speakgoldscoreexceedsitsteacher'sown,soacompactRLexpertcantransfercapabilitytoamuchlargerstudentviaOPD.ToestimateOPDoutcomes,wefit*powerlaws*forhowG_{peak}andtheslopeoftheuseful-transferregimescalewithstudentandteacherparametercountsandwithteachergoldscore.Theselawsshowthatpeakgoldscoreimproveswithteacherscaleonlyuptoroughlythestudent'sscale,andthatatamatchedgoldscoresmallerteacherstransferbetter,soateacher'sscorealonedoesnotdefineitssupervisionvalue.WealsostudythescalingeffectsoftwoOPDvariants,bootstrappingweak-to-strongOPD,andthedegreeofon-policysupervision.",
-      "published_date": "Sep 26",
-      "github_url": null,
-      "org_tag": "Zhejiang University"
-    },
-    {
-      "title": "LoopVL: Recurrent Visual Intelligence",
-      "url": "https://huggingface.co/papers/2609.38426",
-      "likes": 295,
-      "date": "2026-10-04",
-      "abstract": "WeintroduceLoopVLtostudywhetherLoopTransformerscanbeeffectivelyextendedtovision-languagemodels.LoopVLcombinesModule-LoopandModel-Loopcomputationtoiterativelyupdateaunifiedvision-languagestatethroughsharedmodules.WetrainLoopVLfromscratchthroughlanguagepre-training,multimodaltraining,andpost-training.LoopVLoutperformsarangeofsimilarlysizedandlargernon-recurrentmodelsonmultimodalunderstandingandvisualreasoningbenchmarks.WealsoobserveVisualAhaMomentsinLoopVL,characterizedbypronouncedshiftsinvisualattentionacrossloops.LoopVLprovidespracticalevidenceforrecurrentvision-languagemodelingandoffersanintuitiveperspectiveonhowsharedparameterscansupportdeepermultimodalcomputationovercontinuouslyevolvingvisual-languagestates.",
-      "published_date": "Sep 29",
-      "github_url": "https://github.com/Tier-Flow/LoopVL",
-      "org_tag": "Renmin University of China"
-    },
-    {
-      "title": "Omni-IO Skills: Harnessing Your Agent Omni-Native",
-      "url": "https://huggingface.co/papers/2609.31847",
-      "likes": 287,
-      "date": "2026-10-04",
-      "abstract": "General-purposeagentscanplan,reason,andactoverlonghorizons,yettheirproductioncapabilitiesremainfragmentedacrosstext,images,audio,video,documents,3Dassets,andcode.Extendingafoundationmodeltoadditionalmodalitiestiescapabilitygrowthtocostlymodelupdates,whileassemblingspecialistmodelsandtoolsleavesunresolvedhowprocedures,dependencies,intermediateassets,andcross-turnrevisionsshouldbecoordinated.WepresentOmni-IOSkills,aplug-and-playAgentHarnessthatmakesexistingagentsomni-nativethroughhierarchicalSkills,astandardizedmultimodalexecutioninterface,dependency-awareorchestration,andapersistentAssetRegistry.Multi-assetworkflowsarerepresentedasDeclareExecutionGraphs,whichscheduleindependentoperationsconcurrentlyandregistersuccessfuloutputsfordownstreamandcross-turnreuseacrossreplaceableexecutionbackends.Its27Skillscover38representativetasksspanningsevenartifactmodalitiesandfourcapabilityfamilies:understanding,generation,reasoning,andretrieval.OnUniM-90,theharnessraisestheinput-supportratesofGPT-5.6SolandClaudeSonnet5from40.00%and38.89%to100%,whileincreasingrelativeSemantic--QualityCoupledScorefrom26.99to74.94andfrom27.82to77.78,respectively;StrictStructureScorereaches100.00and99.78.Theseresultsestablishharness-levelcapabilitycompositionasapracticalroutetobroad,evolvableOmnisystemswithoutchangingthehostagent'sreasoningcore.",
-      "published_date": "Sep 25",
-      "github_url": "https://github.com/any2any-mllm/Omni-IO-Skill",
-      "org_tag": "National University of Singapore"
-    },
-    {
-      "title": "UniEvo-VL: An On-policy Self-Distillation Training Recipe for Multimodal Model Self-improvement",
-      "url": "https://huggingface.co/papers/2609.38721",
-      "likes": 274,
-      "date": "2026-10-04",
-      "abstract": "Modernmultimodalmodelsbringgenerationandunderstandingintoasingleunifiedsystem,whichenablesthemtoprovideandlearnfromtheirownfeedback.Motivatedbythisunifiedcapacity,weintroduceUniEvo-VL,aself-evolvingframeworkformultimodalmodelstolearnfromthisconstructiveself-correctionfeedbackduringtest-timecompute.Insteadofrelyingonaseparate,oftenlarger,teacher,weleveragetheirself-critiquesasprivilegedinformationandaskasinglemultimodalmodeltoactasbothteacherandstudentwithdifferentcontexts.Thestudentonlyseesthevanillaquestion,whiletheteacherconditionsontheprivilegedcritique.Thentrainingminimizestheper-statedivergencebetweentheirdenoisingdiffusiondistributionsoverthestudent'sownsamplingtrajectories.ExperimentsdemonstratethatUniEvo-VLimprovestheimagegenerationcapabilitiesofmultimodalmodels,whilemaintainingtheirsensitivitytoadditionalreflectioninformation.Specifically,webuildontopoftheopen-sourceQwen-image-2512andobserveasignificantperformancegainfrom0.747to0.808onGenEvalandfrom32.97to35.53onGenEval2Soft-TIFA.Moreover,attemptswithmorepowerfulexternalcritics(e.g.,GPT5.6-Luna)showthatmultimodalmodelswithstrongjudgecapabilitiescananticipateahigherself-evolvingceiling.Lastbutnotleast,mixedtext-renderingoutcomesshowthatourself-improvementsmaynotbeuniformacrossdifferenttasks.Ourstudyaimstoshedlightonthecurrenthotrecursiveself-improvementresearchlinetoenhancetheuserexperiencewhenusingmultimodalmodelswithoutexternalsupervisionorguidance.",
-      "published_date": "Sep 30",
-      "github_url": null,
-      "org_tag": "Stanford NLP"
-    },
-    {
-      "title": "Post-Training Leaves Behavioral Shadows on Unrelated Decisions",
-      "url": "https://huggingface.co/papers/2609.29233",
-      "likes": 271,
-      "date": "2026-10-04",
-      "abstract": "Wefindthatlanguagemodelscantransfercapabilitiesthroughtask-unrelatedtext.Post-trainingtypicallyimproveslanguagemodelsusingtask-specificdata.Priorworkonsubliminallearningshowsthatinformationabouttheseupdatescanpassthroughunrelatedgenerations,buthaslargelyfocusedontraitsorpreferencesusingextensiveteacheroutputs.WeintroduceActiveTasklessDistillation(ATD),whichachievescapabilitytransferusingonlyasinglewordfromtheteacherperprompt.ATDprobesthebehavioralshadowofpost-trainingbyselectingpromptswheretheteacherandstudent'ssharedpublicancestorisnearlyindifferentbetweentwoordinarywords.Astudentinitializedfromthisancestorlearnssolelyfromtheresultingprompt-wordpairs,withouttarget-taskexamples,teacherlogits,orteacherparameters.IntheprimarycodingexperimentwithQwen2.5-1.5B,5,664nsesyielda5.34ppgainonHumanEval+overanexactnuisance-matchedcontrolthadisruptsprompt-resperimentsshowtransferinscientificknowledge,commonsensereasoning,andreadingcomprehensinsacrossadditionalmodelgenerations,sizes,andfamilies.Functionalanalysesshowthatthelearnedsidcomposable,andthatitsstrengthtrackstheteacher'supdatestrength.",
-      "published_date": "Sep 24",
-      "github_url": "https://github.com/myboker/ATD",
-      "org_tag": "Peking University"
-    },
-    {
-      "title": "YuE2: Unifying Symbolic and Audio Music Generation at Frontier Quality",
-      "url": "https://huggingface.co/papers/2609.33757",
-      "likes": 242,
-      "date": "2026-10-04",
-      "abstract": "Symbolicmodelsmakemelody,harmony,rhythm,andformexplicitbuttypicallystopbeforeafinishedrecording;audiomodelsproducecompletesongswhileleavingcompositionimplicit.WeintroduceYuE2,whichunifiessymbolicandaudiomusicgenerationatfrontierqualitythroughsymbolicplanning.AsingleAR-NARMixture-of-Transformers(MoT)firstwritesareadablescorespecifyingmelodyandharmony,expandsitintosemanticmusictokens,andrealizesitasfull-songaudio.Incomparisonsusingthesamecheckpoint,expertsprefersymbolicplanningforoverallqualityandmusicality,with49.3%ofoverallpreferencesversus34.6%withoutplanning.ExpertsalsofavortheunifiedmodeloveraseparatelanguagemodelanddiffusionTransformer.OnWildSongBench,YuE2scores6.73onSongBenchGlobalAvg,exceedingallevaluatedpublicbaselines.Selectingfromeightcandidates(best-of-8),YuE2reaches6.96,thehighestobservedmeanamongallevaluatedsystems.Expertlisteningfurtherestablishesitscompetitivenesswithproprietarysonggenerators,favoringbest-of-8overSunov4.5andyieldingnearlybalancedpreferencesagainstSunov5.Tolearnthisgenerationprocessfromrecordingswithoutalignedscores,weintroduceMERT2andSheetSage2tosupplysemanticandsymbolicsupervision.MERT2setsanewstateoftheartinmusicrepresentationlearning,surpassingpreviousbestresultson14of15MARBLEmetrics;SheetSage2leads12of15benchmark-metricpairsinourlead-sheettranscriptioncomparison.Thesamecheckpointfollowsscoreeditswhilelargelypreservinguneditedmusicalcontentandgenerateszero-shotcoverswithoutcover-specifictraining.Itsreadablescorealsoenablesagenticmusicediting,withexternallanguagemodelstranslatinguserfeedbackintorevisionsofthecomposition.",
-      "published_date": "Sep 27",
-      "github_url": "https://github.com/multimodal-art-projection/YuE",
-      "org_tag": "Multimodal Art Projection"
-    },
-    {
-      "title": "VisionHOPE: Visual Backbones as Self-Modifying Learning Systems",
-      "url": "https://huggingface.co/papers/2609.33325",
-      "likes": 216,
-      "date": "2026-10-04",
-      "abstract": "VisualbackboneshaveevolvedfromConvolutionalNeuralNetworks(CNNs)withlocalaggregationtoVisionTransformers(ViTs)withglobalinteractions,State-SpaceModels(SSMs)withinput-dependentstatetransitions,andTest-TimeTraining(TTT)layersthatadaptaninnerlearnerwhileprocessinganimage.Acrossthisprogression,visualcomputationhasbecomeincreasinglyadaptivetoeachinput,yettherulesgoverningthatadaptationremainlargelyprescribedbythetrainedbackbone.WeintroduceVisionHOPE,thefirstgenericvisualbackboneformulatedasaself-modifyinglearningsystem,inwhichwhatthemodelremembersandhowitlearnsco-evolvewithinanimage.Buildingontheself-referentialconstructionofNestedLearning(NL),VisionHOPErealizesthisco-evolutionthroughfivecoupledmemoriesthatstorecontent,generatekeyandvaluerepresentations,andgovernlearningrateandretention.Thesememoriesevolvejointlyasvisualcontextaccumulatesalongeachscan.However,directlyapplyingtheunconstrainedself-referentialupdatetoavisualbackboneleadstoinstability.Wethereforederiveastability-matchedstep-sizecontrolschemethatcombinesasoftcaponself-referentialinjectionwithaspectralclampontheretainedmemorytransition,andprovethattheresultingmemorydynamicsarenon-expansivealongeachscan.Fortwo-dimensionalfeaturemaps,weadaptNL'schunkformulationbyaligningchunkswithimagerowsandcolumnsacrossfourdirectionalscans.TheproposedVisionHOPEachievescompetitiveresultsonImageNet-1K,COCO,andADE20K,establishingself-modifyinglearningsystemsasapracticalfoundationforgeneral-purposevisualbackbones.Thecodeisavailableathttps://github.com/PSRben/VisionHOPE.",
-      "published_date": "Sep 27",
-      "github_url": "https://github.com/PSRben/VisionHOPE",
-      "org_tag": "Mininglamp Technology"
-    },
-    {
-      "title": "Rethinking Latent Visual Reasoning: Grounding Latent Reasoning in Visual Evidence",
-      "url": "https://huggingface.co/papers/2609.34563",
-      "likes": 209,
-      "date": "2026-10-04",
-      "abstract": "Latentvisualreasoning(LVR)enablesmultimodallargelanguagemodels(MLLMs)toperformintermediatecomputationincontinuouslatenttokensratherthanexpressingeveryreasoningstepinwords.However,unliketextualCoT,latentreasoningisnotdirectlyobservable,makingitdifficulttosupervisewhatlatenttokenslearn.Inthiswork,wefirstconductathoroughanalysisoflatent-tokenbehaviorandidentifyalatentevidence-creditgap:latenttokensrespondonlyweaklytoimageperturbationsthatalterthecorrectanswer.WehypothesizethatthisissuestemsfromthelackofexplicitsupervisionduringGRPOtraining.Thesefindingssuggestthatafinal-answerrewardprovidestoolittleguidanceonwhatvisualevidencetopreserveorhowcreditshouldbeassignedacrosslatenttokens.Tobridgethisgap,weproposeReaLVR,whichbringsvisual-evidencesupervisiontothemodel'sownfree-runninglatenttrajectories.ReaLVRcontrastscorrectandmodel-generatedwronganswerstodeterminewherestrongersupervisionisneeded,andrelevantandmismatchedvisualevidencetospecifywhattopreserve.Acrossthreemodelfamilies,ReaLVRconsistentlyoutperformsevaluatedLVRbaselines,achievingthehighestfive-taskaverageof63.7%onQwen2.5-VL-7B.Crucially,wearethefirsttoscalevisualreasoninginlatentspace,showingthatourframeworkcontinuestodeliverrobustimprovementsatfrontiermodelscalesupto235B.Furtheranalysesshowmorequestion-sensitivelatent-tokenpositions,strongeralignmentwithrelevantvisualregions,andgreaterfixed-contextdependenceonthemostattendedlatenttokens.",
-      "published_date": "Sep 28",
-      "github_url": "https://github.com/xixiaouab/ReaLVR-code",
-      "org_tag": "Amazon"
-    },
-    {
-      "title": "Beyond Teacher Assignment: Domain-Normalized Multi-Teacher On-Policy Distillation",
-      "url": "https://huggingface.co/papers/2609.35347",
-      "likes": 178,
-      "date": "2026-10-04",
-      "abstract": "Reinforcementlearningcanturnonelanguagemodelintoseveralspecialists,eachexcellentatasingleskillsuchasmathematics,codingorfollowinginstructions,butusersneedonemodelwithalloftheseskills.Multi-teacheron-policydistillation(MOPD)mergesthembylettingthespecialiststeachonestudent:thestudentanswerseachprompt,andthespecialistforthatprompt'sdomaingivesfeedbackoneverytoken.Thisroutingdecideswhichspecialistteaches,butnothowstronglyitsfeedbackmovesthesharedstudent.InQwen3.5modelsatthreesizes,wefindthatMOPD'sstudentdoesnotbeatonetaughtbythebestsinglespecialistandgainslittleofthemathematicsspecialist'sadvantage.Thefeedbackisunbalanced:instruction-followingfeedbackisseveraltimesmorespreadoutthanmathematicsfeedbackanddominatesthestudent'supdates.WeproposeDomain-NormalizedMOPD(DN-MOPD),whichkeepstheroutingandrescaleseachdomain'sfeedbackbyitsmeasuredspread.Onsixpublicbenchmarks,DN-MOPDimprovestheaveragescoreoverMOPDateverysize,acrossthreerandomseedsandundertwoanswer-lengthlimits,andrecoversmostofthelostmathematicsgain.Controlswithfixeddomainweightsshowthatthegaincomesmainlyfromturningdowninstruction-followingfeedbackratherthanturningupmathematicsalone,andthatfixedweightsclosetothoseDN-MOPDmeasuresperformcomparably.Combiningspecialiststhereforerequiresdecidingnotonlywhichoneteaches,butalsohowstronglyitsfeedbackcounts.",
-      "published_date": "Sep 28",
-      "github_url": "https://github.com/LiXin97/DN-MOPD",
-      "org_tag": "Nanyang Technological University"
-    },
-    {
-      "title": "PanoVLN: Towards Effective Panoramic Vision-and-Language Navigation",
-      "url": "https://huggingface.co/papers/2609.34759",
-      "likes": 161,
-      "date": "2026-10-04",
-      "abstract": "Recentvision-languagemodels(VLMs)haveadvancedvision-and-languagenavigation(VLN),enablingmodelstopredictnavigationactionsfromvisualobservationsandlanguageinstructions.Inthiswork,weexploreVLNwithpanoramicobservationsandintroducePanoVLN.Themotivationisstraightforward:morecompletevisualcontextshouldenablebetter-informednavigationdecisions.Forexample,apanoramacanrevealapassageoutsideaperspectivecamera'sfieldofview,allowingthemodeltoidentifytheintendedroutewithoutadditionalexploration.However,wefindthatsimplyreplacingperspectiveimageswithpanoramasyieldsonlylimitedgains.Ourdiagnosissuggeststhatfullyexploitingwidervisibilityrequiresmodificationstoactionprediction,trainingsupervision,andvisualrepresentation.First,widervisibilitysupportslonger-horizonactionplanning.Wemakethemodelpredictlongeractionsequences,enablinglargerturnsandsubsequentmovementfromasinglepanorama.Specifically,weintroduceaconfidence-guidedexecution(CGE)strategythatdynamicallydetermineshowmanypredictedactionstoexecutebeforereplanning.Second,widervisibilityalsobringsmorecomplexroutechoices.Wethereforeconstructtrainingrouteswithfrequentbranchingpointsandclearinstructionstoprovidetargetedsupervisionforrouteselection.Third,panoramicnavigationrequiresunderstandingspatialrelationshipsacrossviewingdirections,beyondrecognizingindividuallandmarks.WecombinesemanticandgeometricfeaturesfromRGBpanoramastocapturebothscenecontentandspatiallayoutwithoutaddingvisualtokens.Witha4BbackboneandRGB-onlyinput,PanoVLNsurpassesthepreviousSOTAby11.9%and8.7%insuccessrateonR2R-CEandRxR-CEVal-Unseen.Real-worldexperimentsonaquadrupedfurtherdemonstratefasternavigationwithfewerpausesthanpriorVLNmethods.",
-      "published_date": "Sep 28",
-      "github_url": "https://github.com/wangzhen-w/PanoVLN",
-      "org_tag": "Zhejiang University"
-    },
-    {
-      "title": "OneStreamer: Unifying Perception, Memory, and Proactive Response in Streaming Video Interaction",
-      "url": "https://huggingface.co/papers/2610.01762",
-      "likes": 160,
-      "date": "2026-10-04",
-      "abstract": "StreamingvideoLLMsmustretainevidencebeforeitsrelevancetofuturetasksisknownandrespondwhensufficientevidencebecomesavailable.Thechallengeistoformreusablefactualmemorywithoutcompromisingreal-timeperception.WeintroduceOneStreamer,whichjointlylearnsquery-independentevidencerecordingandtaskresponsethroughasharedproactivegenerationprocess.ItsProactiveHierarchicalCaptionMemory(PHCM)producestime-groundedlocal-detailcaptionsandsummariesofcompletedevents.Streamingcaptiontargetssupervisetheinterpretationofobservedvideoprefixesduringtraining.Atinference,model-generatedrecordscomplementarecentvisualwindow,providingreusablefactualcontextwithoutrevisitinghistoricalvisualfeatures.ProactiveStateTransitionLearning(PSTL)reducesthedominanceofrepeatedwaitingstatesbypreservingsupervisionatalloutputanchorsandselectingrepresentativestate-changeandstate-persistencetokens.Wefurtherdevelopastreamingdatasynthesispipelinethatalignsoutputcontentandtimingwithavailableevidence.CombiningtheresultingstreamingcaptionsandQAwithcleanedopen-sourcedatayieldsOneStreamer-1M,abroad-coveragestreamingvideointeractiondatasetwithoveronemillionrecordsspanningdiversetasks.Our4Bmodelachievesthebestresultsamongthecomparedmethodsacrossalleightevaluatedstreamingvideounderstandingbenchmarks.AblationsshowthatretaininggeneratedcaptionsimproveshistoricalQAwithoutdegradingreal-timeperception.PSTLalsooutperformsdensestatesupervisionwhilesupervisingonly27.5%ofannotatedstatetokens.Together,theseresultssupportproactivegenerationasasharedlearninginterfaceconnectingperception,memoryformation,andtimelyresponseinstreamingvideointeraction.",
+      "title": "RealCompanion: Benchmarking Human Understanding from Reasoning over Longitudinal Real-World Conversations",
+      "url": "https://huggingface.co/papers/2610.01780",
+      "likes": 280,
+      "date": "2026-10-11",
+      "abstract": "Acompanionthattalkswithapersonformonthsshouldcometounderstandthem.Itshouldrememberwhattheysaid,inferwhotheyare,andknowwhenthepastbearsonthemessageinfrontofit.Testingthisrequiresarealperson'srecord,andsuchrecordsareprivate,sobenchmarksgeneratethepersonandthequestionsandsettleinadvancewhatmatters.Werelease\\bench,tenrealrelationshipswithanAIcompanion:27,218messagesoverupto120days,releasedastheconversationandfourfilesderivedfromit,aprofile,apersona,achatgroundtruthandaquestionset,eachcitingthemessagesitrestson.Everychatlabelcarriesthereasoningtracethatproducedit,checkedstagebystageagainsttheconversation.Threefindingsfollow.First,thepastisrarelyneededandfaraway.Pooledmeasuresmislead:arecencywindowfindstherequiredmessagefor95.9\\%ofprobesand2.2\\%ofthosethatneedmemory,andatthenaturalrate96\\%ofthegainfromsupplyingrecordedevidencecomesfrommessagesthatneednone.Second,nodetectorwetriedcantellwhenmemoryisneededonrealmessages,authoredquestionsoverthesamehistoriesleakthecue,andlabelingthesamemessagesasmemoriesraisestheirusebytentofourteenpoints.Third,threeagentsystemsreconstructthepersonawiththesameF1ata31-folddifferenceincost.",
       "published_date": "Oct 1",
-      "github_url": "https://github.com/MCG-NJU/OneStreamer",
-      "org_tag": "Nanjing University"
-    },
-    {
-      "title": "FuseReg: Regularizing Layer Fusion Mitigates the Reconstruction-Generation Gap in Representation Autoencoders",
-      "url": "https://huggingface.co/papers/2609.31620",
-      "likes": 158,
-      "date": "2026-10-04",
-      "abstract": "Representationautoencoders(RAEs)reusefeaturesfromapretrainedvisualencoderasreconstructionanddiffusionlatents,integratingstrongvisualrepresentationsintoimagegeneration.However,RAEsstillneedtodecidewhichencoderlayersformthesharedlatentspaceforthegeneratorandpixeldecoder.Thischoiceinvolvesatrade-off.Shallowerlayerstendtopreservefinepixeldetailsbetter,whiledeeperlayerstendtoyieldbettergenerationmetrics.Afixedheuristiclayerfusionthereforecouplestwostagesthatbenefitfromdifferentinformation.WeintroduceFuseReg,whichreplacesheuristicfeatureselectionwithtrainingoverrandomsubsetsofencoderlayers.Wetheoreticallyanalyzetheunderlyingmechanism:subsetsamplingexplicitlypenalizessensitivitytocross-layerdisagreement.OnImageNet-256withDINOv3-L,asingleFuseRegdecoderreconstructsfromfull,sparse,andsingle-layerfusionswithoutretraining,achievinghigherPSNRthandecodersspecializedtofixedfusions.Thisflexibilityalsobenefitsgeneration:decoderreplacementalonereducesunguidedgFIDby27%withanunchangedRAEv2DiT-XLgenerator.Thesameregularizationprincipleextendstodiffusiontraining,withjointregularizationofbothstagesreducingunguidedgFIDby29%onDiT-Base.Theseresultsshowthattrainingdownstreammodelsforlayer-fusionrobustnessnarrowsthereconstruction-generationgapwithoutmodifyingthepretrainedencoder.",
-      "published_date": "Sep 25",
-      "github_url": "https://github.com/Hongyang-Du/FuseReg",
-      "org_tag": null
-    },
-    {
-      "title": "On-Policy or Off-Policy Learning? A Systematic Study of Distillation Dynamics",
-      "url": "https://huggingface.co/papers/2609.35259",
-      "likes": 154,
-      "date": "2026-10-04",
-      "abstract": "On-policylearninghasbeenarguedtoreducecatastrophicforgetting,producesparserparameterupdates,andimprovegeneralisation.However,existingcomparisonsbetweensupervisedfine-tuningandreinforcementlearningvarymanyfactorssimultaneously,makingthecontributionofrolloutpolicydifficulttoisolate.Westudytheeffectofrolloutpolicyinacontrolledstrong-to-weakdistillationsetting,byindependentlyvaryingrolloutpolicy,token-levelKLdirection,andlearningrateacrosstheLlama3andQwen2.5modelfamiliesandreasoningtasksspanningscientific,medical,andarithmeticdomains.Ouranalysisrevealsanuancedpictureofdistillationdynamicsinwhichrolloutpolicydoesnotnecessarilyplayacentralrole.Instead,token-levelKLdirectionmoreclearlyshapestaskperformanceandoutputcoverage,whilelearningrategovernsforgettingandupdatesparsity.AnalysisofKLgradientsandexperimentsalongacontinuousstudent-teacherrollout-policyspectrumexplainthispattern:forwardKLisremarkablyrobusttorolloutpolicy,withitsperformancestableandstrongdespitechangestotherolloutpolicy,whereasreverseKLissubstantiallymoresensitiveandfavoursstudent-generatedrollouts.On-policydataneverthelessimprovesgeneralisationtohardervariantsoftheCountdownarithmetictaskunderbothKLdirections,althoughthisadvantagedoesnotreliablypersistaftersubsequentRLVR.Ourbroaderconclusionsremainrobusttoremovinggradientclipping,usingsampledKLestimators,andtrainingontasksrequiringlongerreasoningchains.Overall,ourresultschallengetheviewthaton-policyrolloutsareinherentlypreferableandshowthattheirvaluedependscriticallyontheobjective,evaluationsetting,andoptimisationhyperparameters.",
-      "published_date": "Sep 28",
       "github_url": null,
-      "org_tag": "University of Cambridge"
+      "org_tag": "Quis Lab"
     },
     {
-      "title": "VoxMem: Benchmarking Multimodal Memory in Large Audio Language Models",
-      "url": "https://huggingface.co/papers/2609.32607",
+      "title": "Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability",
+      "url": "https://huggingface.co/papers/2610.08448",
+      "likes": 201,
+      "date": "2026-10-11",
+      "abstract": "On-PolicyDistillation(OPD)trainsastudentonitsowngenerationsusingteacherfeedback.Withdifferenttokenizers,comparingteacherandstudentpredictionsrequiresalignmentatbothsequenceandvocabularylevels.Inthispaper,weexaminewhetherexpandingthisalignmentcoverageimproveslearning.Acrossthreeheterogeneousteacher--studentpairsonmathematicalreasoningandcodegeneration,strict1:1groupsalreadycovermoststudent-generatedtokensdespitesubstantialvocabularymismatch.Onresponsessampledfromthestudentsbeforedistillation,thesharedvocabularyretainsnearlyallteacherandstudentprobabilitymassatstrictlyalignedpositionsonaverage.RestrictingreverseKLtoastudent-selectedtop-16subsetofthesharedvocabularyateachstrictpositionachievesaccuracycomparabletofullshared-vocabularyOPD,outperformingtheevaluatedcross-tokenizerbaselines.Addingmeansquarederrorsupervisiononspanlog-probabilitiesinmismatchgroupsgivescompletesupervisioncoverage,yetreducesaccuracy.Atcheckpointsfromtrainingwithonlythestrictloss,thespangradientsshowweakornegativedirectionalagreementwiththestrictgradientsandgrowinmagnituderelativetothem.Thesediagnosticsmayhelpexplaintheaccuracydropfromaddingspansupervision.Ourfindingsmotivateashiftfrommaximizingalignmentcoveragetoprioritizingsupervisionreliability:compactsupervisionatstrictpositionscanbemoreeffectivethanbroadercoveragethatintroducesweaklyalignedorconflictingtrainingsignals.",
+      "published_date": "Oct 6",
+      "github_url": null,
+      "org_tag": "📄tardellirs/paper-pulse"
+    },
+    {
+      "title": "Kandinsky 6.0 Video: Foundation Models for Synchronized Video and Audio Generation",
+      "url": "https://huggingface.co/papers/2610.05608",
+      "likes": 162,
+      "date": "2026-10-11",
+      "abstract": "WepresentKandinsky6.0Video,afamilyoffoundationdiffusionmodelsforsynchronizedtext-to-audio-videogeneration,comprisingKandinsky6.0VideoLite(3Bparameters)andKandinsky6.0VideoPro(29Bparameters).Bothmodelsgenerate5-secondvideoclipswithsynchronized44kHzaudio,includinglip-sync,intext-to-audio-video(T2AV)andimage-to-audio-video(I2AV)modes;abuilt-insuper-resolutionmodelraisestheoutputresolutiontoFull-HD(1920times1080).BuildingonthevideogenerationcapabilitiesofKandinsky5.0,Kandinsky6.0Videoemploysadual-streamCrossDiTarchitecturethatconnectsapretrainedvideostreamandanewlytrainedaudiostreamthroughbidirectionalcross-attentionfortemporalandsemanticalignment.Ourcontinuouspretrainingstrategyfirsttrainstheaudiostreamfromscratchonlarge-scaleaudiocorporaandthentrainsbothstreamsjointlyonpairedaudio-videodatawhilepreservingunimodalfidelity;pretrainingisfollowedbysupervisedfine-tuning,reinforcement-learning-basedpost-training,anddistillation.Inside-by-sidehumanevaluation,Kandinsky6.0VideoProclearlyoutperformsitspredecessor,Kandinsky5.0VideoPro,andremainscompetitivewithleadingaudio-videogenerationmodels,particularlyinspeechquality.Toaccelerateopenresearchanddeploymentinmultimediageneration,wereleasethecode,modelcheckpoints,anddiffusersintegrationundertheMITlicense.",
+      "published_date": "Oct 4",
+      "github_url": "https://github.com/kandinskylab/kandinsky-6",
+      "org_tag": "Kandinsky Lab"
+    },
+    {
+      "title": "Self-Retrospection Distillation: Turning Post-hoc Experiences into Prior Foresight",
+      "url": "https://huggingface.co/papers/2610.08077",
+      "likes": 156,
+      "date": "2026-10-11",
+      "abstract": "Reinforcementlearningwithverifiablerewards(RLVR)turnsagentexperienceintolearningsignalsprimarilythroughscalaroutcomerewardsafterinteraction.Forgroup-relativeobjectives,however,thissignalvanisheswhenallrolloutsreceivethesamereward,eventhoughtheirtrajectoriesmayrevealusefulinformationaboutwhatthetaskrequiresandhowtheagentfails.Weaskacomplementaryquestion:canhindsightteachanagentwhatitcouldhaveanticipatedbeforeacting?Weintroduceprospectivelearning,whichusespost-hocexperiencetosuperviseforesightpredictionsfromthepre-interactionview,andinstantiateitwithSelf-RetrospectionDistillation(SRD).Intuitively,acompletedtrajectoryrevealsknowledgethatwouldhavebeenusefulandpitfallsthatshouldbeavoided;SRDdistillsthisprivilegedhindsightintotrajectory-blindforesightofthesamepolicy.Foresightservesonlyasatrainingtargetandneednotbeexplicitlygeneratedatinferencetime.Across10tool-integratedreasoningandlong-horizonagentictasks,SRDcomplementsRLVRandself-distillationbaselineswithgainsofupto24.2pp.Itsadvantageisespeciallypronouncedwhenrewardcontrastisscarce:when37--98%ofrolloutgroupsarereward-uniformacrossmodelscales,yetSRDcanstillexploitlearningsignalfromsampledtrajectories.Inthe2Bsetting,where98%ofgroupsareall-failure,theRLVRtrainingendsupat0.0%success,whileaddingSRDreaches60.6%underthesamerolloutbudget.Ourresultssuggestthatpost-hocagentexperienceisusefulnotonlyforevaluatingorimprovingbehavior,butalsoforshapingpredictiverepresentationsbeforeavailableinteraction.",
+      "published_date": "Oct 6",
+      "github_url": "https://github.com/SalesforceAIResearch/SRD",
+      "org_tag": "Salesforce AI Research"
+    },
+    {
+      "title": "UltraText Bench: A Comprehensive Bilingual Benchmark for Evaluating Visual Text Rendering in Image Generation",
+      "url": "https://huggingface.co/papers/2610.09823",
+      "likes": 153,
+      "date": "2026-10-11",
+      "abstract": "Densevisualtextrequiresimagegeneratorstoreproducelongstringsacrossmultipleregionswithcorrectplacementandlegibility.Asshort-stringrenderingimproves,evaluationmusttestsustainedperformanceacrossmoredemandingscenes.WeintroduceUltraTextBench,abilingualbenchmarkforprompt-onlygenerationofdensevisualtext.Itcontains432promptsspanning24real-worldscenecategoriesandthreedifficultylevels,splitequallybetweenEnglishandChinese.Eachhuman-reviewedpromptsuppliesexactstringsforfourtotwelvetextregions,pairedwithstructuredreferencesfortheircontent,placement,andvisualattributes.WeusetheQ-Judgervision-languagemodeltoassesseachimageagainstthecompletereference,reportingtextfidelity,textclarity,spatialquality,andscenequality.Across24modelconfigurations,thesedimensionsrevealdifferentstrengths:Z-Image-Turbogains3.81claritypointsoverZ-Image-Basewhilelosing14.76fidelitypointsunderthereportedsettings.Performancealsovarieswithworkload;Qwen-Image-2512'sEnglishcompositefallsfrom86.50atL1to42.86atL3.Tenparticipantstookpartinhumanevaluationoftheautomaticscores.Repository:https://github.com/LINs-lab/UltraText_Bench.",
+      "published_date": "Oct 7",
+      "github_url": "https://github.com/LINs-lab/UltraText_Bench",
+      "org_tag": "Westlake University"
+    },
+    {
+      "title": "AgentGarten: Code Worlds for Evolving Agents",
+      "url": "https://huggingface.co/papers/2610.12374",
       "likes": 149,
-      "date": "2026-10-04",
-      "abstract": "Spokenconversationalsystemsmustrecoverinformationfrompriorinteractions(i.e.,memory),yetrelevantinformationinspeechextendsbeyondwhatwassaidtowhosaidit,howitwasspoken,andwhatwasaudible,informationthatexistsonlyintheaudiosignalandcannotberecoveredfromatranscript.Beyondwhattoremember,memoryalsodemandsdiverseoperations:retrievingasinglefact,integratingevidenceacrossturns,trackinganevolvingstate.Realinteractionsfurtherunfoldacrosssessions,meaninginformationaccumulatesacrossdistinctepisodesratherthanasinglecontinuousrecording.Existingbenchmarksfallshortonallthreedimensions:theyfocusprimarilyonlexicalcontent,adoptlimitedandadhocmemoryoperations,andtreatmemoryasasingle-sessionproblem.Wearguethatprincipledmemoryevaluationrequiresjointlycharacterizingtheacousticevidencetoberetainedandtheoperationsappliedtoit,andintroduceataxonomyalongthesetwoaxes.Buildingonthistaxonomy,wepresentVoxMem:3,196evaluationinstancesover34,743spokensessions(177hours)crossingfouracousticevidencetypes(speechsemantics,speakeridentity,paralinguisticcues,environmentalsound)withfourmemoryoperations(informationextraction,multi-sessionreasoning,temporaltracking,andanswerrefusal),groundedinmulti-sessionhistoriesandstratifiedacrosscontextbudgetsfrom8Kto64Ktokens.Evaluating15LALMs,nomodelexceeds40%at32K.Modelsretainwhatwassaidfarbetterthanwhosaidit,how,orwhatwasaudible,agapthatwidensforcomplexoperations,growswithhistorylength,andmanifestsasqualitativelydistinctfailuremodesacrossevidencetypes.VoxMemaimstoprovideafoundationtomeasureanddriveprogressonthefullscopeofspokenconversationalmemory.",
-      "published_date": "Sep 26",
-      "github_url": "https://github.com/swagshaw/voxmem",
-      "org_tag": "The University of Melbourne"
+      "date": "2026-10-11",
+      "abstract": "Interactivevirtualworldsallowagentstolearnthroughexplorationandinteraction.Whatagentscanlearnisboundedbytheenvironmentstheypracticein,whichmustbefaithful,withconsistentstate,rules,anddynamics,andrealistic,withobservationsthatfollowthereal-worldvisualdistributions.Achievingbothacrossdiverseworldsremainsabottleneck.WeintroduceAgentGarten,aframeworkthatcouplessimulatorsandgameengineswithasharedneuralrenderertobuildreal-timeinteractiveenvironments.Itssimulationbackendsmaintainpersistentworldstateandexecuteprogram-definedinteractionrules,whiletherenderergeneratesvisualobservationsfromstructuredconditionsexportedthroughacommoninterface.Tobuildtheneuralrenderer,weadaptapretrainedvideomodeltogeometryconditions,distillitwithourproposedAdversarialForcing,andoptimizeinferenceforreal-timeinteraction.AdversarialForcingmakeshistoryprefillingdifferentiablethroughexactreplay,sothatlossesonlaterpredictionsupdatehowtherendererencodespriorobservations,andaddsreal-dataadversarialsupervisiontoimproveitsvisualquality.InAgentGarten,agentsperceivetheworldthroughvisualobservations,interactwithitinrealtime,andimprovebydistillingeachroundofexperienceintoplaybooksthatsubsequentagentsinheritandrefine.Ourempiricalstudydemonstratesasubstantialgaininlearningefficiency,withagentslearningfromjust4roundscomparedwithmillionsforaconventionalreinforcementlearningcounterpart.Asnewworldscanbewrittenascodeandrenderedthroughthesameinterface,environmentscanscaleinbothnumberanddifficultyalongsidetheiragents,asteptowardagentsthatkeepevolvingthroughinteractiveexperience.",
+      "published_date": "Oct 8",
+      "github_url": "https://github.com/MirroS-Lab/AgentGarten",
+      "org_tag": "MirroS"
     },
     {
-      "title": "GraphForge: Training Working Agents with Graph-Anchored Workspace Synthesis",
-      "url": "https://huggingface.co/papers/2609.38923",
-      "likes": 144,
-      "date": "2026-10-04",
-      "abstract": "Workingagentsneedtoreaddiversefiles,coordinatetools,andproducedeliverables.Trainingsuchagentsrequirestasksbuiltonmanyrealfileswithverifiableresults,butfewpipelinesexisttosynthesizethiskindofdata.Existingpipelineseithergeneratefileswithmodels,whichlackrealismanddiversity,orbuildtasksonrealfileswithouttask-specificverifiers,leavingresultqualityunchecked.WeintroduceGraphForge,anevidence-graphbasedframeworkthatgroundsboththetaskanditsverificationinrealfiles.Startingfromoccupation-groundedseedsforcontrolleddiversity,GraphForgeassemblesaworkspaceofrealfilesforeachseedandbuildsanevidencegraphovertheirrelations.Sincethetaskstatementandrubricsarebothderivedfromthisgraph,taskrequirementsarebackedbytheworkspacefilesandeachcriterionisanchoredtothefilesneededtoverifyit.Aninitialrolloutfurthertestsexecutability,andarevisionagentrepairsthetaskandrubricsagainsttheoriginalfilesbeforetrajectoriesarecollected.Fine-tuningQwen3.6-27Bon2,169GraphForgetrajectoriesbringsGDPValto1445.7(+65.7)underOpenHands,andWorkspace-Bench-LiteandSpreadsheetBenchIIto63.7(+7.7)and24.0(+13.7)underClaudeCode.Rejectionfine-tuningontheSFTmodel'sownrollouts,withcandidatesselectedbytheevidence-anchoredrubrics,yieldsfurtherimprovementsonallthreebenchmarks,suggestingthattherubricsprovideausefulselectionsignal.Thedataandmodelsareavailable.",
+      "title": "Learn2Play Bench: How Well Do LLM Agents Learn from Experience in Unfamiliar Environments?",
+      "url": "https://huggingface.co/papers/2610.08215",
+      "likes": 135,
+      "date": "2026-10-11",
+      "abstract": "LearningfromexperienceisessentialforLLMagentstoadapttounfamiliaranddynmaicenvironments.Evaluatingthisabilityisthereforeimportantforunderstandinghoweffectivelyagentsacquireandusenewknowledge.Existingbenchmarkshavesoughttoevaluatethisability,buttheyprimarilyevaluatetaskswhoserulesareprovidedintheinstructionsoralreadyfamiliartopretrainedmodels,makingitdifficulttodistinguishlearningfrominteractionsfromreasoningwithexistingknowledge.Toaddressthis,weintroduceLearn2PlayBench,abenchmarkofnewlydesignedtext-basedgames,whoserulesarenovelorcounterintuitive,requiringagentstoacquireknowledgethroughinteractionratherthanrelysolelyonpretrainedknowledge.Thesegamesprovidereproduciblefeedbackandautomaticscoring,enablingcontrolledevaluationoflearningacrossrepeatedattempts.Wealsovarygameinstancestotestwhetheragentscanapplywhattheyhavelearnedtonewsituations.Therefore,weevaluatehowbackbonemodels,self-evolvingmethods,andagentharnessesaffectagents'learningability,revealingthreefindings:(1)Experienceretention:Retainingcompleterecordsofactionsandfeedbackcansupportmoreeffectivelearningthansummarizingtheseexperiencesintorulesorstrategies.(2)Humanagentgap:Top-performinghumanplayersachievehigherpeakscoresthantheevaluatedagents.Humanexploremorevariedstrategies,andrepeatactionsless.(3)Harnessmatters:Withthebackbonefixed,changingtheharnesscanimproveperformancewhilereducingestimatedinferencecost.Together,thesefindingsprovideinsightsintohowLLMagentslearnfromexperienceandsuggestdirectionsforfutureworktoimprovetheirlearningability.Projectwebsite:https://liushiliushi.github.io/learn2play-bench-website/",
+      "published_date": "Oct 8",
+      "github_url": "https://github.com/liushiliushi/Learn2Play-Bench",
+      "org_tag": "National University of Singapore"
+    },
+    {
+      "title": "TokenRouter: Efficient Serving System for Token-Level LLM Routing",
+      "url": "https://huggingface.co/papers/2610.12242",
+      "likes": 129,
+      "date": "2026-10-11",
+      "abstract": "Largelanguagemodel(LLM)routingdistributesinferenceworkacrossdifferentmodels,advancingthecost-qualityParetofrontierofLLMserving.Whilecoarse-grainedroutingatthesessionorquerylevelhasbeenwidelyadoptedinproductionsystems,recentalgorithmicworkshowsthatfine-grainedtoken-levelroutingcanyieldsubstantialefficiencyandqualitygains.However,efficientlyservingtoken-levelroutedinferenceposessignificantchallengestoexistingsystems.Builtonsingle-LLMassumptions,currentsystemssufferfromseverestepdesynchronizationandfrequentbatchadmissiondelaysundertoken-levelrouting,andtheyalsoimposehighimplementationcomplexityondevelopers.Toaddressthesechallenges,wedesignTokenRouter,anefficientanddeveloper-friendlyservingsystemfortoken-levelroutedLLMinference.TokenRouterfollowstheprincipleofrequest-centricprogramming,model-centricexecution:developersdescriberoutinglogicfromtheperspectiveofasinglerequest,whiletheruntimelaunchesasubserverforeachLLManddispatchesrequestsasynchronously.Eachsubserveremploysadelayed-batchingscheduler,whoseoptimalhyperparametersarederivedfromamathematicalthroughputmodelofthesystem.Acrossdiverseroutingalgorithms,workloads,andmodelpairs,TokenRouterachieves2.01-64.15xhigherdecodingthroughputthanexistingsystems,substantiallyadvancingtheservingefficiencyoftoken-levelLLMrouting.Ourcodeisavailableathttps://github.com/thu-nics/TokenRouter.",
+      "published_date": "Oct 8",
+      "github_url": "https://github.com/thu-nics/TokenRouter",
+      "org_tag": "Tsinghua-NICS-EFC"
+    },
+    {
+      "title": "FrameMorrow: Future-guided Frame Selection with Prospective Tokens for Long-Horizon Video Generation",
+      "url": "https://huggingface.co/papers/2609.38839",
+      "likes": 124,
+      "date": "2026-10-11",
+      "abstract": "Long-horizonvideogenerationrequiresmodelstoeffectivelyleverageanincreasinglylonggenerationhistory.Asthegeneratedhistorygrows,retainingallpreviouscontentbecomesincreasinglyexpensiveandredundant,makingeffectivehistoricalselectionessential.Existingapproachesoftendeterminehistoricalrelevancebasedonthecurrentcontent.However,informationrelevanttothepresentisnotnecessarilyusefulforfuturegeneration,whileseeminglylessrelevanthistorymaybecomeimportantlater.Ourkeyinsightisthathistoricalinformationshouldbeselectedaccordingtoitsrelevancetofutureinformationneeds.Capturingtheseneedsdoesnotrequiregeneratingthefullfuture;instead,acompactrepresentationofwhatbecomesimportantnextissufficienttoguidehistoricalselection.Buildingonthisinsight,weproposeFrameMorrow,aprospectiveframeselectorthatpredictsasmallsetofprospectivetokensrepresentingfutureinformationneedsandusesthemtoidentifyrelevantinformationfromhistory.FrameMorrowselectsexplicithistoricalframesratherthanmodel-specificinternalstates,enablingplug-and-playintegrationacrossdiversegenerators,includingclosed-sourcemodels,withlittleadditionalinferencecost.WeevaluateFrameMorrowacrossfivebenchmarksand11generativemodelsspanninglong-videogeneration,interactivegeneration,andaction-conditionedworldmodels.Extensiveexperimentsdemonstrateconsistentimprovementsinlong-rangeconsistency,visualquality,andactionalignmentacrossdiversegenerationsettings.",
       "published_date": "Sep 30",
+      "github_url": "https://github.com/YinBo0927/FrameMorrow",
+      "org_tag": "National University of Singapore"
+    },
+    {
+      "title": "STEPQuant: When and Where Errors Matter in Delta-Rule Recurrent State Quantization",
+      "url": "https://huggingface.co/papers/2609.38169",
+      "likes": 117,
+      "date": "2026-10-11",
+      "abstract": "LinearattentionreplacesgrowingKVcacheswithfixed-sizerecurrentstates,yetthesepersistentstatescanbecomeasubstantialmemorybottleneckunderconcurrentserving.Directlyquantizingrecurrentstatestolowprecisionoftenleadstosevereaccuracydegradation,asquantizationerrorspropagatethroughsuccessivestateupdates.Wediscoverthattheimpactoftheseerrorsdependsontwocomplementarydimensions:temporally,errorsinlong-livedmemorycanpersistacrossmanydecodingsteps;spatially,errorsindifferentkeyrowsaffectmodeloutputsdifferently,whilestatemagnitudesvarysubstantiallyalongbothrowsandcolumns.Motivatedbytheseobservations,weproposeSTEPQuant,aspatial-temporalpost-trainingquantizationframeworkforDelta-rulerecurrentstates.STEPQuantallocatesprecisionaccordingtoerrormagnitudeandmemorylifetime,andjointlyfitskey-rowandvalue-columnscalesbasedonstatedistributionsandkey-rowimpactonoutputerror.ExperimentsonQwen3.8-27BandKimi-Linear-48B-A3B-Instructacrossbothlong-andshort-generationbenchmarksshowthatSTEPQuantcloselymatchesFP32-stateaccuracyunderanominal6-bitbudgetandoutperformsuniformINT8inits4-bitconfiguration.IntegratedintoSGLangwithoptimizedGPUkernels,6-bitSTEPQuantachievesover5xrecurrent-statecompressionandreducestotalservingmemorybyupto68.7%.Ourcodeisavailableathttps://github.com/Dreamer-Toby/STEPQuant.",
+      "published_date": "Sep 29",
+      "github_url": "https://github.com/Dreamer-Toby/STEPQuant",
+      "org_tag": "Zhejiang University"
+    },
+    {
+      "title": "MotorMind: Scaffolding General Vision Language Models for Zero-Shot Robot Manipulation",
+      "url": "https://huggingface.co/papers/2609.38078",
+      "likes": 114,
+      "date": "2026-10-11",
+      "abstract": "Vision-language-action(VLA)modelshaveadvancedroboticmanipulation,buttheirzero-shotgeneralizationinnewtasksandenvironmentsremainslimited,andtheirrelianceonspecializedtrainingkeepsthemfrombenefitingdirectlyfromrapidlyadvancinggeneral-purposevision-languagemodels(VLMs).Inparallel,recentagenticroboticsystemsleverageVLMsforhigh-levelreasoningorcodingagentsforrobotcontrol,butoftendependonextensiveexternalmodelsandtools,introducingadditionalcomplexityandcost.Thismotivatesustoask:Canageneral-purposeVLMitselfoperatearobotmorelikethehumanteleoperatorbyreasoningdirectlyfromobservations,issuingactions,andcontinuouslyadaptingtoexecutionfeedback,withoutrelyingonexternalmodelssuchaslearnedactionexperts,codingagentsorgroundingtoolslikeSAM3?Inthiswork,weintroduceMotorMind,arobotmanipulationharnessthatconnectsVLM-proposedmid-levelactionstodeterministicrobotcontrolandfeedback,withasynchronousmonitoringandbackgroundmemoryupdates.Withouttask-specificpolicytraining,codingagents,oradditionalgroundingtoolssuchasSAM3,MotorMindachieves66.7%successonthebaseLIBERO-PROsuitesand53.8%underperturbations,comparedwithatmost13.3%and19.2%,respectively,forthepriorzero-shotmethodsweevaluate.Thesameinterfacereaches95%averagesuccessonarealxArm6robotacrossdirectmanipulationandhuman-perturbationsettings.ReplacingthebackbonewithastrongerVLMfurtherimprovesperformance,whiletheremainingfailures-primarilyduetovisualgrounding,embodiedreasoning,andactionknowledge-decreaseasVLMcapabilityimproves.Theseresultsshowthatageneral-purposeVLM,whenequippedwithanappropriatemid-levelactionrepresentationandasynchronousexecutionharness,canperformeffectivezero-shotroboticmanipulation.",
+      "published_date": "Sep 29",
       "github_url": null,
-      "org_tag": null
+      "org_tag": "📄tardellirs/paper-pulse"
+    },
+    {
+      "title": "From Traces to Agentic Worlds: Agentic Language World Models for Interactive Environment Simulation",
+      "url": "https://huggingface.co/papers/2610.06100",
+      "likes": 105,
+      "date": "2026-10-11",
+      "abstract": "RealisticenvironmentreplicasareincreasinglyvaluablefortrainingandevaluatingLLMagents,yettheoriginalsystemsmaybeinaccessibleorimpracticaltoreproduce.Weexploreagenticlanguageworldmodeling:ratherthanrebuildinganexecutableenvironment,aworldmodelagentservesastheenvironmentforataskagentandsupportsfaithfulandstatefulsimulation.WeinstantiatethisparadigmwithTrace2Env,alearning-freeframeworkforsettingswheretheoriginalsystemisunavailablebuthistoricalinteractiontracesremainaccessible.Trace2Envreconstructsthesetracesintoareusableenvironmentworldbookcontainingenvironmentschemas,groundedevidence,andinducedbehavioralknowledge.Atruntime,theworldmodelagentactivelyconsultstheworldbooktogetherwithpersistentepisodicstatetoinfereachaction'sobservationandlastingstateeffects.Acrossnineenvironments,Trace2Envimprovesbothnext-observationfidelityandlong-horizoninteractionconsistencyoverconventionalprompt-basedLWMs.Inmulti-turninteraction,taskagentactionsgeneratedagainstTrace2Envremainvalidmoreoftenwhenreplayedintherealenvironment,indicatingthatitssimulateddynamicsbetterpreservetheconsequencesofearlieractionsacrosssuccessiveturns.Theseresultsestablishagenticlanguageworldmodelingasanalternativedirectionforbuildingrealisticenvironmentreplicaswithoutreconstructingtheoriginalexecutablesystem.",
+      "published_date": "Oct 5",
+      "github_url": "https://github.com/ruyue0001/trace2env",
+      "org_tag": "Quanyu001/trace2env_demo"
+    },
+    {
+      "title": "Long-WAM: Scaling the Context of World-Action Models",
+      "url": "https://huggingface.co/papers/2610.10528",
+      "likes": 104,
+      "date": "2026-10-11",
+      "abstract": "Real-timerobotcontroldemandsenoughvisualhistorytoinfermotionandtaskprogress,butprocessingthathistorycandelayaction.WepresentLong-WAM,amodel-systemframeworkforscalingthecontextofcausalworld-actionmodelsunderreal-timecontrolconstraints.Ourcentralfindingisthataccesstohistoryisnotthesameasusingit:longerhistoriespayofffarmorewhenthevideofoundationispretrainedautoregressively(AR).Wefirstlearncausalpredictionfromrobotandegocentricvideoswithoutactionlabels,thenpreservethishistory-to-futurestructureduringworld-actionadaptation.OnRoboCasaGR-1,increasingcontextfrom0.0to19.2secondsraisessuccessfrom63.3%to78.7%,whereasabidirectionallypretrainedinitializationshowsnonetgain;robot-domainARpretrainingfurtherraisespeaksuccessonGR-1andLIBERO-Long.Long-WAMalsoachievesthebestresultsamongcomparedmethodsonLIBERO-Long,RoboTwin2.0,andDOMINO.Streamingobservationencoding,asynchronousexecution,andhardware-specificaccelerationenabledeploymentonRTX5090,DGXSpark,andJetsonAGXThorwithoutdroppingfutureprediction;onRTX5090,eachactionchunk,includingfuture-videolatentprediction,takes107.4ms.Real-timedeploymentonUnitreeG1andYAMsupportsdynamicandlong-horizonmanipulation,including95%successondynamiccupstacking,wherePi0.5andFast-WAMsucceedinnoneof20trials.Asamemory-informedexecutor,Long-WAMalsocomplementshigher-levelplanningincompositetasks.",
+      "published_date": "Oct 7",
+      "github_url": "https://github.com/NVlabs/LongLive",
+      "org_tag": "NVIDIA"
+    },
+    {
+      "title": "Scaling Trajectories for Complex Tasks through Recursive Self-Rewrite",
+      "url": "https://huggingface.co/papers/2610.02826",
+      "likes": 103,
+      "date": "2026-10-11",
+      "abstract": "Successfultrajectoriesondifficulttasksprovidevaluablesupervisionformodelimprovement,butspecializedharnessesintroduceinterventionsthatmaybeunavailableduringdeployment.WeproposeRecursiveSelf-Rewrite(RSR),aframeworkthatusesonebasemodel,Qwen-3.8-27B,todiscoversuccessfulsolutionsunderdiverseharnessesandreconstructthemastrainingtrajectoriesunderageneralharness.Aplannerextractsproceduresintorunbooks,acriticscreensforverifierandsolutionleakageandguidesrecursiverevision,andanexecutorfollowsqualifiedrunbooksinfreshsandboxes.Acrossapproximately3Kself-curatedterminaltasks,threeharnessesjointlysolve759tasks,34.3%morethanthestrongestindividualharnessintherecordedpool.RSRexpands2,001successfulsourcetrajectoriesinto11,094rewrittentrajectoriesforsupervisedfinetuning.TrainingonthesetrajectoriesoutperformsboththebasemodelanddirecttrajectorySFT.Comparedwiththebasemodel,pass@3increasesfrom57.0%to74.2%onTerminal-Bench2,from1.5%to9.1%onTerminal-Bench4,from39.0%to63.0%onourself-curatedTerminal-BenchHard,andfrom3.0%to6.0%onourSoftwareTerminal-Bench.ProcessrewardonLong-HorizonTerminal-Benchrisesfrom0.21to0.29.Theseresultsshowhowdiverseharness-assistedexperiencescanbereconstructedintoreusablecapabilitiesforamodeloperatingunderageneralharness.",
+      "published_date": "Oct 2",
+      "github_url": null,
+      "org_tag": "Tencent Hunyuan"
+    },
+    {
+      "title": "nanoMuse: An Open-Source Personal Agent for Every Device You Own",
+      "url": "https://huggingface.co/papers/2610.08699",
+      "likes": 101,
+      "date": "2026-10-11",
+      "abstract": "Assistantsfrom2011answeredandwaited,andagentsfrom2023didataskandstopped.InSeptember2026Meta'sMuseshowedanagentforoneperson,withaccounts,devices,memoryandaconversationthatlasts,closed,inavendor'scloud,inonecountry.Suchanagentisexpectedtoactonaperson'saccountsanddevices,rememberthemacrossweeks,speakfirstwhenitisworthit,andanswerforwhatitdid.Itisakindofsoftware,notamodel,anduntilnowhadnoopencounterpart.Thisreportdefinesthepersonalagentinfivequestionsandthreehorizons.ItreadshowMuseisbuiltfromMeta'spublicrecordandacopyofitsproductionprompt,eachstatementmarkedbyitssource.ItthenpresentsnanoMuse,theopen-sourcecounterpartundertheGPL-3.0,oneagentoneverydeviceapersonowns,withhandsonthephone'sscreenandthecomputer's.Theyshareoneconversationoverarelayanyonecanrun;everyactiongoesthroughaSentinel,memoryisfilesthepersoncanread,andthemodelistheirchoice.Itssizeandcostaregivenasestimates.Whatisopen,memorywithprovenance,anevaluationsuiteforthehandsandanopenmodelforthem,issetoutasaroadmap.",
+      "published_date": "Oct 6",
+      "github_url": "https://github.com/nano-muse/nanoMuse",
+      "org_tag": "Zhejiang University"
+    },
+    {
+      "title": "World Action Modeling with Progressive Visual Planning",
+      "url": "https://huggingface.co/papers/2610.02508",
+      "likes": 97,
+      "date": "2026-10-11",
+      "abstract": "Worldactionmodels(WAMs)haveemergedasapromisingparadigmforroboticcontrolbyjointlypredictingfuturevisualdynamicsandactionsfromaninitialobservationandinstruction.However,existingWAMsstrugglewithlong-horizonprediction,asgeneratingdensevideorolloutsishighlyinefficient.SomerecentWAMsaddressthisbypredictingasinglefutureframewithoutgeneratingthefullvideo,butthisapproachneglectshowtoprogresstowardthegoal.WepresentProWAM,aprogressiveworldactionmodelthatjointlypredictsactionsandanorderedsequenceofsparsevisualsub-goals,providingexplicitvisualguidancetoanchoractiongenerationthroughouttaskexecution.Thisdesignscalesnaturally,assub-goalpredictioncanbelearnedfromlarge-scaleaction-freevideos,allowingthevideobackbonetooffloadcomplexvisualplanningfromtheactionpolicy.Forefficientactiongeneration,ProWAMexecutesasinglevideo-backboneforwardpasstocachesparsesub-goalfeatures,eliminatingiterativefull-videogenerationandrequiringonlylightweightactiondenoisingduringreplanning.Acrossextensiveevaluations,ProWAMachievessuperiorout-of-distributionrobustness.Onsimulationbenchmarks,itsetsnewstate-of-the-artresultsonLIBERO-Plus(85.8%)andrandomizedRoboTwin(75.7%),outperformingthestrongestbaselinewithrelativegainsofupto+35.9%.OnRoboCasa365,ProWAMachievesa48.1%successrateand18.2%onthechallengingComposite-Unseensplit,ranking4thoverall.Crucially,inzero-shotreal-worldexperiments,ProWAMachieves70.0%success,outperformingthestrongestbaselineby+15.0(from55.0%to70.0%,a+27.3%relativegain)innovelscenes.Theseresultsdemonstratethevalueofprogress-indexedvisualforesightforclosed-loopcontrol.Ourprogramisinhttps://sii-ferenas.github.io/ProWAM-page.",
+      "published_date": "Oct 1",
+      "github_url": null,
+      "org_tag": "Meta"
+    },
+    {
+      "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+      "url": "https://huggingface.co/papers/2610.06647",
+      "likes": 96,
+      "date": "2026-10-11",
+      "abstract": "Reinforcementlearning(RL)hasgreatlyadvancedthecapabilitiesoflargelanguagemodels(LLMs),butitsmemorydemandsremainabarriertobroaderadoption.WeintroduceLoGRA,anapproachtoRLpost-trainingthatreducesmemorybyretainingusefullearningsignalsinlow-rankgradientsketches.Thesecompactrepresentationssupportbothmodelupdatesandefficientpolicysynchronization.Topreventoverlylargeupdatesfromdisruptinglearning,wecomplementgradientcompressionwithpredicted-KLstepcontrol,whichestimatespolicychangesbeforeapplyingeachupdateandadjustsitsmagnitudeaccordingly.Acrossreasoningtasks,LoGRAreducesaveragetrainingmemorybyupto45.7\\%withoutsacrificingperformance.Italsoenablesstabletrainingofa27B-parametermodelforover1,100stepsonasingleeight-GPUnode,wheredenseAdamrunsoutofmemory,makingpreviouslymemory-infeasibleRLtrainingpractical.Codeisavailableinthehttps://github.com/skzhang1/labs-molt/tree/logra/examples/scripts/logra{Moltlibrary}.",
+      "published_date": "Oct 5",
+      "github_url": null,
+      "org_tag": "NVIDIA"
+    },
+    {
+      "title": "DuoMatching: Joint-Marginal Distribution Matching for Few-Step Video Generation",
+      "url": "https://huggingface.co/papers/2610.03543",
+      "likes": 93,
+      "date": "2026-10-11",
+      "abstract": "Streamingvideogenerationhasbenefitedfromdistributionmatchingdistillation(DMD),whichmatchesthejointdistributionofvideoframestoavideoteacher'sapproximationoftherealvideodistribution.Althoughthisjointmatchingmitigatesdriftduringautoregressiverollouts,limitationsremaininvisualqualityandsemanticalignment.Toaddresstheselimitations,weproposeDuoMatching,adistributionmatchingframeworkthatapproximatestherealvideodistributionthroughaunifiedjoint-marginalformulation.Ontopofexistingjointmatchingformulations,theadditionalmarginalmatchingobjectiveprovidesdedicatedframe-levelsupervisionfromanimagegenerator,transferringcomplementaryvisualandsemanticpriorsfromit.Toapplythisframe-levelsupervisioninvideogeneration,weintroduceLatentBridgetoresolvethelatentrepresentationmismatchbetweenthevideostudentandtheimageteacher.LatentVariationSamplingfurtherdistributessuchframe-levelsupervisionacrossdistincttemporalsegments,reducingredundancy.ExperimentsdemonstratethatDuoMatchingimprovesvisualquality,composition,andsemanticalignmentwhilelargelypreservingmotiondynamics.Humanevaluationsshowoverallpreferenceratesabove80%againstallevaluatedbaselines.Theprojectpageisavailableathttps://johnzhan2023.github.io/DuoMatching/.",
+      "published_date": "Oct 2",
+      "github_url": "https://github.com/JohnZhan2023/DuoMatching",
+      "org_tag": "ByteDance"
+    },
+    {
+      "title": "TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models",
+      "url": "https://huggingface.co/papers/2610.07767",
+      "likes": 88,
+      "date": "2026-10-11",
+      "abstract": "Reinforcementlearning(RL)forpost-traininglargelanguagemodels(LLMs)incurssubstantialcomputationandmemoryoverheadduringrolloutgeneration,whichmotivateslow-precisionrolloutforefficientRLtraining.However,existingFP4RLmethodssufferfromakeylimitation:theyprimarilyoptimizequantizationaccuracyonthetrainingandrolloutpathsindependentlyratherthandirectlyreducingthediscrepancybetweenthetwoquantizedexecutionpaths.Inthiswork,weproposeTRACE(Train-RolloutQuantizationAlignmentviaCompactGuidancE),anFP4quantizationframeworkforRLtrainingofMixture-of-Experts(MoE)languagemodelsthataddressesthelimitationofexistingFP4RLmethods.TRACEincorporatesrollout-guidedquantization-awaretrainingthatusesrollout-sidequantizationoutcomestoguidetraining-sideFP4roundingdecisions,directlyreducingtrain-rolloutdiscrepancy.Moreover,TRACEadoptsanefficientquantization-informationcachingschemethatselectivelyretainsmantissaandscaleinformationfromdeeperlayerstoreducethestorageandcommunicationoverheadintroducedbyrolloutguidance.WeevaluateTRACEonfourlarge-scaleMoElanguagemodelsacrossreasoning,coding,andlong-horizonRLtasks.OurresultsdemonstratethatTRACEenablesjointFP4weight/activationandFP4KV-cacherolloutwithRLperformancecomparabletoBF16rollout,whileachievingupto5.4xrolloutspeedupandstrongfinalFP4performancecomparedwithpost-hocFP4quantizationofBF16-trainedpolicies.",
+      "published_date": "Oct 6",
+      "github_url": null,
+      "org_tag": "Qwen"
+    },
+    {
+      "title": "Native Action-Prior Learning from Videos for World Action Models",
+      "url": "https://huggingface.co/papers/2610.03391",
+      "likes": 88,
+      "date": "2026-10-11",
+      "abstract": "Worldactionmodelsintegratefuturevisualdynamicswithrobotactionprediction,buttheirscalabilityremainslimitedbytheneedforaction-annotatedrobottrajectories.Observation-onlyvideoscontainrichevidenceaboutinteractiondynamics,butexistingapproachestypicallyusethemeithertopretrainvisualrepresentationsthatmustlaterbeadaptedforcontrol,ortoinferlatentactionsthataresubsequentlygroundedtorobotcommands.WepresentNAVA-WAM,whichintroducesnativeaction-priorlearningbydirectlypretrainingtheactionpolicyfromobservation-onlyvideos,avoidingindirectrepresentation-to-controltransferoraseparatelatent-actionmodel.Ourtrainingconsistsoftwostages.First,wepretrainonobservation-onlyvideos,wherefuture-videoflow-matchingsupervisionovervisualtransitionsispropagatedthroughtransition-structuredjointattentiontooptimizetheAction-DiTandlearnaction-relevantpriors.Second,weuseaction-labeleddemonstrationstopost-traintheAction-DiTforrobotcontrolthroughjointvideo--actionflowmatching,whileasymmetricattentiondecouplesthevisualbranchfromiterativeactiondenoisingandenablesefficientaction-onlyinference.ExtensiveexperimentsshowthatNAVA-WAMconsistentlyoutperformspriorapproachesunderbothin-distributionandout-of-distributionsettings,whiledemonstratingstrongaction-labelefficiencyandeffectivereal-robotgeneralization.Theseresultsestablishnativeaction-priorlearningasaneffectiveapproachtodirectlypretrainactionpoliciesfromobservation-onlyvideos,providingascalablepathbeyondaction-labeledrobotdata.",
+      "published_date": "Oct 2",
+      "github_url": null,
+      "org_tag": "Meta"
     }
   ]
 }
