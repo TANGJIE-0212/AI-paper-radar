@@ -1,206 +1,206 @@
 {
-  "week": "2026-W44",
-  "dateRange": "2026-10-25 to 2026-10-31",
+  "week": "2026-W45",
+  "dateRange": "2026-11-01 to 2026-11-07",
   "papers": [
     {
-      "title": "Trial by Trace: Benchmarking AI Agent Harnesses for Reliability and Failure Attribution",
-      "url": "https://huggingface.co/papers/2610.32285",
-      "likes": 202,
-      "date": "2026-11-01",
-      "abstract": "LLM agents are increasingly used to solve real-world problems, and their effectiveness depends on both the underlying models and the harnesses that support their operation. However, most existing benchmarks focus on model capabilities and overall agent performance, with limited attention to the evaluation ofagent harnesses. To address this gap, we introduceTraceTrial-Bench, which organizes harness reliability into seven components covering context, execution, governance, lifecycle, observability, tools, and verification. We construct 95 expert-level, mechanism-oriented tasks with executable or state-based ground truth to support semantically equivalent comparisons while preserving the native behavior of each harness. We design aTrajectory Tracing(TT) module to capture agent execution traces and introduce atwo-layer evaluation frameworkthat separately assesses agent performance and harness reliability. In addition, we design aMulti-source Evidence Acquisition(MEA) module to provide evidence from the agent context, harness, and execution environment for LLM-based evaluation, and develop aFailure Attribution(FA) module that uses explicitmechanism chainsto support attribution at the run level. Across 4 harnesses, 9 models, and 95 tasks, our evaluation of 3,420 runs yields macro-averaged harness scores ranging from 59.8% to 72.0%, while 31.1% of runs achieve task success despite failing at least one harness criterion.TraceTrial-Benchprovides an auditable and reproducible foundation for comparingagent harnesses, diagnosing their failures, and studying how harness design interacts with model behavior.",
-      "published_date": "Oct 23",
-      "github_url": "https://github.com/TraceLite-AI/TraceTrial-Bench",
-      "org_tag": "TraceLite AI"
+      "title": "Advances in Agentic Computer Graphics",
+      "url": "https://huggingface.co/papers/2611.01860",
+      "likes": 143,
+      "date": "2026-11-08",
+      "abstract": "Computer graphics is built on code. Large language model (LLM) agents can now generate graphics code and iteratively refine it through various feedback. This capability opens the door to a potentially new paradigm of computer graphics, with graphics algorithms increasingly built aroundagentic systemsto automate progressively complex tasks. Over the past years, research on agentic graphics has expanded rapidly across a diverse range of tasks. This rapid growth makes it increasingly difficult for manual literature reviews to keep pace with new developments. At the same time, similar ideas are often described using different terminology across these tasks, further complicating efforts to develop a systematic understanding of the field. In this report, we address these challenges through two contributions. First, we introduce a unified taxonomy for characterizingagentic systemsacross diverse computer graphics tasks. Second, we develop an agentic literature system that can assist human researchers in analyzing existing and newly published papers at scale. Building on these contributions, we analyze emerging research trends and discuss open challenges in coordinating agents and tools across graphics tasks, designing interfaces and representations for human-agent collaboration, sustaining long-horizon planning and refinement, and reliably evaluating interactive graphics systems.",
+      "published_date": "Nov 1",
+      "github_url": "https://github.com/AgenticGraphics/Awesome-Agentic-Graphics",
+      "org_tag": "University of Texas at Austin"
     },
     {
-      "title": "PDRVLA: A Vision-Language-Action Model with Physical Dynamics Representations",
-      "url": "https://huggingface.co/papers/2610.37381",
-      "likes": 150,
-      "date": "2026-11-01",
-      "abstract": "Vision--Language--Action (VLA) models generate robot actions from visual observations and language instructions, but their understanding of physical dynamics remains limited.Video world modelscan capture scene dynamics, yet generating future videos introduces high latency into the control loop. We introduce PDRVLA, whose lightweightPhysical Dynamics Moduleextractsphysical tokensfrom vision--language features to condition action generation without online video generation. The module learns through direct prediction of future RGB, depth, andoptical-flow features, with auxiliary supervision through a frozen pretrained video world model. Training relies entirely on publicly available data, expanded throughhuman-to-robot synthesis,subtask annotation, andembodied chain-of-thought(ECoT) annotation. Across four simulation benchmarks, PDRVLA achieves success rates of 99.3% on LIBERO, 89.9% on LIBERO-Plus, 93.6% on RoboTwin~2.0, and 81.5% on SimplerEnv. Ablations show improved future prediction with world-model supervision and evaluate how subtask conditioning, future object-pose supervision, and ECoT training affect action success.",
-      "published_date": "Oct 27",
-      "github_url": null,
-      "org_tag": null
+      "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+      "url": "https://huggingface.co/papers/2611.00859",
+      "likes": 125,
+      "date": "2026-11-08",
+      "abstract": "Real-time long-video generation requires continuous output with consistent appearance and natural motion. Existing chunk-wise autoregressive methods face challenges in both generation efficiency and long-video quality: serialized denoising and history-cache refresh require two forward passes even with one-step denoising, and longer rollouts can degrade quality and cause camera drift. We proposeWave Forcing(WF), which co-designs generation, training, and execution for continuous video output withmulti-step denoising. WF useschunk-wise causal attentionto access earlier, cleaner chunks before their denoising is complete, and distributes staggered denoising and cache-refresh stages across full-model replicas to achieve 1F1C: one output chunk per concurrent forward round afterpipeline fill. To adapt the model to this continuous generation process, we develop a three-stage training procedure that successively introducesmixed-noise denoising,motion supervision, andcausal adaptationusing self-generated history. To execute this process efficiently,Wave Runtime(WaveRT) usesWave Parallelism(WP) for early K/V delivery and communication-computation overlap, together with optimized kernels and pipelined VAE decoding. Experiments on Wan2.1-T2V-1.3B show that 5-step WF maintains overall quality comparable to Rolling Forcing while achieving higher Dynamic Degree on both short and long videos. Our system efficiency experiments show that 4-step WF achieves 147.6DiT FPSand 134.8 end-to-end FPS on eight H200 GPUs, yielding 7.07x the single-GPU end-to-end throughput. In DiT-only tests with matched SageAttention+W8A8 backends, denoising steps, and GPU counts, WP delivers up to 2.53x the throughput of the faster of the Ulysses and Ring context-parallel baselines across six model scales (1.3B-14B).",
+      "published_date": "Oct 31",
+      "github_url": "https://github.com/SJTU-DENG-Lab/WaveForcing",
+      "org_tag": "DENG Lab @ SJTU"
     },
     {
-      "title": "Hy-Nomas: Towards Free-form Interactive World Generation",
-      "url": "https://huggingface.co/papers/2610.36729",
-      "likes": 123,
-      "date": "2026-11-01",
-      "abstract": "Interactive world generationrequires models to follow successive commands while preserving relevant history and action consequences. We present Hy-Nomas, avideo world modelwith an 8Bdiffusion backbonethat supports free-form text instructions and continuous camera control across multiple interaction turns. It generates variable-length segments conditioned on current inputs and cached history. Our central design aligns structured video captions with action-awarecausal attention: descriptive context remains accessible across segments, while action instructions are restricted to their intended temporal windows. Avision-language Prompt Enhancer(PE) translates user requests and multimodal interaction histories into structured conditions for the next segment. A multi-stage curriculum progressively introduces causal generation, text interaction, camera control, and training on model-generated histories, followed bydiffusion distillation. In human evaluation, Hy-Nomas shows superior performance over existing world models. We release model weights, code and benchmarks, together with a lightweight adaptation workflow, to support reproducible research oninteractive world generation.",
-      "published_date": "Oct 27",
-      "github_url": "https://github.com/Tencent-Hunyuan/Hy-Nomas",
-      "org_tag": "Tencent Hunyuan"
-    },
-    {
-      "title": "Work Agents: Systems, Capabilities, and Optimization",
-      "url": "https://huggingface.co/papers/2610.35845",
-      "likes": 115,
-      "date": "2026-11-01",
-      "abstract": "Asfoundation modelsevolve from information generation to digital work execution, agents are increasingly capable of completing complex tasks across tools, applications, and workflows. However, existing research lacks a unified perspective on how agents reliably accomplish delegated work. To address this gap, we present a work-centric, system-level perspective that viewswork agentsas systems combiningfoundation modelsandruntime harnessesto execute tasks instateful workspacesand deliver verifiable outcomes. We introduce two complementary dimensions,work persistenceandwork openness, to characterize working conditions, and classify digital work into five forms according to task scope and organization. Building on this framework, we identify five core capability families required for reliable work execution and examine approaches tomodel optimization,harness optimization, and theirjoint optimization. We further analyze existing evaluation methods and metrics from the perspective ofwork outcomes. Finally, we discuss future research directions, including sustained work delegation, adaptation to open environments, and the interaction between work execution and capability improvement. This paper provides a unified framework for understanding, optimizing, and evaluatingwork agents, supporting the development of systems capable of delivering reliable, verifiable, and practically valuablework outcomes.",
-      "published_date": "Oct 26",
-      "github_url": "https://github.com/EnjunDu/awesome-working-agent",
-      "org_tag": "Shanghai Jiao Tong University"
-    },
-    {
-      "title": "OmniShowcase: Omnidirectional Subject-Consistent Video Generation from Multi-View Images",
-      "url": "https://huggingface.co/papers/2610.35684",
-      "likes": 114,
-      "date": "2026-11-01",
-      "abstract": "Generating videos of a specific subject from a few reference images remains challenging when the camera reveals surfaces that are not visible in the input. Earlysubject-to-video(S2V) methods condition on a single reference image and must therefore infer the subject's unseen appearance and geometry as the viewpoint changes. To address this limitation, recent methods extend S2V to multiple reference views, providing more information about the subject from different viewpoints. However, they do not explicitly specify the 3D structure that connects these observations. In addition, existing training data do not guarantee that viewpoint changes preserve the same underlying 3D subject. We present OmniShowcase, built on two components: (i) a fully automateddata synthesis pipelinethat produces training videos along diversecamera trajectories, with viewpoint variation driven by underlying subject geometry, even spanning full 360-degree orbits; and (ii) ageometry-conditioningmethod that provides the video model with a turntable ofsurface-normal mapsreconstructed from the reference views without requiring temporal alignment with the generated frames. We construct Showcase-4K, a corpus of 3D-asset-based videos covering twelve camera motions across 88 trajectory configurations with reconstruction-derived surface-normal conditioning, and ShowcaseBench, a held-out evaluation set with the source meshes and camera parameters used to render each video. Experiments show state-of-the-art subject identity and3D consistencywhile maintaining competitive video quality and motion. Project page: justin4ai.github.io/OmniShowcase",
-      "published_date": "Oct 26",
-      "github_url": "https://github.com/justin4ai/OmniShowcase",
-      "org_tag": "KAIST AI"
-    },
-    {
-      "title": "Efficient Streaming Audio-Visual Target Speaker Extraction for Real-World Acoustic Scenes",
-      "url": "https://huggingface.co/papers/2610.32749",
-      "likes": 112,
-      "date": "2026-11-01",
-      "abstract": "Streamingaudio-visual target speaker extraction(AVTSE) is essential for latency-sensitive applications. However, current causal systems face two coupled gaps. First, standard benchmarks fix the number of speakers at two and ignore the near-/far-field interference, reverberation, and sudden noise of real scenes. Second, high-performance causal architectures are too heavy for edge deployment. Lightweight alternatives try to reclaim capacity by repeatedly invoking a small separator, which offsets the savings. To address the first gap, we releaseRealSSA, a realistic AVTSE benchmark consisting ofRealSSA-Sim andRealSSA-Real.RealSSA-Sim provides controllable simulated scenes with 1--5 dynamic near-field interfering speakers; scenes with far-field interference additionally include 10--15 far-field interfering speakers.RealSSA-Real provides a held-out real-recorded evaluation set. To address the second gap, we proposeFalcon, acausal AVTSEmethod. Its Separator performsmulti-scale time-frequency separationin a single encoder--decoder pass. We trainFalconwith anencoder-space speaker contrastive loss. This loss suppresses near-field leakage at zero inference cost and transfers across backbones.Falconachieves state-of-the-art extraction quality onRealSSA-Sim, LRS2-2Mix, LRS3-2Mix, and VoxCeleb2-2Mix. Compared with the causal AV-TFGridNet baseline, it cuts parameters by 91.9%, computation by 20.2 times, and GPU inference latency by 11.1 times. Code and demo are available at https://cslikai.cn/Falcon/.",
-      "published_date": "Oct 23",
-      "github_url": "https://github.com/JusperLee/Falcon",
-      "org_tag": "Tsinghua Machine Learning Group"
-    },
-    {
-      "title": "StreamVibe: Proactive Video Agents for Evolving User Intent",
-      "url": "https://huggingface.co/papers/2610.34662",
-      "likes": 101,
-      "date": "2026-11-01",
-      "abstract": "Vision-language modelsare shifting from offline passive understanding toward onlineproactive interaction. However, prevailing methods largely rely on explicit requests while miss theimplicit user intent(e.g., \"where should I click next?\" while a user navigate a website), meanwhile fail to update the state simultaneously as user requests might update continuously. These limitations make them less suited to intent-aware interaction in practical. To address these challenges, we introduceStreamVibe-Bench, a new benchmark serving as testbed for user intent interaction, with 4.1K evaluation samples and 85K training samples spanning explicit, implicit, anddynamic intents. Building on this benchmark, we developStreamVibe-VL, astreaming proactive modelthat infersimplicit user intents from continuous observations and dynamically tailors its interactions as these intents evolve. We further introduceStreamVibe-Harness, which maintains user intents as persistent states with a fleixble lifecycles via ahierarchical memoryto track the latest user intent and environmental state. Our experiments reveal three key findings: (i)StreamVibe-VLpreserves strong general video understanding while improving response timing and answer quality by 10.7% over other baselines; (ii) existing proactive models remain limited in understanding user intent and deciding when to respond, especially under implicit anddynamic intents; and (iii)StreamVibe-Harnessfurther improves response consistency and adaptation over sustained interaction, resulting in a 12.3% gain inproactive interaction.",
-      "published_date": "Oct 26",
-      "github_url": null,
-      "org_tag": "Google"
-    },
-    {
-      "title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
-      "url": "https://huggingface.co/papers/2610.36671",
+      "title": "VFlash: Fast, Accurate Visual Planning via Flash Primitive Decoding",
+      "url": "https://huggingface.co/papers/2611.08449",
       "likes": 100,
-      "date": "2026-11-01",
-      "abstract": "Diffusion vision-language models(DVLMs) process their entire input at every denoising step. Since visual tokens make up 89-97% of this input on the benchmarks we study, most of the decoding computation is spent repeatedly processing the same image.Visual token pruningmethods partially relieve this burden by removing part of the visual tokens, but they lose the removed information and still process the remaining image at every step. To measure how often the image is actually needed, we compareLLaDA-V's predictions with and without the image at every decoding step and find that removing the image changes a token being unmasked at only 22.8% of steps on average and at as few as 7.9%. We therefore proposeLOWN, a decoding method that decides at every step whether to process the image and how many tokens to unmask.LOWNpredicts themasked tokenswithout the image and processes the image only when this prediction disagrees with the last image-conditioned prediction. Agreement certifies the earlier prediction for reuse, and the number of certified tokens sets how many are unmasked in that step. We further observe that the need for the image differs across benchmarks, soLOWN's adaptive decision is needed rather than a fixed schedule. Without training or a tuned threshold,LOWNretains 99.6% ofLLaDA-V's score on ten benchmarks at 35.3% of thedecoding FLOPson average.LOWNalso generalizes across LLaDA-based DVLMs, composes orthogonally withvisual token pruning, and runs underkey-value cachingfor further efficiency gains. Code and project page are available at https://hyeon9698.github.io/LOWN/",
-      "published_date": "Oct 27",
-      "github_url": "https://github.com/hyeon9698/LOWN",
-      "org_tag": "KAIST AI"
-    },
-    {
-      "title": "DynaFlow: Learning Free-Form Multi-Agent Orchestration",
-      "url": "https://huggingface.co/papers/2610.34467",
-      "likes": 96,
-      "date": "2026-11-01",
-      "abstract": "Multi-agent systemsoften rely on predefined collaboration structures, limiting their ability to adapt to diverse task requirements. We introduce DynaFlow, a framework that integrates free-formexecutable workflow synthesisinto the action space of the main agent. The agent decides when collaboration is needed and generates task-specific programs that coordinatesub-agentsthrough sequential or parallel execution, structured information exchange, and verification. Execution results and traces inform subsequent actions, enabling the agent to adapt collaboration as reasoning progresses. We train only the main agent throughsupervised fine-tuningon distilled trajectories, followed by refinement on examples filtered for unsupported premises, biased verification, and information-flow defects. Allsub-agentsremain fixed, separatingorchestrationlearning from executor capability improvement. Across six benchmarks spanning mathematical reasoning, scientific question answering, and multi-hop retrieval, DynaFlow achieves 88.08% overall accuracy in Forced mode, outperforming the strongest evaluated baseline by 10.90 percentage points with the same Qwen3.5-27B backbone. Workflow analysis finds more explicit use, verification, and refinement of upstream outputs after training, highlightingcross-stage information flowas a key dimension of multi-agentorchestration.",
-      "published_date": "Oct 25",
-      "github_url": "https://github.com/amiya-special/Dynaflow",
-      "org_tag": "National University of Singapore"
-    },
-    {
-      "title": "Memory Tax: Dissecting the Net Value of Agent Memory",
-      "url": "https://huggingface.co/papers/2610.34073",
-      "likes": 92,
-      "date": "2026-11-01",
-      "abstract": "Memory is increasingly used inlong-horizon agents, yet the net value of building memory over direct retrieval from raw history remains largely unclear. Through a large-scale evaluation across multiple benchmarks and model backbones, we find many dedicated memory systems underperform naiveRAGin many cases, indicating a negative net value. TakingRAGas a reference, we dissect the net value of memory into the gains and losses over direct retrieval, termedmemory benefitandmemory tax. These gains and losses arise because memory process changes how the raw information is organized and accessed. We view such changes as the double-edged deviations from the raw history. They are originally designed and introduced to benefit the task, for example by reorganizing facts or distilling preferences, but some may also remove or obscure evidence, giving rise tomemory tax. Sincememory benefitreflects the expected gains of its design, we then focus more on the overlookedmemory tax, study how it arises from the system and evaluation side, and generalize the concept to more application scenarios of memory. We hope the notion ofmemory taxcan provide a new lens and shift more attention from standalone performance to the net value of memory, informing more reliable memory designs and evaluations. We will open-source the code and results to the community. Project Page: https://hexuan21.github.io/MemoryTax/",
-      "published_date": "Oct 25",
-      "github_url": "https://github.com/hexuan21/MemoryTax",
-      "org_tag": null
-    },
-    {
-      "title": "HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory",
-      "url": "https://huggingface.co/papers/2610.24520",
-      "likes": 90,
-      "date": "2026-11-01",
-      "abstract": "In long-term interactions with large language model (LLM) agents, users reveal habits through their choices and actions. These habits capture implicit user information that agents must infer across conversations. However, individual observations may provide only partial evidence about a habit or when it applies. Retaining past interactions alone does not ensure that agents can infer habits and apply them appropriately. We introduceHABIT-Benchto evaluate how wellagent memory systemsinfer habits from weak evidence and apply them to later requests. We construct synthetic user histories fromtask-oriented dialoguedata and controlledhabit graphs. The histories span hundreds of sessions across food, finance, software, and travel. Four-choice tasks assess agents' ability to infer user habits and apply them appropriately. They includetemporary exceptions, changes in habits, and suggestions that users have not accepted. Sampled tasks undergo independent human review. We evaluate eight memory methods with Qwen3-235B-A22B and GLM-5.3-Flash. The best-performing memory method achieves 33.61\\%macro accuracyacross the four domains. Performance remains limited even when annotated evidence is supplied directly. These results expose a persistent gap between access to past interactions and the ability to infer and appropriately use user habits.",
-      "published_date": "Oct 20",
-      "github_url": "https://github.com/LUMIA-Group/habit-bench",
-      "org_tag": "Shanghai Jiao Tong University"
-    },
-    {
-      "title": "Rollback: Experience Backtracking in World Models for Policy Improvement",
-      "url": "https://huggingface.co/papers/2610.36068",
-      "likes": 84,
-      "date": "2026-11-01",
-      "abstract": "Action-conditioned world modelsoffer a scalable alternative to costly real-world interaction for improving robot policies. However, existing world-model-based methods largely treat world models as forward-only surrogates of the physical environment, leaving untapped a capability no physical environment affords: rewinding to past decision points to explorecounterfactual futures. We introduceRollback, a policy improvement paradigm that turns world models from passive simulators into counterfactual engines: it rolls back to critical decision points, branches into alternative actions, and contrasts their outcomes to attribute success to individual decisions. This concentrates imagination where it matters most and distills counterfactual outcomes into fine-grained, action-level supervision without a separately learned value model. We build a scalable training system that unifies distributedworld-model searchwith asynchronous real-robot execution, forming a self-reinforcing cycle: real-world experience continually sharpens the world model, and a sharper world model in turn drives further policy improvement. We term the world-model side of this cycletest-time physics grounding, a capability that hand-built physics simulators lack: while the world model serves as the training environment, real transitions from the policy it trains correct its dynamics through a lightweightLoRApipeline. Experiments on three challenging real-world tasks show thatRollbackimproves success rates over the strongest baseline by an absolute 10.67%, 11.11%, and 11.85% on block extraction, ball tossing, and tabletop curling, respectively, while achieving more stable improvement throughout training. Although initialized from teleoperated demonstrations far below human level,Rollbacksurpasses the average success rate of human players on both ball tossing and tabletop curling within 8 hours of training.",
-      "published_date": "Oct 26",
-      "github_url": null,
-      "org_tag": "AgiBot World"
-    },
-    {
-      "title": "ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence",
-      "url": "https://huggingface.co/papers/2610.34283",
-      "likes": 77,
-      "date": "2026-11-01",
-      "abstract": "Training aspatial VLMto answer which side an object lies on does not require it to preserve the metric displacement that determines that answer, while supervision for a distance estimate may leave categorical relations largely unconstrained. When post-training emphasizes one readout, improvements can therefore concentrate on that interface while transfer to others remains weak or even degrades; we call this observed specializationinterface lock-in.ChronoReplayaddresses it by replaying heterogeneous spatial supervision as chronologically ordered episodes, retaining source-native targets, and balancing supervision across families. Under the same observation access, a singleChronoReplaycheckpoint improvesOVO-S-Bench,OST-Bench, andUCS-Benchtogether, including a 13.41-point gain onOST-Bench, and achieves the highest three-benchmark mean among the supervision settings compared here. Same-data controls further separate the ingredients of this transfer: answer serialization redistributes gains across OST and UCS, family-balanced learning improves over ordinaryjoint SFTand natural turn weighting, and chronological replay exceeds a shifted-order control by about 2.41 OST points across two paired seeds.Adaptive frame selectionthen changes evidence access while keeping the trained model fixed, providing an additional inference-time gain at lower visual cost. Streaming spatial performance depends on what distinctions supervision preserves, how heterogeneous histories are organized during learning, and what causal evidence inference makes available at test time.",
-      "published_date": "Oct 25",
-      "github_url": "https://github.com/yihaohu0118/ChronoReplay",
-      "org_tag": "LINs lab"
-    },
-    {
-      "title": "InteractiveWorld: A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants",
-      "url": "https://huggingface.co/papers/2610.33966",
-      "likes": 76,
-      "date": "2026-11-01",
-      "abstract": "People have long dreamed of an assistant that is always there to guide them and remind what they forget, from new dishes to lost keys. Powered bymultimodal large language models(MLLMs),egocentric AI assistantson wearable devices are bringing this dream within reach: they see what the user sees and give instructions for user's physical work when necessary. However, testing such assistance is challenging and usually requires real people. The expensive and rare real interaction data leaves a key question unanswered: Can today's MLLMs truly help people in physical world? To answer this question, we proposeInteractiveWorld, the first verifiable environment forclosed-loop interactionbetween human and AI assistant. Unlike existing robot-centric simulators,InteractiveWorldlets the assistant guide a human agent who observes the scene, understands instructions, and acts independently. It thus realistically simulates how AI assistant collaborates with human: the assistant instructs, the human acts, and the environment executes actions and updates what they see next. Building on it, we introduceInteractiveBench, the first dynamic benchmark foregocentric AI assistants, with 120 multi-turn tasks across six categories. In each task, the assistant guides the human in real time, and every instruction shapes the outcome, which is scored by verifiable,state-based rewards. Experiments with 12frontier MLLMsshow they are still far from reliable assistants. Even the strongest model, Claude Fable 5.1, achieves at most 20% and 25% on long-horizon Guidance and Planning tasks, respectively. Overall, our work offers a verifiable platform and a rigorous evaluation set, laying a solid foundation for research on interactive MLLM assistants that truly help people in the physical world.",
-      "published_date": "Oct 25",
-      "github_url": "https://github.com/facebookresearch/InteractiveWorld",
-      "org_tag": "Meta"
-    },
-    {
-      "title": "Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
-      "url": "https://huggingface.co/papers/2610.39301",
-      "likes": 72,
-      "date": "2026-11-01",
-      "abstract": "We present Youtu-Parsing-Omni, anomni-modal parserthat converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that read, locate, and cite evidence across modalities. Its design rests on one encoder for every modality and one schema for every task. Youtu-Omni-Encoder, initialized from a pre-trained language model to strengthen text reading, encodes all modalities withshared weightsin a unified space-time coordinate system, and a few fusion layers let video frames attend to concurrent audio, bringingcross-modal fusionandtemporal alignmentinto perception itself. OmniSchema unifies the outputs of all ten parsing tasks, allowing a singleself-evolving post-trainingprocedure, OmniSchema-AwareOn-Policy Distillation(OSAD), to provide a shared token-role-based objective across tasks. In each round, the model is trained on its own rollouts againsttoken-level targetsfrom a reference-conditioned copy of itself, which is then refreshed with the trained weights, so that the parser and its supervision co-evolve. With a single 5 B-parameter checkpoint, Youtu-Parsing-Omni achieves state-of-the-art performance on OmniDocBench v1.6 (96.96 Overall) and leads all open-weight models on OmniParsingBench (75.08 Avg.), with its advantage concentrated on audio and video. It also achieves the best overall chart-parsing score (95.02) and the highest exact chemical-fingerprint agreement among compared systems, and matches a dedicated optical-music model in character-level transcription of typeset sheet music while staying far ahead of general-purpose systems. Code and model weights are publicly available.",
-      "published_date": "Oct 29",
-      "github_url": "https://github.com/TencentCloudADP/youtu-parsing/tree/main/youtu_parsing_omni",
-      "org_tag": "Tencent"
-    },
-    {
-      "title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
-      "url": "https://huggingface.co/papers/2610.37230",
-      "likes": 71,
-      "date": "2026-11-01",
-      "abstract": "Agentic services alternate between model inference on clustered GPUs and external tools on distributed CPUs. In this scenario, existing systems (1) overlooktool-return readinessin service evaluation, wasting limited resources, and (2) use heuristic strategies to decideadmission and placementon GPUs, resulting in suboptimal scheduling decisions. To bridge this gap, we present TAO, a tool-aware joint scheduling framework forLLM-based agentic serving. Its value interface combines near-term tool readiness,node-specific cache creditwithtime-aware decay, andtoken footprint; a dynamic program jointly selects and places waiting sessions under capacity constraints. Across the 12 reported model-workload-concurrency settings, TAO reduces latency by up to 26.8%, reduces meantime to first token (TTFT)by up to 36.3%, and increasesdecode throughputby up to 29.5% relative to the best evaluated state-of-the-art baseline for each metric.",
-      "published_date": "Oct 27",
-      "github_url": null,
-      "org_tag": "AIOR"
-    },
-    {
-      "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
-      "url": "https://huggingface.co/papers/2610.38568",
-      "likes": 65,
-      "date": "2026-11-01",
-      "abstract": "Recursive self-improvementrequires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful. Existing methods often focus on what experience to generate next, while paying less attention to when fresh experience should be introduced. Many also construct training targets throughself-consistencyor majority voting, making supervision depend on the model's own uncertain predictions. We address these two questions separately:training dynamicsdetermine when to acquire new experience, while the answers to new tasks remain independently checkable.A-RSImonitorsreward variationand accuracy in training logs to refresh atask poolwhen its learning signal declines, without consulting validation or test scores. A static library ofmodel-authored programsproducesmultimodal questionsand derives their reference answers; we specify the task-generation contract, automatically verify chosen properties of the reward and refresh rules, and separately audit the generated answers. The training loop uses no external training examples or human-written answer labels. On the primary eleven-benchmark suite,A-RSIraises the performance average from 57.77 to 61.05 with 800 fresh tasks.",
-      "published_date": "Oct 28",
-      "github_url": null,
-      "org_tag": "Xiaomi Research"
-    },
-    {
-      "title": "ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning",
-      "url": "https://huggingface.co/papers/2610.37666",
-      "likes": 63,
-      "date": "2026-11-01",
-      "abstract": "Vision-Language-Action (VLA) models have made substantial progress in robotic manipulation, but their generalization remains constrained by the diversity and coverage of action-labeled robot demonstrations. Human videos provide much broader behavioral and environmental experience, while learning from them faces a fundamental trade-off between scalable data and explicit action grounding. We introduce ThinkWorld, a VLA learning framework that grounds action reasoning inworld dynamicsand strengthens it throughreinforcement learningwithworld imagination. ThinkWorld represents each action thought as aChain-of-Dynamics(CoD), a sequence of discretemotion tokensthat captures the intermediate dynamics connecting the current world to a future state and serves as a common action representation across embodiments. We first initialize CoD with action-labeled demonstrations, then predict the future induced by each CoD and reinforce those whose predictions better match the observed outcome. This enables videos without action annotations to provide direct supervision from observed state transitions, allowing human and robot experience to refine the same reasoning space. Experiments in simulation and on real robots demonstrate effective human-to-robot transfer and strong generalization to unseen tasks and environments.",
-      "published_date": "Oct 27",
+      "date": "2026-11-08",
+      "abstract": "ModelsforphysicalAItasks,suchasroboticsandautonomousdriving,neednotreasonsolelyinlanguage.Theycanusevisualplans--points,boundingboxes,andtrajectories--torepresentspatialgoalsandanticipatemotion.However,autoregressivevision-languagemodelsgeneratetheseplansonecoordinatetokenatatime,makingricherpredictionsincreasinglycostly.WeintroduceVFlash,amethodforfast,accuratevisualplanningthroughFlashPrimitiveDecoding.VFlashexploitstheknownstructureofvisualprimitivestopredicttheircoordinatesjointly,usingalightweightdrafterthatgeneratesanentireprimitiveinoneforwardpass.Thelayoutadaptstotheprimitive'stype,dimensionality,andlength,supportingcompactboxesandlong,variable-lengthtrajectories.Crucially,spatialaccuracyneednotrequirereproducinganautoregressivemodel'sexacttokensequence.VFlashthereforetrainsonannotatedprimitivesanddirectlyacceptsstructurallyvalidpredictionswithouttarget-tokenagreement.Acrosstheevaluated2Dand3Drobottrajectorytasks,VFlashconsistentlyreducespredictionerrorsrelativetoautoregressivedecoding.Preliminarysingle-rolloutmeasurementsindicateapproximately25xfastergenerationfor3Dpointmotionforecasting.AworldactionmodelconditionedonVFlashplansachieves70.2%averagesuccessacrossfourMolmoSpacestasksuites,comparedwith62.6%forthebaseline.",
+      "published_date": "Nov 5",
       "github_url": null,
       "org_tag": "NVIDIA"
     },
     {
-      "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
-      "url": "https://huggingface.co/papers/2610.30932",
-      "likes": 63,
-      "date": "2026-11-01",
-      "abstract": "Agentic recommendationpursues shopper goals through sequences of context-dependent decisions. Developing and evaluating such policies requires faithfulrecommendation world modelsthat capture both the interactive shopping environment and users' behavioral responses over long interactions. Existing resources rarely provide long-horizon, fine-grained real-user trajectories or support trajectory-level evaluation andoffline validationagainst production A/B results. We introduceUserArena, a real-world e-commerce interactive benchmark containing 64,729 session trajectories from 11,010 users, spanning 566,102 items and 13 action types.UserArenapairs these trajectories with aninteractive environmentand supportsoffline validationagainst outcomes from a controlled production A/B test, enabling five-level evaluation from output validity and local decisions to sequential behavior, personalization, and outcomes. To improvesimulator fidelityover these long-horizon interactions, we further proposeOn-Policy Trajectory Distillation(OPTD), which usestrajectory-level intentto provide dense teacher targets on student-generated rollouts. Experiments show that OPTD achieves the strongest overall fidelity among the evaluated simulators underUserArena's evaluation protocol and most closely reproduces the production policy effect in offline simulation.",
-      "published_date": "Oct 22",
-      "github_url": "https://github.com/RecGPT-Team/UserArena",
-      "org_tag": "alibaba"
+      "title": "CoworkOS:Scaling Agent Coworkers for Real-world Automation",
+      "url": "https://huggingface.co/papers/2611.03178",
+      "likes": 100,
+      "date": "2026-11-08",
+      "abstract": "Rapid advances incowork agentsare shifting human-AI collaboration toward real-world automation, delivering software, designs, and other artifacts. However, such productivity work demands both high-quality delivery on complex productivity tasks and continued monitoring and decision-making over long horizons, a combination that remains an open challenge. We introduce CoworkOS, a general-purpose harness forlong-horizon workthat separates task strategy from execution management: the model decides actions, delegation, and acceptance, while the runtime maintains state and feedback. Its three-layer architecture enables direct execution or delegation toSubagents, synchronously or asynchronously, under stable responsibilities. Through a shared application layer, humans and agents inspect and revise the same evolving documents, presentations, CAD models, and Blender scenes, sohuman-in-the-loopparticipation can enter both through conversation and through direct modification of the work itself. To sustain continuity across agents and sessions, CoworkOS further introduceshierarchical workspacesandpersistent semantic memory, so working files, key decisions, and long-running Job logs remain shareable, reusable, and resumable after interruption. Across 12 benchmarks and 6 categories of real-world applications, CoworkOS proves highly competitive with frontier agent applications such as Codex and DeepSeek Harness. As a sustained-work case study, CoworkOS uses GLM-5.3 as its backbone to conduct RSI-drivenautomated post-trainingon Qwen3.6-35B-A3B. Over five rounds, the model's average score across eight benchmarks rose from 33.19 to 42.95 (+9.76). Looking ahead, we believe CoworkOS opens a meaningful path toward general cowork-agent intelligence.",
+      "published_date": "Nov 2",
+      "github_url": "https://github.com/RUC-NLPIR/CoworkOS",
+      "org_tag": "Renmin University of China"
     },
     {
-      "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
-      "url": "https://huggingface.co/papers/2610.39302",
-      "likes": 58,
-      "date": "2026-11-01",
-      "abstract": "Whether models trained on different modalities converge to the same representation of the world is central to AI. ThePlatonic Representation Hypothesis(PRH) conjectures that they do as they scale, but without a proof it offers neither a guarantee nor a recipe. We turn the hypothesis into a theorem. First, we prove a Platonic Representation Theorem:Joint-Embedding Predictive Architectures(JEPAs) trained separately on any number of modalities learn the same representation up to one rotation whenever theirpositive pairsare two observations of one scene--good views--and their misalignment is bounded otherwise. Second, we show thatnext-token predictionis a JEPA with bad views, parts of a single document, which explains why language models align with vision only through scale. Third, we validate the theory from 145k captions to the texts of 940M web images, and uncover ascaling law of alignmentthat predicts unseen runs within seed noise.Good viewsneed 42 times fewer training samples thannext-token predictionon the same corpus to reach the same alignment, and a 109M-parametertext JEPAaligns withDINOv2andCLIP's image encoders better than every language model we evaluated, up to 72B parameters, and thanCLIP's text encoder:next-token predictionis a remarkably inefficient route to platonic representations. As a showcase, one rotation turns separately trained encoders into an image captioner (CIDEr .838 on COCO). Even that rotation needs no pair: on the latest pair-free benchmark, ourtext JEPAbeats every zero-shot accuracy reported with language models up to 8B parameters, e.g., 64\\% against at most 56\\% top-5 on ImageNet-100. Positive views, and not scale alone, are thus the lever to build platonic representations.",
+      "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
+      "url": "https://huggingface.co/papers/2611.05376",
+      "likes": 86,
+      "date": "2026-11-08",
+      "abstract": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Largefoundation modelsnow write code and run multistep tasks, and personal agents act on a person's behalf. Yet people still forget what they once knew, miss what they are not looking at, fail to find the right words, and face hard choices without the benefit of their own history, because the machine that could help stands outside the situation. As AI moves into the physical world, attention has settled on one kind of intelligent individual, theembodied robot; we argue that the era ofPhysical AIholds a second kind of equal importance, the person augmented by AI. Alongside artificial general intelligence, which asks how intelligent a machine can be, standsAI-augmented human intelligence(AHI), which asks how much intelligence a machine can enable in a particular person. Realizing it calls for a new kind of system, acognitive symbiont: a lifelong, embedded, real-time, private, low-friction, and proactive companion that senses what the person senses through external devices, keeps their context across years, models their situation and their mind, takes part in their thinking at the right moment, carries out everyday tasks with their context, and keeps learning the person as both change. We give the paradigm a conceptual core, thecognitive gapbetween what a person could bring to a situation and what they can hold inworking memory, and organize its design space as asymbiosis loopof sensing, keeping, understanding, living alongside, acting for and thinking with the person, and growing, enclosed by apersonal runtimeand by trust. Because a symbiont changes what a person can do in front of others, it also raises risks of a new kind, from covert assistance in examinations to pressure on everyone to adopt it, and we treat their governance as part of the paradigm.",
+      "published_date": "Nov 3",
+      "github_url": null,
+      "org_tag": "University of Oxford"
+    },
+    {
+      "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
+      "url": "https://huggingface.co/papers/2611.08373",
+      "likes": 82,
+      "date": "2026-11-08",
+      "abstract": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space. However,vision-language-action (VLA) foundationslargely inherit visual representations from2D vision-language pre-training, whilespatial supervisionis often introduced only during task-specific adaptation. Developing spatial understanding as a transferable foundation-model capability therefore calls for learning from broader robot experience. We present SLA, aSpatial-Language-Action Modelthat scalesimplicit spatial alignmenttocontinual pre-trainingand maintains it duringdownstream post-training. Initialized from apretrained pi05 policy, SLA jointly optimizesaction predictionand alignment betweenintermediate visual embeddingsandspatial representationsfrom afrozen 3D perception model. We curate and unify heterogeneous robot datasets to support spatial learning across diverse embodiments, tasks, and scenes. To accommodate this diversity, we introducefeature-dependent gatesthat adaptively aggregate visual embeddings frommultiple VLA layersforspatial supervision. The teacher further exploits partially available depth and camera calibration alongside RGB observations, enabling effective use of heterogeneous geometric annotations.Probabilistic state dropoutencourages reliance on visual cues and mitigates overfitting todemonstration trajectories. All auxiliary components are used only during training, allowing direct reuse ofpretrained VLA weightsand preserving the originalinference architecture.",
+      "published_date": "Nov 5",
+      "github_url": "https://github.com/OpenHelix-Team/Spatial-Forcing",
+      "org_tag": "HKUSTGZ"
+    },
+    {
+      "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+      "url": "https://huggingface.co/papers/2611.05275",
+      "likes": 79,
+      "date": "2026-11-08",
+      "abstract": "Artificial general intelligence (AGI) requires a method that can understand, generate, reason, and act across diverse domains and modalities. Rather than relying on a single model to master every capability, a promising path toward AGI now is to orchestrate a heterogeneous ecosystem of specialized models, tools, and policies (candidates) into a unified AI system. At the heart of this vision lies a fundamental question: how can an AI system dynamically select and coordinate the most capable candidate for each task while balancing performance and computational cost? In this work, we present Route Anything, a unified framework for studying model andpolicy routingacross general-purpose AI systems. We develop a unified theoretical foundation that characterizes optimal routing under quality--cost trade-offs and establishes how the information available to a router determines its attainable performance. To systematically investigate routing across diverse capabilities, we first construct anomni-modal trajectory matrixspanning 25 benchmarks across language understanding, image, video, and speech generation, coding and workplace agents, and robotic manipulation, comprising 374,401 scored runs from 452 candidate configurations. Building on this framework, we train and test different routers to investigate the potential of omni-modalmodel routing, the capabilities oflearned routers, and the conditions under which routing improves efficiency. Our results reveal substantial opportunities forcapability orchestration: per-input oracle routing outperforms the best fixed candidate by 5.4 points, andlearned routersoutperform it by 0.3 points across 16 benchmarks, by 2.1 points on video generation, and by 1.1 points on robot manipulation while using 24% less policy time. More importantly, routing raises efficiency by 8.82x on average compared with the reference model.",
+      "published_date": "Nov 3",
+      "github_url": "https://github.com/InfRec-Cardinal/route-anything",
+      "org_tag": null
+    },
+    {
+      "title": "Video Generation Meets Agent Harness: Agentic Video Generation, Agentic World Modeling and Recursive Self-Improvement",
+      "url": "https://huggingface.co/papers/2610.40191",
+      "likes": 78,
+      "date": "2026-11-08",
+      "abstract": "Video generation is shifting from end-to-end synthesis toward agentic generation, where planning, tool use, and feedback enable coherent, controllable multi-shot videos. In parallel,video world modelsprovide action-conditioned observations and predicted futures, serving as interactive environments for agents. We study their intersection through theagent harness: an executable runtime that constructs context, exposes tools, maintains state, routes feedback, and manages budgets around video models. This report examines three directions. First,agentic video generation, where harnesses coordinate scripting, shot planning, asset management, production, and editing, alongside the evaluation challenges of these systems. Second, agentic world modeling, where harnesses mediate observation, control, execution, and state. We discuss hybrid designs in which game engines or agent-written programs maintain world state while video models render observations, and how agents and world models can mutually evaluate and improve one another. Third,recursive self-improvement(RSI) in video model development, distinguishing output revisions, updates to harness state, generator parameters, and evaluators, and changes to the improvement procedure itself. We identify how these improvements feed back into subsequent development. Across these directions, we analyze essential agent capabilities, including audiovisual perception, long-horizon planning, memory, code-based interaction,feedback-guided control, skill reuse, andmulti-agent coordination. We conclude with challenges in autonomous video production, lifelong memory, programmable hybrid control, autonomous model development, provenance, cost accounting, and evaluation linking video quality and task performance to sustained improvements in models and harnesses.",
       "published_date": "Oct 29",
-      "github_url": "https://github.com/galilai-group/prh-proof",
-      "org_tag": "galilai-group"
+      "github_url": "https://github.com/agentic-videogen/awesome-agentic-videogen",
+      "org_tag": "Video Rebirth"
+    },
+    {
+      "title": "Words Caught in the Heart: Simulating Person-Specific Expression for Self-Opaque Clients in Psychotherapy",
+      "url": "https://huggingface.co/papers/2611.00617",
+      "likes": 77,
+      "date": "2026-11-08",
+      "abstract": "Psychotherapy clients may experience distress before they can coherently describe it, and their expression changes with emotion, perceived safety, and trust.Large language model-basedclient simulators often rely on clinically organized case descriptions, which can encourage responses explaining the client's difficulties more clearly than their current understanding warrants. We propose Pandora, a psychotherapy client simulation framework that models how psychological experience becomes situated, individual expression. Pandora updates psychological andrelational states in response to therapist interventions, constructssubjective appraisals and attributions, and plans response content and strategy. A separateexpression plannercombines these decisions with language patterns distilled from the client's utterances to guide linguistic realization. We evaluate Pandora against five baselines on 115 cases from four counseling and motivational interviewing datasets. It achieves the highestexpression similarityand overalldisclosure-alignmentscore among the compared systems. In a four-evaluator study of 45 matched disclosure items, Pandora receives AI-like judgments in 7.2% of ratings, compared with 43.3--67.2% for the baselines and 35.6% without expression planning. The ablation also reducesexpression similarity. These results support explicit expression planning in client simulation to improve alignment with individual language patterns and reduce perceived AI-like expression in the evaluated setting.",
+      "published_date": "Oct 31",
+      "github_url": "https://github.com/whunextgen/Pandora",
+      "org_tag": "CLAIN-WHU"
+    },
+    {
+      "title": "Behind Video Generation: Observations and Insights on Multimodal Understanding from Kling",
+      "url": "https://huggingface.co/papers/2611.04916",
+      "likes": 74,
+      "date": "2026-11-08",
+      "abstract": "Video generation has progressed from isolated clips to coherent short-form audiovisual sequences, and the bottleneck is shifting from rendering to semantic control. This report summarizes the observations and insights onmultimodal understandinggained from successive generations of Kling. We argue that generation quality is the projection ofmultimodal understandingthrough the entire data--conditioning--alignment--evaluation chain, and we examine this chain module by module.Kling-MLLM, a shared multimodal foundation model that unifies image, video, audio, synchronized audio--video, and interleaved inputs, is specialized for each downstream module. Because aDiTis trained on far fewer training samples than a language model, we treatcaptioningas a semantic contract that maximizes description density, and extend it toreference-grounded captioningthat makes reference bindings explicit.Prompt enhancementtranslates user intent into this caption distribution: basic PE is derived from captions of compelling videos and refined with text-level and generator-in-the-loopreinforcement learning, while agentic PE refines the story and retrieves compelling examples. We show that a reliabletext encodercomes fromperceptual trainingrather than from stronger language ability, and that candidates can be screened from text alone before end-to-end training.Reward modelingpairs a general reward model for explainable, localized critiques with a decision reward model for fast multidimensional scoring, treating perceptual bandwidth as a first-class design parameter. Finally, we review task-specificautomatic evaluation, focusing on protocols that expose scoring shortcuts and help trace failures to their upstream source. We hope these lessons offer practical guidance for building the understanding stack behind controllable video generation.",
+      "published_date": "Nov 3",
+      "github_url": null,
+      "org_tag": "KlingAI Research"
+    },
+    {
+      "title": "MoviEdit: Long-form Multi-Shot Video Editing Made Easy",
+      "url": "https://huggingface.co/papers/2611.02737",
+      "likes": 74,
+      "date": "2026-11-08",
+      "abstract": "Long-formmulti-shot video editingrequires an intended edit to remain coherent across abrupt changes in scene, viewpoint, and subject appearance, while processing substantially longer visual context than conventional single-shot editors. We introduce MoviEdit, an end-to-end framework for scalable long-formmulti-shot video editingthat jointly addresses the challenges of data, modeling, and evaluation. To provide cross-shot supervision data at scale, we develop automatic data-generation pipelines spanning synchronized multi-view footage, real-world multi-shot videos, and generated multi-shot content, yielding 87K paired editing videos without manual annotation. Architecturally, MoviEdit employs a cascadedbidirectional-autoregressive design: a lightweight bidirectional stage first establishes a globally coherent editing draft over aspatiotemporally compressed representation, which is then autoregressively propagated and refined over the full video. We further introduceMoviEdit-Bench, a dedicated benchmark for systematic evaluation of long-formmulti-shot video editing. Extensive experiments show that MoviEdit substantially outperforms existing open-source models and performs on par with industry frontier models across text-guided and image-guided editing. Visit our project page for complete results and to access the benchmark: https://multi-shot-edit.github.io/",
+      "published_date": "Nov 2",
+      "github_url": "https://github.com/adobe-research/MoviEdit-Bench",
+      "org_tag": "Adobe"
+    },
+    {
+      "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+      "url": "https://huggingface.co/papers/2611.04277",
+      "likes": 64,
+      "date": "2026-11-08",
+      "abstract": "Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns. Rather than seeking a universally superior harness, we introduceHarness-Sto selectively rescue failures of a base execution system throughsibling harnessesand transfer the resulting capabilities into a single policy that remains effective under the original harness.Directional Harness Evolutiondevelops specializedsibling harnessesalong distinct repair directions, forming a reusableSibling Harness Poolthat remains fixed duringpolicy training.Complementary Harness Rescue Traininginvokes this pool only when all initial attempts under thebase harnessfail. The same policy generates freshrolloutsunder selectedauxiliary harnesses, and thesetrajectoriesreplace the failed group forreinforcement learning. AnAdaptive Harness Routerselects theTop-k variantsusingHarness Behavior Profilesand voting across multipleLLMs.Policy-aware profile re-anchoringrefreshes this evidence as the policy learns. Across AppWorld, SWE-Gym, and DBBench, the trained policy substantially outperforms policy-only training when returned to the originalbase harness. Behavioral analyses and held-out cases support the transfer of harness-elicited behaviors into the policy itself. Reusing the router forRank-1 inferenceprovides additional gains at the same executor rollout count.",
+      "published_date": "Nov 3",
+      "github_url": "https://github.com/DeepExperience/Harness-S",
+      "org_tag": "Shanghai JiaoTong University"
+    },
+    {
+      "title": "Does Scaling Toward AGI Depend on What System-1 Lets System-2 Execute?",
+      "url": "https://huggingface.co/papers/2610.39497",
+      "likes": 64,
+      "date": "2026-11-08",
+      "abstract": "Progress toward artificial general intelligence (AGI) has largely relied on scaling a resource-intensive executive,System-2, through larger models, more data and compute, longer reasoning, and more agents. We ask whether the next stage may come instead from co-designing it withSystem-1, a lightweight, semantically aware predictor that evaluates candidate interactions before execution, so thatSystem-2acts only on those worth their cost. Our answer is a qualified yes. We studyconditional interaction, a predict--gate--execute--update loop:System-1estimates each candidate's utility,System-2executes those admitted by anadaptive threshold, and the outcomes updateSystem-1. The loop spans training, test-time reasoning, adaptive decision-making, and agentic tool use, with utility and cost defined by the application. Under ideal screening and equal execution costs, execution compute falls by a factor approaching 1/ρ_u, where ρ_u is the density of utility-relevant interactions (cost-weighted when costs differ); prediction errors, exploration, and distribution shift reduce the saving. We boundselection regretby predictor error and theutility margin. These results motivate our central hypothesis: ρ_u is a measurable coordinate ofscaling efficiencyand makesinformative computea better description of scaling than total compute.",
+      "published_date": "Oct 29",
+      "github_url": null,
+      "org_tag": "Tsinghua University"
+    },
+    {
+      "title": "Think Less, Locally: Local Preference Learning for Reasoning Compression",
+      "url": "https://huggingface.co/papers/2611.04814",
+      "likes": 61,
+      "date": "2026-11-08",
+      "abstract": "Large reasoning models achieve strong performance on challenging tasks, but their longchain-of-thoughtoften incurs substantial inference costs by continuing to deliberate after sufficient information has been obtained. Existingreasoning compressionmethods primarily operate on reasoning trajectories, paying less attention to the local decision of whether further reasoning is necessary given the current state. We propose LoCo, alocal preference learningmethod forreasoning compression. LoCo detects candidateoverthinkingstates from the model's own traces, freezes the corresponding reasoning prefixes, regenerates shorter verified continuations from the same states, and trains on the resultingstate-conditioned preference pairswithDPO. This formulation teaches the model when to continue reasoning and when to conclude, rather than simply encouraging shorter trajectories overall. We construct training data entirely from self-generated mathematical traces and evaluate LoCo on five mathematical and three code generation benchmarks. LoCo reduces completion length by 41.7\\%--45.4\\% on mathematics and 23.4\\%--36.3\\% on code, while maintaining or improving accuracy and achieving the best AUC across all code benchmarks. LoCo consistently improves the accuracy-efficiency trade-off on mathematics and transfers effectively to code generation despite math-only training, demonstrating the cross-domain generality oflocal preference learningforreasoning compression. The code and model will be publicly released at https://github.com/MuyaoYuan/LoCo.",
+      "published_date": "Nov 3",
+      "github_url": "https://github.com/MuyaoYuan/LoCo",
+      "org_tag": "Tencent"
+    },
+    {
+      "title": "From Pixels to Actions - Towards Native Vision-Language-Action Policies",
+      "url": "https://huggingface.co/papers/2611.06918",
+      "likes": 60,
+      "date": "2026-11-08",
+      "abstract": "Vision-language-action modelsare typically built on a simple premise: perception is first compressed byvisual encoders, and action reasoning begins only afterwards. Yet manipulation often hinges on precisely the visual signals most vulnerable to this abstraction, e.g., local geometry, boundaries, depth, and subtle state changes. This raises a fundamental question: should action policies inherit a fixed visual endpoint, or directly access evolving visual computation? We introduce NEO-VLA, a structurallyencoder-freevision-language-action framework. Images are tokenized by lightweightpatch convolutional layersand evolve jointly with language throughout the backbone, allowing aflow-matchingaction expert to draw from instruction-conditioned visual representations at different depths. This simple change reveals a consistent pattern. Native architectures outperform encoder-based counterparts under controlled comparisons; full fine-tuning reduces but does not erase the gap, and additional scale alone cannot recover it. More strikingly,layer-wise probingshows that the action-critical signals often peak well before the final visual representation. Across diverse manipulation settings and distribution shifts, NEO-VLA consequently achieves stronger and more robust control. Together, these results suggest thatembodied controlbenefits from access to visual representations across the computational hierarchy, rather than a fixed encoder output.",
+      "published_date": "Nov 4",
+      "github_url": null,
+      "org_tag": "MMLab@NTU"
+    },
+    {
+      "title": "DreamX: Video Diffusion Model is a Universal Latent Action Learner",
+      "url": "https://huggingface.co/papers/2611.05377",
+      "likes": 57,
+      "date": "2026-11-08",
+      "abstract": "Learning a universal action representation from video requires modeling dynamics that are consistent across different executions of the same action yet invariant to changes in embodiment and appearance. Existinglatent actionmodels infer actions from visual transitions, but their representations often entangle the underlying action with irrelevant visual variations, limiting transfer across embodiments. We introduce DreamX, which repurposes a pretrainedvideo diffusion modelas a universallatent actionlearner. Our approach extracts compactlatent actions from the video model's richspatiotemporal features, compressing each latent video frame by 300times (1{,200 rightarrow 4} tokens). In addition, by leveraging the video model'sgenerative prior, theselatent actions capture action-relevant dynamics disentangled from visual appearance. The resulting latent space serves as a shared action interface across embodiments (human and robot), environments, and action parameterizations. On LARY-Bench, DreamX achieves state-of-the-art performance amonglatent actionmodels. Moreover, actions encoded in one setting remain effective in another: the latent space supports any-to-any video transfer andzero-shot action transferacross diverse embodiments and environments. Furthermore, this shared interface also enables policy learning in a compactlatent action space, reducing the computational cost of video-diffusion-based policies.",
+      "published_date": "Nov 3",
+      "github_url": null,
+      "org_tag": "KAIST AI"
+    },
+    {
+      "title": "FrontierPhysics: Evaluating Agents for End-to-End Physics Research",
+      "url": "https://huggingface.co/papers/2611.06910",
+      "likes": 56,
+      "date": "2026-11-08",
+      "abstract": "AI agentsare playing an increasingly important role in physics research. However, existingphysics benchmarks only evaluate fixed questions, isolated sub-tasks, or paper reproduction with given solutions, and rarely check research quality alongside correctness. We introduceFrontierPhysics, an end-to-end benchmark with 56 tasks made by 42 physicists based on their own research, covering nine domains across theoretical, computational, and experimental physics. Each task requires agents to review the literature, develop a research plan, conduct research and experiments, and produce structured outputs and scientific manuscripts. Combiningdeterministic verifierswithexpert-authored rubrics,FrontierPhysicsevaluates whether agents' research is correct and publishable. Across 22 models in 26 configurations, no configuration passes more than 46 of its 168 rollouts. Manual review of agent trajectories shows that frontier agents' main weaknesses are insufficiently rigorous reasoning and limited expert intuition, rather than gaps in physics knowledge or execution errors.",
+      "published_date": "Nov 4",
+      "github_url": null,
+      "org_tag": "BenchFlow"
+    },
+    {
+      "title": "Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand",
+      "url": "https://huggingface.co/papers/2611.00883",
+      "likes": 50,
+      "date": "2026-11-08",
+      "abstract": "Benchmarkcompressionreducestheoftenprohibitivetimeandcostofmodelevaluationbyevaluatingmodelsonasmallbenchmarksubsetthatcloselymatchesfull-benchmarkresults.Toquantifyestimationerror,wederiveanaccurateanalyticalapproximationtotheerrordistributionwhenestimatingfull-benchmarkscoresfromasubset,showingthatmostsubsetsyieldsmallerrors,whileafewproducemuchlargererrors,resultinginalong-taileddistribution.Thismeansrandomsamplingalonecanachievesurprisinglystrongperformancewithhighprobability,butremainsunstableduetorarelargeerrors.Wefurthershowthatthisinstabilityisinherenttomodernfoundationmodelsandpersistsevenasmoremodelsareevaluated.Basedonthesefindings,weintroduceBestRand,astableandlow-costbenchmarkcompressionmethodthatpreservestheefficiencyofrandomsamplingwhilesubstantiallyreducingitshigh-errortail.WevalidateBestRandon70+text,multimodal,andagentbenchmarks,andfurtherextendittoVLAevaluation.Comparedwithcompetitivemethods,BestRandreduceshigh-errorriskby50.2%andestimationerrorby16.4%onaverage,whilerequiringonly51.3%oftheconstructioncost.ItfurtherreducesOODestimationerrorby21.8%onaverageacrossscore-range,model-family,andtemporalshifts.Together,ourtheoryprovidespracticalguidanceforunderstandingandpredictingtheaccuracyandreliabilityofbenchmarkcompression,whileBestRandenablesstableandaccuratecompressionatlowcost.Thecodeanddataarepubliclyavailableonhttps://github.com/George-Ling3/BestRand.",
+      "published_date": "Oct 31",
+      "github_url": "https://github.com/George-Ling3/BestRand",
+      "org_tag": "Carnegie Mellon University"
+    },
+    {
+      "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
+      "url": "https://huggingface.co/papers/2611.02497",
+      "likes": 50,
+      "date": "2026-11-08",
+      "abstract": "General-purpose robot policies must work across robots, tasks, and environments, yet the variation that makes physical trials informative also makes them difficult to reproduce. We introduce RoboColosseum, adistributed evaluationframework that combines unified policy serving and standardized protocols across a network of locally operated robots in diverse environments. Our initial study evaluates fivevision-language-action (VLA) policiesand three frontier AI agents across fourembodiments (SO-101, Franka, Bimanual-YAM, and G1 Humanoid). The Open Track compares models without task-specific adaptation in blinded, pairwise trials under matched local conditions. The Fine-tune Track measures how well VLA policies adapt to 20 tasks across all fourembodiments when each policy receives the same 100 demonstrations per task. Across 5,699 pairwise Open Track comparisons at 124 sites, frontier agents rival specialized VLA policies, while all systems struggle to complete open-world tasks reliably. Afterfine-tuning, GR00T N1.7 leads on SO-101 and pi0.5 leads on Franka and Bimanual-YAM. Policy rankings show weak agreement acrossembodiment-specific task suites (Kendall W = 0.24). Open Track rankings poorly predict relative performance afterfine-tuning, with substantial rank reversals on all threeembodiments shared between tracks. Measuring partial progress reveals differences that task success alone misses. On the G1 Humanoid, no policy completes any of the five tasks, yet average progress ranges from 13.3% to 23.2% across policies. Open Track rankings stabilize as trials accumulate, and active matchmaking achieves comparable ranking agreement with substantially fewer physical trials than uniform sampling. These results show how distributed physical evaluation can reveal where robot policies generalize, how well they adapt to new tasks, and how far they progress on tasks they fail to complete.",
+      "published_date": "Nov 2",
+      "github_url": "https://github.com/RoboColosseum/robocolosseum-client",
+      "org_tag": "Hugging Face"
+    },
+    {
+      "title": "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit",
+      "url": "https://huggingface.co/papers/2611.06728",
+      "likes": 49,
+      "date": "2026-11-08",
+      "abstract": "Streaming video understandingrequires models to repeatedly decide whether to respond or continue observing. Recently,Group Relative Policy Optimization(GRPO) has been applied to this setting, with existing approaches emphasizing reward design while retaining a single trajectory-level advantage across turns. Such shared credit can reinforce redundant replies after earlier successes and discourage useful follow-ups after earlier failures. We propose TurnWise, a turn-level GRPO framework that aligns learning with individual streaming decisions. TurnWise addresses the mismatch between trajectory-level feedback and turn-level interaction, promoting informative responses and reducing redundancy. Specifically,turn-level credit assignmentusessilence-completed prefix scoringto construct group-relative advantages from each decision's remaining return, separating its learning signal from earlier rewards.Turn-mean policy optimizationaverages token losses within each turn and then across turns, giving response and waiting decisions equal weight regardless of output length. These complementary designs improve streaming policy learning without a learned critic or additional rollouts. Extensive experiments show our method outperforms prior RL approaches forstreaming video understanding.",
+      "published_date": "Nov 4",
+      "github_url": "https://github.com/XD111ds/turn-wise-rl",
+      "org_tag": null
     }
   ]
 }
